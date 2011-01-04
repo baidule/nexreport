@@ -8,9 +8,9 @@ import jatools.dom.NodeStack;
 
 /**
  *
- *  ÔÚ×é¼ş´òÓ¡Ê±£¬»áÒªÇóÈİÆ÷½âÎöÏàÓ¦±äÁ¿Öµ
+ *  åœ¨ç»„ä»¶æ‰“å°æ—¶ï¼Œä¼šè¦æ±‚å®¹å™¨è§£æç›¸åº”å˜é‡å€¼
  *
- *  ²Î¼û ZComponent.print()
+ *  å‚è§ ZComponent.print()
  *
  *  @version $Revision: 1.1 $
  *  @author $author$

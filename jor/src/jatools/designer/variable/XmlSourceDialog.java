@@ -30,7 +30,7 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
       super((Frame)javax.swing.SwingUtilities.getWindowAncestor(c));
         this.c=c;
         exitedOK=false;
-        this.setTitle("XML ˝æ›ºØ∂®“Â");
+        this.setTitle("XMLÊï∞ÊçÆÈõÜÂÆö‰πâ");
         this.setModal(true);
         this.setSize(270,160);
         this.setLocation(250,250);
@@ -39,7 +39,7 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
     private void initUI(){
         JPanel center=new JPanel();
 
-        JLabel label=new JLabel("√˚≥∆£∫");
+        JLabel label=new JLabel("ÂêçÁß∞Ôºö");
         tagName=new JTextField();
 
         GridBagConstraints gbc = new GridBagConstraints();
@@ -52,14 +52,14 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
         center.add(tagName, gbc);
         gbc.weightx = 0;
 
-        label=new JLabel("URL£∫");
+        label=new JLabel("URLÔºö");
         url=new JTextField();
         gbc.gridwidth = 1;
         center.add(label, gbc); //
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         center.add(url, gbc);
 
-        label=new JLabel("XPath£∫");
+        label=new JLabel("XPathÔºö");
         xpath=new JTextField();
         gbc.gridwidth = 1;
         center.add(label, gbc); //
@@ -67,8 +67,8 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
         center.add(xpath, gbc);
 
 
-        JButton ok=new JButton("»∑∂®");
-        JButton cancel=new JButton("»°œ˚");
+        JButton ok=new JButton("Á°ÆÂÆö");
+        JButton cancel=new JButton("ÂèñÊ∂à");
         ok.setPreferredSize(new Dimension(78,23));
         cancel.setPreferredSize(new Dimension(78,23));
         ok.setActionCommand("ok");
@@ -132,12 +132,12 @@ public class XmlSourceDialog extends JDialog implements ActionListener{
     private boolean checkNull(){
          boolean b=false;
         if(tagName.getText()==null||tagName.getText().trim().equals("")){
-            JOptionPane.showConfirmDialog(c,"√˚≥∆≤ªƒ‹Œ™ø’","Ã· æ",
+            JOptionPane.showConfirmDialog(c,"ÂêçÁß∞‰∏çËÉΩ‰∏∫Á©∫","ÊèêÁ§∫",
                JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
             b=true;
         }
         else  if(url.getText()==null||url.getText().trim().equals("")){
-            JOptionPane.showConfirmDialog(c,"url≤ªƒ‹Œ™ø’","Ã· æ",
+            JOptionPane.showConfirmDialog(c,"url‰∏çËÉΩ‰∏∫Á©∫","ÊèêÁ§∫",
                JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
             b=true;
         }

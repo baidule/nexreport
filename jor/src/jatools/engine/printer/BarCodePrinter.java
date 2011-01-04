@@ -47,7 +47,7 @@ public class BarCodePrinter extends ImagePrinter {
 //                lastcss.setFlashObject(new FlashImage(flash, null));
 //                return lastcss;
             	// TODO
-            	new UnsupportedOperationException("暂时不支持flash格式输出, 待统计图移植过来后再支持!");
+            	new UnsupportedOperationException("鏆傛椂涓嶆敮鎸乫lash鏍煎紡杈撳嚭, 寰呯粺璁″浘绉绘杩囨潵鍚庡啀鏀寔!");
             }
         }
 

@@ -22,7 +22,7 @@ import java.util.Date;
  * Company: EZSoft.
  * </p>
  *
- * @author ÖÜÎÄ¾ü
+ * @author å‘¨æ–‡å†›
  * @version 1.0
  */
 public class DateFormat implements Format2 {

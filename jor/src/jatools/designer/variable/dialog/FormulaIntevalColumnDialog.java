@@ -123,8 +123,8 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
         JPanel result = new JPanel(new BorderLayout());
 
         CustomTable table = new CustomTable(new String[] {
-                    "«¯º‰Ãıº˛",
-                    "«¯º‰÷µ"
+                    "Âå∫Èó¥Êù°‰ª∂",
+                    "Âå∫Èó¥ÂÄº"
                 });
 
         table.getColumnModel().getColumn(0).setPreferredWidth(180);
@@ -141,7 +141,7 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
 
         JButton b = null;
 
-        p.add(b = new JButton("–¬‘ˆ"), gbc);
+        p.add(b = new JButton("Êñ∞Â¢û"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     newIntervalFormula();
@@ -149,13 +149,13 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
             });
 
         gbc.insets.top = 0;
-        p.add(b = editButton = new JButton("±‡º≠"), gbc);
+        p.add(b = editButton = new JButton("ÁºñËæë"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     edit();
                 }
             });
-        p.add(b = deleteButton = new JButton("…æ≥˝"), gbc);
+        p.add(b = deleteButton = new JButton("Âà†Èô§"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     sortTable.delete();
@@ -163,14 +163,14 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
             });
 
         gbc.insets.top = 10;
-        p.add(b = upButton = new JButton("…œ“∆"), gbc);
+        p.add(b = upButton = new JButton("‰∏äÁßª"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     sortTable.up();
                 }
             });
         gbc.insets.top = 0;
-        p.add(b = downButton = new JButton("œ¬“∆"), gbc);
+        p.add(b = downButton = new JButton("‰∏ãÁßª"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     sortTable.down();
@@ -191,13 +191,13 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
         gbc.insets.left = 5;
         gbc.insets.right = 5;
         gbc.insets.top = 6;
-        re.add(new JLabel("√˚≥∆:  "), gbc);
+        re.add(new JLabel("ÂêçÁß∞:  "), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         re.add(nameText, gbc);
         gbc.weightx = 0.0;
         gbc.insets.top = 15;
-        re.add(new TitledSeparator("«¯º‰π´ Ω:"), gbc);
+        re.add(new TitledSeparator("Âå∫Èó¥ÂÖ¨Âºè:"), gbc);
         gbc.insets.left = 0;
         gbc.insets.right = 0;
         gbc.insets.top = 0;
@@ -209,7 +209,7 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
     }
 
     protected void newIntervalFormula() {
-        IntervalFormulaDialog d = new IntervalFormulaDialog(Main.getInstance(), "–¬Ω®«¯º‰π´ Ω");
+        IntervalFormulaDialog d = new IntervalFormulaDialog(Main.getInstance(), "Êñ∞Âª∫Âå∫Èó¥ÂÖ¨Âºè");
         d.show();
 
         if (d.getIntervalFormula() != null) {
@@ -231,7 +231,7 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
             String exp = (String) table.getValueAt(row, 0);
             String as = (String) table.getValueAt(row, 1);
 
-            IntervalFormulaDialog d = new IntervalFormulaDialog(Main.getInstance(), "±‡º≠«¯º‰π´ Ω");
+            IntervalFormulaDialog d = new IntervalFormulaDialog(Main.getInstance(), "ÁºñËæëÂå∫Èó¥ÂÖ¨Âºè");
             d.setIntervalFormula(new IntervalFormula(exp, as));
 
             d.show();
@@ -282,13 +282,13 @@ public class FormulaIntevalColumnDialog extends JDialog implements ListSelection
         String name = this.nameText.getText();
 
         if ((name == null) || (name.trim().length() == 0)) {
-            throw new JatoolsException("√˚≥∆≤ªƒ‹Œ™ø’.", this.nameText);
+            throw new JatoolsException("ÂêçÁß∞‰∏çËÉΩ‰∏∫Á©∫.", this.nameText);
         }
 
         CustomTable table = (CustomTable) this.sortTable.getTable();
 
         if (table.getRowCount() == 0) {
-            throw new JatoolsException("π´ Ω≤ªƒ‹Œ™ø’.", table);
+            throw new JatoolsException("ÂÖ¨Âºè‰∏çËÉΩ‰∏∫Á©∫.", table);
         } else {
             ArrayList formulas = new ArrayList();
 

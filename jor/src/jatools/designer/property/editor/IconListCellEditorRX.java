@@ -43,16 +43,16 @@ public class IconListCellEditorRX extends AbstractCellEditor
     }
 
     /**
- * JTable ÒªÇóÒ»¸öcell±à¼­Æ÷
- * <p>TableCellEditor ·½·¨</p>
+ * JTable è¦æ±‚ä¸€ä¸ªcellç¼–è¾‘å™¨
+ * <p>TableCellEditor æ–¹æ³•</p>
  *
- * @param table ÊÇÄÄÒ»¸ötableÒªÇó±à¼­Æ÷
- * @param value µ¥Ôª¸ñÖĞµÄÏÖÖµ
- * @param isSelected µ¥Ôª¸ñÊÇ·ñ±»Ñ¡ÖĞ
- * @param row µ¥Ôª¸ñËùÔÚĞĞ!
- * @param column µ¥Ôª¸ñËùÔÚÁĞ
+ * @param table æ˜¯å“ªä¸€ä¸ªtableè¦æ±‚ç¼–è¾‘å™¨
+ * @param value å•å…ƒæ ¼ä¸­çš„ç°å€¼
+ * @param isSelected å•å…ƒæ ¼æ˜¯å¦è¢«é€‰ä¸­
+ * @param row å•å…ƒæ ¼æ‰€åœ¨è¡Œ!
+ * @param column å•å…ƒæ ¼æ‰€åœ¨åˆ—
  *
- * @return ·µ»Ø±à¼­Æ÷²¿¼ş£¨colorCombo£©
+ * @return è¿”å›ç¼–è¾‘å™¨éƒ¨ä»¶ï¼ˆcolorComboï¼‰
  */
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         comboBox.setSelectedItem(value);
@@ -78,10 +78,10 @@ public class IconListCellEditorRX extends AbstractCellEditor
     }
 
     /**
- * table µÃÖª±à¼­Æ÷±à¼­½áÊøºó£¬À´ÌáÈ¡ÏÖÖµ
+ * table å¾—çŸ¥ç¼–è¾‘å™¨ç¼–è¾‘ç»“æŸåï¼Œæ¥æå–ç°å€¼
  *
- * <p>TableCellEditor ·½·¨</p>
- * @return ÏÖÖµ
+ * <p>TableCellEditor æ–¹æ³•</p>
+ * @return ç°å€¼
  */
     public Object getCellEditorValue() {
         return comboBox.getSelectedItem();

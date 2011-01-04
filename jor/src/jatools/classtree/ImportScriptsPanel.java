@@ -200,7 +200,7 @@ final Rectangle rec = tree.getPathBounds(path);
         _tree.addMouseListener(new NodeSelectionListener(_tree));
         _tree.addTreeExpansionListener(new TreeExpansionListener() {
                 public void treeCollapsed(TreeExpansionEvent event) {
-                    // TODO ×Ô¶¯Éú³É·½·¨´æ¸ù
+                    // TODO è‡ªåŠ¨ç”Ÿæˆæ–¹æ³•å­˜æ ¹
                 }
 
                 public void treeExpanded(TreeExpansionEvent event) {
@@ -324,7 +324,7 @@ final Rectangle rec = tree.getPathBounds(path);
 				return;
 			}
 
-			if (e.isPopupTrigger()) {//Èç¹ûµ±Ç°ÊÂ¼şÓëÊó±êÊÂ¼şÏà¹Ø£¬Ôòµ¯³ö²Ëµ¥
+			if (e.isPopupTrigger()) {//å¦‚æœå½“å‰äº‹ä»¶ä¸é¼ æ ‡äº‹ä»¶ç›¸å…³ï¼Œåˆ™å¼¹å‡ºèœå•
 				// popupMenu.show(e.getComponent(),e.getX(), e.getY());
 				getPopupMenu().show(e.getComponent(), e.getX(), e.getY());
 			}
@@ -333,7 +333,7 @@ final Rectangle rec = tree.getPathBounds(path);
 
 	class _findAction extends AbstractAction {
 		_findAction() {
-			super("²éÕÒÀàÃû");
+			super("æŸ¥æ‰¾ç±»å");
 		}
 
 		public void actionPerformed(ActionEvent e) {
@@ -343,7 +343,7 @@ final Rectangle rec = tree.getPathBounds(path);
 		public void showfindClass() {
 			FindClassDialog fc = new FindClassDialog(
 					((javax.swing.JDialog) (javax.swing.SwingUtilities
-							.getRoot(ImportScriptsPanel.this))), "²éÕÒÀàĞÍ");
+							.getRoot(ImportScriptsPanel.this))), "æŸ¥æ‰¾ç±»å‹");
 			fc.setLocationRelativeTo(((JDialog) (SwingUtilities.getRoot(ImportScriptsPanel.this))));
 			fc.pack();
 			fc.setVisible(true);

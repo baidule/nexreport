@@ -138,7 +138,7 @@ public class BorderStyle implements BorderBase {
      * @return DOCUMENT ME!
      */
     public String toString() {
-        // Èç¹ûÊÇÕûÊı£¬Ôò°´pxÎªµ¥Î»£¬·ñÔò£¬ÒÔptÎªµ¥Î»£¬ÔÚjorÉè¼ÆÆ÷½çÃæÉÏ£¬ÓĞ0.5pt£¬1px-8pxÎª¿í¶ÈµÄ±ß¿òÏß
+        // å¦‚æœæ˜¯æ•´æ•°ï¼Œåˆ™æŒ‰pxä¸ºå•ä½ï¼Œå¦åˆ™ï¼Œä»¥ptä¸ºå•ä½ï¼Œåœ¨jorè®¾è®¡å™¨ç•Œé¢ä¸Šï¼Œæœ‰0.5ptï¼Œ1px-8pxä¸ºå®½åº¦çš„è¾¹æ¡†çº¿
         return thickness + (this.isIntegerThickness() ? "px " : "pt ") + style + " " +
         StyleAttributes.toString(color);
     }

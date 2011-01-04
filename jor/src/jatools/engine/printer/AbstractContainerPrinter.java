@@ -17,7 +17,7 @@ import java.util.Map;
 
 
 /**
- * ´òÓ¡¹æÔò 1. Ã»ÓĞÔ¤Áô´òÓ¡ÎÊÌâ 2. ×Ó¼ş´òÓ¡¹ıµÄ,²»ÔÙ´òÓ¡ 3. µÚ¶ş´Î´òÓ¡,´ÓÎ´´òÓ¡×Ó¼ş,¿ªÊ¼
+ * æ‰“å°è§„åˆ™ 1. æ²¡æœ‰é¢„ç•™æ‰“å°é—®é¢˜ 2. å­ä»¶æ‰“å°è¿‡çš„,ä¸å†æ‰“å° 3. ç¬¬äºŒæ¬¡æ‰“å°,ä»æœªæ‰“å°å­ä»¶,å¼€å§‹
  *
  * @author $author$
  * @version $Revision$
@@ -171,7 +171,7 @@ public abstract class AbstractContainerPrinter extends AbstractPrinter {
                     }
                 }
 
-                // ´òÓ¡Ò»´Îºó£¬È¡Ïû±êÖ¾
+                // æ‰“å°ä¸€æ¬¡åï¼Œå–æ¶ˆæ ‡å¿—
                 this.setForcedBreak(false);
             } else if (free) {
                 growDelta -= printer.getComponent().getHeight();

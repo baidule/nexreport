@@ -1,7 +1,7 @@
 /*
  *   Author: John.
  *
- *   º¼ÖÝ½Ü´´Èí¼þ   All Copyrights Reserved.
+ *   æ­å·žæ°åˆ›è½¯ä»¶   All Copyrights Reserved.
  */
 package jatools.designer.peer;
 
@@ -48,7 +48,7 @@ public class LinePeer extends ComponentPeer {
         if ((x >= (x1 - off)) && (x < (x1 + off)) && (y >= (y1 - off)) && (y <= (y1 + off))) {
             return locate(this.getX(), this.getY());
         } else if ((x >= (x2 - off)) && (x < (x2 + off)) && (y >= (y2 - off)) && (y <= (y2 + off))) {
-            //  »÷ÖÐµÚÒ»µã
+            //  å‡»ä¸­ç¬¬ä¸€ç‚¹
             return locate(this.getX2(), this.getY2());
         } else {
             return NOT_HIT;
@@ -95,7 +95,7 @@ public class LinePeer extends ComponentPeer {
     }
 
     /**
-     * ±» selectionFrame.applyµ÷ÓÃ
+     * è¢« selectionFrame.applyè°ƒç”¨
      *
      * @param x1 DOCUMENT ME!
      * @param y1 DOCUMENT ME!

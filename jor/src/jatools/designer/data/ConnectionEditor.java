@@ -179,7 +179,7 @@ public class ConnectionEditor extends JDialog {
 
 //        if ((name == null) || name.trim().equals("")) //
 //         {
-//            ZMessageBox.error(this, Z"Êı¾İ¼¯Ãû³Æ²»ÄÜÎª¿Õ."); //
+//            ZMessageBox.error(this, Z"æ•°æ®é›†åç§°ä¸èƒ½ä¸ºç©º."); //
 //            nameText.requestFocus();
 //
 //            return false;

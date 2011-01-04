@@ -83,7 +83,7 @@ public class DNDManager implements DragSourceListener, DragGestureListener,
   }
 
   /**
-   * ·¢ÏÖÓĞÍÏ¶¯ÆóÍ¼
+   * å‘ç°æœ‰æ‹–åŠ¨ä¼å›¾
    *
    * @param dge DOCUMENT ME!
    */

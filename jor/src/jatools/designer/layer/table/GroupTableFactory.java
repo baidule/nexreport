@@ -33,10 +33,10 @@ public class GroupTableFactory {
     
     
     /**
-     * ´Ë·½·¨¹©Ñ¡ÖĞÊÇgroupNodesourceÕ¹Ê¾·Ö×éÓÃ£¬ÔİÊ±ÆúÓÃ
-     * ¸ÄÍÏgroupNodesourceÖ±½ÓÉú³É¼òµ¥µÄµ¥Ôª¸ñ
+     * æ­¤æ–¹æ³•ä¾›é€‰ä¸­æ˜¯groupNodesourceå±•ç¤ºåˆ†ç»„ç”¨ï¼Œæš‚æ—¶å¼ƒç”¨
+     * æ”¹æ‹–groupNodesourceç›´æ¥ç”Ÿæˆç®€å•çš„å•å…ƒæ ¼
      * @param source NodeSource
-     * @param containNext boolean   ÊÇ·ñ°üº¬×ÓgroupNodeSource
+     * @param containNext boolean   æ˜¯å¦åŒ…å«å­groupNodeSource
      * @return Table
      */
     public static Table getTable(NodeSource source, boolean containNext) {
@@ -96,7 +96,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * ·µ»Ø·Ö×é±¨±í
+     * è¿”å›åˆ†ç»„æŠ¥è¡¨
      * @param source NodeSource
      * @return Table
      */
@@ -151,7 +151,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * Í¨¹ıÍÏ¶¯rowNodeSource½ÚµãÉú³É ±í¸ñ
+     * é€šè¿‡æ‹–åŠ¨rowNodeSourceèŠ‚ç‚¹ç”Ÿæˆ è¡¨æ ¼
      * @param rowNodeSource RowNodeSource
      * @return Table
      */
@@ -241,7 +241,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * ÓÃÓÚgroupNodeSourceºÍrowNodeSource·µ»ØÆÕÍ¨±í¸ñ
+     * ç”¨äºgroupNodeSourceå’ŒrowNodeSourceè¿”å›æ™®é€šè¡¨æ ¼
      * @param source NodeSource
      * @return Table
      */
@@ -356,7 +356,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * GroupNodeSource Ò»¶¨ÔÚDatasetNodeSource½ÚµãÏÂ
+     * GroupNodeSource ä¸€å®šåœ¨DatasetNodeSourceèŠ‚ç‚¹ä¸‹
      * @param dataseNodeSource DatasetNodeSource
      * @return GroupNodeSource
      */
@@ -375,7 +375,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * ´ÓdatasetNode½ÚµãËãÆğµ½rowNode ÕâÌõÂ·¾¶µÄÉÏ×î½Ó½üdatasetNode µÄgroupNode½Úµã
+     * ä»datasetNodeèŠ‚ç‚¹ç®—èµ·åˆ°rowNode è¿™æ¡è·¯å¾„çš„ä¸Šæœ€æ¥è¿‘datasetNode çš„groupNodeèŠ‚ç‚¹
      * @param dataseNodeSource DatasetNodeSource
      * @param endNodeSource NodeSource
      * @return GroupNodeSource
@@ -398,7 +398,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * ÅĞ¶Ïancestor ÊÇ²»ÊÇ child µÄ×æÏÈ
+     * åˆ¤æ–­ancestor æ˜¯ä¸æ˜¯ child çš„ç¥–å…ˆ
      * @param ancestor NodeSource
      * @param child NodeSource
      * @return boolean
@@ -432,7 +432,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * ÁĞÍ·Ãû³ÆÅÅĞò
+     * åˆ—å¤´åç§°æ’åº
      * @param list ArrayList
      * @param fields ArrayList
      * @param groupSource GroupNodeSource
@@ -471,7 +471,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * ÅĞ¶ÏGroupNodeSourceÊÇ·ñº¬ÓĞRow
+     * åˆ¤æ–­GroupNodeSourceæ˜¯å¦å«æœ‰Row
      * @param groupNodeSource GroupNodeSource
      * @return boolean
      */
@@ -493,9 +493,9 @@ public class GroupTableFactory {
     }
 
     /**
-     * ÒÔGroupNodeSourceÎªÆğµãÑ°ÕÒ×ÓËïGroupNodeSourceÒÔ¼°×îºóµÄRowNodeSource
+     * ä»¥GroupNodeSourceä¸ºèµ·ç‚¹å¯»æ‰¾å­å­™GroupNodeSourceä»¥åŠæœ€åçš„RowNodeSource
      * @param list ArrayList
-     * @param groupSource NodeSource  ÆğÊ¼½ÚµãÎªGroupNodeSource
+     * @param groupSource NodeSource  èµ·å§‹èŠ‚ç‚¹ä¸ºGroupNodeSource
      * @param containNext boolean
      * @return ArrayList
      */
@@ -520,8 +520,8 @@ public class GroupTableFactory {
     }
 
     /**
-     * ÒÔRowNodeSourceÎªÆğµãÑ°ÕÒ×ÓËïGroupNodeSourceÒÔ¼°×îºóµÄGroupNodeSource
-     * ÓÉÉÏÏòÉÏ
+     * ä»¥RowNodeSourceä¸ºèµ·ç‚¹å¯»æ‰¾å­å­™GroupNodeSourceä»¥åŠæœ€åçš„GroupNodeSource
+     * ç”±ä¸Šå‘ä¸Š
      * @return ArrayList
      */
     private static void configGroupList(ArrayList list, NodeSource rowNodeSource,
@@ -536,8 +536,8 @@ public class GroupTableFactory {
     }
 
     /**
-     * È¡µÃ¹¹½¨ºÃµÄrowPanel,°üÀ¨row(´ÓÑ¡ÖĞµÄgroupNodeSource¿ªÊ¼¹¹½¨)
-     * ´ËÊ±²»¿¼ÂÇÓĞĞÖµÜgroupSourceÇé¿ö,Ö»ÓĞ¸¸×ÓË³Ğò,ËùÒÔ×î¶àÖ»ÓĞÒ»¸örow(×îºóµÄ)
+     * å–å¾—æ„å»ºå¥½çš„rowPanel,åŒ…æ‹¬row(ä»é€‰ä¸­çš„groupNodeSourceå¼€å§‹æ„å»º)
+     * æ­¤æ—¶ä¸è€ƒè™‘æœ‰å…„å¼ŸgroupSourceæƒ…å†µ,åªæœ‰çˆ¶å­é¡ºåº,æ‰€ä»¥æœ€å¤šåªæœ‰ä¸€ä¸ªrow(æœ€åçš„)
      * @param groupSource GroupNodeSource
      * @param containNext boolean
      * @return RowPanel
@@ -619,7 +619,7 @@ public class GroupTableFactory {
     }
 
     /**
-     * ´Ó×î½ü¸¸½ÚµãÖĞÈ¡µÃDatasetNodeSource
+     * ä»æœ€è¿‘çˆ¶èŠ‚ç‚¹ä¸­å–å¾—DatasetNodeSource
      * @param source NodeSource
      * @return DatasetNodeSource
      */

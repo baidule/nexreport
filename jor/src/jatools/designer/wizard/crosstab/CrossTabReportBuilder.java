@@ -11,7 +11,7 @@ import java.awt.Frame;
 
 /**
  * <p>Title:CrossTabReportBuilder </p>
- * <p>Description: 创建交叉报表</p>
+ * <p>Description: 鍒涘缓浜ゅ弶鎶ヨ〃</p>
  * <p>Copyright: Copyright (c) 2007</p>
  * <p>Company:Jatools </p>
  * @author Jiang Dehua

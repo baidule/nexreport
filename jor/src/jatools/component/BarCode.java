@@ -22,7 +22,7 @@ import org.krysalis.barcode4j.DefaultBarcodeClassResolver;
 /**
  *
  *
- * ÌõĞÎÂë±¨±íÔªËØ
+ * æ¡å½¢ç æŠ¥è¡¨å…ƒç´ 
  *
  */
 public class BarCode extends Image implements Var{
@@ -31,12 +31,12 @@ public class BarCode extends Image implements Var{
     private String variable;
 
     /**
-     * ´´½¨Ò»¸öÌõĞÎÂë¶ÔÏó
+     * åˆ›å»ºä¸€ä¸ªæ¡å½¢ç å¯¹è±¡
      *
-     * @param x ÌõĞÎÂë×óÉÏ½ÇµÄºá×ù±ê
-     * @param y ×óÉÏ½ÇµÄ×İ×ù±ê
-     * @param width ÌõĞÎÂë¿í¶È
-     * @param height ÌõĞÎÂë¸ß¶È
+     * @param x æ¡å½¢ç å·¦ä¸Šè§’çš„æ¨ªåº§æ ‡
+     * @param y å·¦ä¸Šè§’çš„çºµåº§æ ‡
+     * @param width æ¡å½¢ç å®½åº¦
+     * @param height æ¡å½¢ç é«˜åº¦
      */
     public BarCode(int x, int y, int width, int height) {
         super(x, y, width, height);
@@ -45,7 +45,7 @@ public class BarCode extends Image implements Var{
     }
 
     /**
-     * ´´½¨Ò»¸öÌõĞÎÂë¶ÔÏó.
+     * åˆ›å»ºä¸€ä¸ªæ¡å½¢ç å¯¹è±¡.
      */
     public BarCode() {
         this.setHorizontalAlignment(1);
@@ -67,7 +67,7 @@ public class BarCode extends Image implements Var{
     }
 
     /*
-     * ÌõĞÎÂëµÄÊôĞÔ¼¯
+     * æ¡å½¢ç çš„å±æ€§é›†
      *
      * @see com.jatools.core.accessor.ZPropertyAccessor#getRegistrableProperties()
      */

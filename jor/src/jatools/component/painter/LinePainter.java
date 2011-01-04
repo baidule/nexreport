@@ -16,9 +16,9 @@ import java.awt.Stroke;
   */
 public class LinePainter extends SimplePainter {
     /**
-    * ÔÚÉè¼ÆÃæ°åÖĞ,»­³öÏß.
+    * åœ¨è®¾è®¡é¢æ¿ä¸­,ç”»å‡ºçº¿.
     *
-    * @param g Éè¼ÆÃæ°åÍ¼ĞÎ¶ÔÏó.
+    * @param g è®¾è®¡é¢æ¿å›¾å½¢å¯¹è±¡.
     */
     public void paintComponent(Graphics2D g, Component c) {
         Line line = (Line) c;

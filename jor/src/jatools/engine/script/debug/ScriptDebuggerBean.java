@@ -181,29 +181,29 @@ public class ScriptDebuggerBean {
             typeDescriptions = new HashMap<Class, String>();
             typeDescriptions_zh = new HashMap<Class, String>();
 
-            put(JatoolsDocument.class, "JatoolsDocument", "ÎÄµµ½Úµã");
-            put(RootNode.class, "RootNode", "¸ù½Úµã");
-            put(ArrayNode.class, "ArrayNode", "Êı×é½Úµã");
-            put(DatasetNode.class, "DatasetNode", "Êı¾İ¼¯½Úµã");
-            put(IndexNode.class, "DatasetNode", "Ë÷Òı½Úµã");
-            put(CrossIndexNode.class, "CrossIndexNode", "½»²æË÷Òı½Úµã");
-            put(GroupNode.class, "GroupNode", "·Ö×é½Úµã");
-            put(RowNode.class, "RowNode", "ĞĞ½Úµã");
+            put(JatoolsDocument.class, "JatoolsDocument", "æ–‡æ¡£èŠ‚ç‚¹");
+            put(RootNode.class, "RootNode", "æ ¹èŠ‚ç‚¹");
+            put(ArrayNode.class, "ArrayNode", "æ•°ç»„èŠ‚ç‚¹");
+            put(DatasetNode.class, "DatasetNode", "æ•°æ®é›†èŠ‚ç‚¹");
+            put(IndexNode.class, "DatasetNode", "ç´¢å¼•èŠ‚ç‚¹");
+            put(CrossIndexNode.class, "CrossIndexNode", "äº¤å‰ç´¢å¼•èŠ‚ç‚¹");
+            put(GroupNode.class, "GroupNode", "åˆ†ç»„èŠ‚ç‚¹");
+            put(RowNode.class, "RowNode", "è¡ŒèŠ‚ç‚¹");
 
-            put(RootNodeSource.class, "RootNodeSource", "¸ù½ÚµãÔ´");
-            put(ArrayNodeSource.class, "ArrayNodeSource", "Êı×é½ÚµãÔ´");
-            put(DatasetNodeSource.class, "DatasetNodeSource", "Êı¾İ¼¯½ÚµãÔ´");
-            put(IndexNodeSource.class, "DatasetNodeSource", "Ë÷Òı½ÚµãÔ´");
-            put(CrossIndexNodeSource.class, "CrossIndexNodeSource", "½»²æË÷Òı½ÚµãÔ´");
-            put(GroupNodeSource.class, "GroupNodeSource", "·Ö×é½ÚµãÔ´");
-            put(RowNodeSource.class, "RowNodeSource", "ĞĞ½ÚµãÔ´");
-            put(FixedNodeField.class, "FixedNodeField", "¹Ì¶¨×Ö¶Î");
-            put(NodeSource.class, "NodeSource", "½ÚµãÔ´");
+            put(RootNodeSource.class, "RootNodeSource", "æ ¹èŠ‚ç‚¹æº");
+            put(ArrayNodeSource.class, "ArrayNodeSource", "æ•°ç»„èŠ‚ç‚¹æº");
+            put(DatasetNodeSource.class, "DatasetNodeSource", "æ•°æ®é›†èŠ‚ç‚¹æº");
+            put(IndexNodeSource.class, "DatasetNodeSource", "ç´¢å¼•èŠ‚ç‚¹æº");
+            put(CrossIndexNodeSource.class, "CrossIndexNodeSource", "äº¤å‰ç´¢å¼•èŠ‚ç‚¹æº");
+            put(GroupNodeSource.class, "GroupNodeSource", "åˆ†ç»„èŠ‚ç‚¹æº");
+            put(RowNodeSource.class, "RowNodeSource", "è¡ŒèŠ‚ç‚¹æº");
+            put(FixedNodeField.class, "FixedNodeField", "å›ºå®šå­—æ®µ");
+            put(NodeSource.class, "NodeSource", "èŠ‚ç‚¹æº");
 
-            put(DatasetField.class, "DatasetField", "Êı¾İ¿â×Ö¶Î");
-            put(RowField.class, "RowField", "ĞĞ×Ö¶Î");
-            put(GroupField.class, "GroupField", "·Ö×é×Ö¶Î");
-            put(CrossIndexField.class, "CrossIndexField", "½»²æ×Ö¶Î");
+            put(DatasetField.class, "DatasetField", "æ•°æ®åº“å­—æ®µ");
+            put(RowField.class, "RowField", "è¡Œå­—æ®µ");
+            put(GroupField.class, "GroupField", "åˆ†ç»„å­—æ®µ");
+            put(CrossIndexField.class, "CrossIndexField", "äº¤å‰å­—æ®µ");
         }
     }
 

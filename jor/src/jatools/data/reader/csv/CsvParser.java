@@ -36,8 +36,8 @@ public class CsvParser {
                             results[i] = TypeUtil.valueOf(strValues[i].trim(),
                                     TypeUtil.getSqlID(rowInfo.getColumnClass(i)));
                         } catch (Exception e) {
-                            throw new Exception("×Ö·û´®:" + strValues[i] + ",²»ÄÜ×ª»¯ÎªÀàĞÍÎª:" +
-                                rowInfo.getColumnClass(i).getName() + " µÄÖµ");
+                            throw new Exception("å­—ç¬¦ä¸²:" + strValues[i] + ",ä¸èƒ½è½¬åŒ–ä¸ºç±»å‹ä¸º:" +
+                                rowInfo.getColumnClass(i).getName() + " çš„å€¼");
                         }
                     }
                 }
@@ -51,7 +51,7 @@ public class CsvParser {
                 s += ("," + strValues[i]);
             }
 
-            throw new Exception("csvÊı¾İ¼¯¼ÇÂ¼ÖĞµÄÖµµÄ¸öÊıÓëÒªÇóµÄÊıÄ¿²»µÈ:\n" + s);
+            throw new Exception("csvæ•°æ®é›†è®°å½•ä¸­çš„å€¼çš„ä¸ªæ•°ä¸è¦æ±‚çš„æ•°ç›®ä¸ç­‰:\n" + s);
         }
     }
 

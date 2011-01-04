@@ -324,10 +324,10 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter, Focus
 
             // start = painter.start;
 
-            // È¡µÃ FillRowPanelµÄ cell;
-            // cell.rowSpan = y ËùÔÚĞĞ -
-            // È¡µÃ¿Õ¼ä
-            // È¡µÃ
+            // å–å¾— FillRowPanelçš„ cell;
+            // cell.rowSpan = y æ‰€åœ¨è¡Œ -
+            // å–å¾—ç©ºé—´
+            // å–å¾—
 
             // System.out.println(tt.getStandardCellAt(x, y));
             // Rectangle area = tt.getBounds(fp.getCell());
@@ -865,7 +865,7 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter, Focus
                 newCell.toRect());
 
         if (!panels.isEmpty()) {
-            if (MessageBox.show(_owner, "ÌáÊ¾", "Ñ¡ÔñÇøÓòÒÑ¾­´æÔÚÌî³ä°å,ÊÇ·ñÏÈÉ¾³ı?", MessageBox.OK_CANCEL) == MessageBox.CANCEL) {
+            if (MessageBox.show(_owner, "æç¤º", "é€‰æ‹©åŒºåŸŸå·²ç»å­˜åœ¨å¡«å……æ¿,æ˜¯å¦å…ˆåˆ é™¤?", MessageBox.OK_CANCEL) == MessageBox.CANCEL) {
                 return false;
             }
         }
@@ -937,7 +937,7 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter, Focus
                     newCell.rowSpan);
 
             if (painter.getTablePeer().isMergedCellCut(sel)) {
-                MessageBox.error(painter.getTablePeer().getOwner(), "Ìî³ä°åÇøÓò²»ÄÜ¸²¸Ç²¿·ÖºÏ²¢µ¥Ôª¸ñ!");
+                MessageBox.error(painter.getTablePeer().getOwner(), "å¡«å……æ¿åŒºåŸŸä¸èƒ½è¦†ç›–éƒ¨åˆ†åˆå¹¶å•å…ƒæ ¼!");
 
                 return;
             }
@@ -971,7 +971,7 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter, Focus
             panels.remove(fp);
 
             if (!panels.isEmpty()) {
-                if (MessageBox.show(_owner, "ÌáÊ¾", "Ñ¡ÔñÇøÓòÒÑ¾­´æÔÚÌî³ä°å,ÊÇ·ñÏÈÉ¾³ı?", MessageBox.OK_CANCEL) == MessageBox.CANCEL) {
+                if (MessageBox.show(_owner, "æç¤º", "é€‰æ‹©åŒºåŸŸå·²ç»å­˜åœ¨å¡«å……æ¿,æ˜¯å¦å…ˆåˆ é™¤?", MessageBox.OK_CANCEL) == MessageBox.CANCEL) {
                     return false;
                 }
             }
@@ -1498,18 +1498,18 @@ public class TablePanelEditLayer extends AbstractLayer implements Painter, Focus
      * @return DOCUMENT ME!
      */
     public Action[] getActions() {
-        _PopAction a = new _PopAction("ĞÂÔöÌî³äĞĞ");
+        _PopAction a = new _PopAction("æ–°å¢å¡«å……è¡Œ");
         a.putValue(Action.ACTION_COMMAND_KEY, CREATE_FILL_ROW);
 
-        _PopAction b = new _PopAction("É¾³ıÌî³äĞĞ");
+        _PopAction b = new _PopAction("åˆ é™¤å¡«å……è¡Œ");
         b.putValue(Action.ACTION_COMMAND_KEY, DELETE_FILL_ROW);
 
         return new Action[] { a, b };
     }
 
     class RubberData extends RubberRect {
-        int hType; // 1/-1 = ÏòÓÒ/Ïò×ó;
-        int vType; // 1/-1 = ÏòÏÂ/ÏòÉÏ
+        int hType; // 1/-1 = å‘å³/å‘å·¦;
+        int vType; // 1/-1 = å‘ä¸‹/å‘ä¸Š
         int row;
         int column;
         Cell srcCell;

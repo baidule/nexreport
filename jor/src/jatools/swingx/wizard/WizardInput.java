@@ -7,27 +7,27 @@ import javax.swing.event.ChangeListener;
 
 
 /**
- * ÊäÈë¾«Áé
+ * è¾“å…¥ç²¾çµ
  *
- * ÓÃÓÚ¶¨Òå¾«ÁéµÄÊäÈëÌØĞÔ£¬ÊäÈë¾«ÁéÊÇÊä³ö¾«ÁéµÄ¶¯×÷»ú£¬Ö÷ÒªÓÃÀ´ÁÙÌıÊä³ö¾«ÁéµÄÊôĞÔ±ä»¯
+ * ç”¨äºå®šä¹‰ç²¾çµçš„è¾“å…¥ç‰¹æ€§ï¼Œè¾“å…¥ç²¾çµæ˜¯è¾“å‡ºç²¾çµçš„åŠ¨ä½œæœºï¼Œä¸»è¦ç”¨æ¥ä¸´å¬è¾“å‡ºç²¾çµçš„å±æ€§å˜åŒ–
  *
  * @version $Revision: 1.1 $
  * @author $author$
  */
 public interface WizardInput extends ChangeListener {
     /**
-     * È¡µÃ¿ÉÒÔ½ÓÊÜµÄÊäÈëÀàĞÍ
+     * å–å¾—å¯ä»¥æ¥å—çš„è¾“å…¥ç±»å‹
      *
-     * @return ¿É½ÓÊÜÀàĞÍ
+     * @return å¯æ¥å—ç±»å‹
      */
     public int[] getInputTypes();
 
     /**
-     * Á¬½Óµ½Êä³ö¾«Áé£¬ÒÔ±ã¼àÌıÆä±ä»¯
+     * è¿æ¥åˆ°è¾“å‡ºç²¾çµï¼Œä»¥ä¾¿ç›‘å¬å…¶å˜åŒ–
      *
-     * @param output Êä³ö¾«Áé
+     * @param output è¾“å‡ºç²¾çµ
      *
-     * @return true/false ³É¹¦/Ê§°Ü
+     * @return true/false æˆåŠŸ/å¤±è´¥
      */
     public boolean connect(WizardOutput output);
 }

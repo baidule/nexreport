@@ -103,10 +103,10 @@ public class LabelPainter extends SimplePainter {
     }
 
     /**
-     * 在设计面板中,画出标签.
+     * 鍦ㄨ璁￠潰鏉夸腑,鐢诲嚭鏍囩.
      *
      * @param g
-     *            设计面板图形对象.
+     *            璁捐闈㈡澘鍥惧舰瀵硅薄.
      */
     public int getHorizentalAdvance(int linesHeight, Label label) {
         int alignY = label.getVerticalAlignment();

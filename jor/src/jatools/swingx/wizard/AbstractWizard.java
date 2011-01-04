@@ -111,18 +111,18 @@ public abstract class AbstractWizard implements WizardInput, WizardOutput, Wizar
     }
 
     /**
-     * ×¢²á±ä»¯¼àÌıÆ÷
+     * æ³¨å†Œå˜åŒ–ç›‘å¬å™¨
      *
-     * @param lst ¼àÌıÆ÷
+     * @param lst ç›‘å¬å™¨
      */
     public void addChangeListener(ChangeListener lst) {
         listeners.add(lst);
     }
 
     /**
-     * ×¢Ïú±ä»¯¼àÌıÆ÷
+     * æ³¨é”€å˜åŒ–ç›‘å¬å™¨
      *
-     * @param lst ¼àÌıÆ÷
+     * @param lst ç›‘å¬å™¨
      */
     public void removeChangeListener(ChangeListener lst) {
         listeners.remove(lst);
@@ -141,11 +141,11 @@ public abstract class AbstractWizard implements WizardInput, WizardOutput, Wizar
     }
 
     /**
-     * Á¬½Óµ½Êä³ö¾«Áé£¬ÒÔ±ã¼àÌıÆä±ä»¯
+     * è¿æ¥åˆ°è¾“å‡ºç²¾çµï¼Œä»¥ä¾¿ç›‘å¬å…¶å˜åŒ–
      *
-     * @param output Êä³ö¾«Áé
+     * @param output è¾“å‡ºç²¾çµ
      *
-     * @return true/false ³É¹¦/Ê§°Ü
+     * @return true/false æˆåŠŸ/å¤±è´¥
      */
     public boolean connect(WizardOutput output) {
         int[] its = getInputTypes();
@@ -244,7 +244,7 @@ public abstract class AbstractWizard implements WizardInput, WizardOutput, Wizar
         return getCellEditor().getEditorComponent();
     }
 
-    /** Ã»ÓĞÊµÏÖµÄ·½·¨
+    /** æ²¡æœ‰å®ç°çš„æ–¹æ³•
     public boolean isTypeAvailable(int type);
     public Object output(int type);
     public Component getEditor();

@@ -17,7 +17,7 @@ import org.jdesktop.swingx.treetable.TreeTableNode;
  * @version $Revision$
  */
 public class ScriptDebuggerModel extends DefaultTreeTableModel {
-    private String[] columnNames = { "Ãû³Æ", "Öµ", "ÀàĞÍ" };
+    private String[] columnNames = { "åç§°", "å€¼", "ç±»å‹" };
     private Class[] columnTypes = { String.class, Object.class, String.class };
     private Interpreter it;
 

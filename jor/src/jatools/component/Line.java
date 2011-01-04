@@ -1,6 +1,6 @@
 /*
  *
- *   º¼Öİ½Ü´´Èí¼ş   All Copyrights Reserved.
+ *   æ­å·æ°åˆ›è½¯ä»¶   All Copyrights Reserved.
  */
 package jatools.component;
 
@@ -11,7 +11,7 @@ import java.awt.Graphics2D;
 
 
 /**
- * ×Ô¶¨ÒåÏß×é¼ş
+ * è‡ªå®šä¹‰çº¿ç»„ä»¶
  *
  */
 public class Line extends Component {
@@ -36,54 +36,54 @@ public class Line extends Component {
 
    
     /**
-    * ´´½¨Ò»¸öÏß¶ÔÏó
+    * åˆ›å»ºä¸€ä¸ªçº¿å¯¹è±¡
     */
     public Line() {
     }
 
     /**
-    * ´´½¨Ò»¸öÏß¶ÔÏó
+    * åˆ›å»ºä¸€ä¸ªçº¿å¯¹è±¡
     *
-    * @param x Ïß×é¼şÔÚÈİÆ÷ÖĞµÄx×ø±ê
-    * @param y Ïß×é¼şÔÚÈİÆ÷ÖĞµÄy×ø±ê
-    * @param width Ïß×é¼ş¿í¶È
-    * @param height Ïß×é¼ş¸ß¶È
+    * @param x çº¿ç»„ä»¶åœ¨å®¹å™¨ä¸­çš„xåæ ‡
+    * @param y çº¿ç»„ä»¶åœ¨å®¹å™¨ä¸­çš„yåæ ‡
+    * @param width çº¿ç»„ä»¶å®½åº¦
+    * @param height çº¿ç»„ä»¶é«˜åº¦
     */
     public Line(int x, int y, int width, int height) {
         super(x, y, width, height);
     }
 
     /**
-     * ÉèÖÃÏßĞÎ
+     * è®¾ç½®çº¿å½¢
      *
-     * @param linePattern ÏßĞÎÖµ
+     * @param linePattern çº¿å½¢å€¼
      */
     public void setLinePattern(int linePattern) {
         this.linePattern = linePattern;
     }
 
     /**
-     * »ñÈ¡ÏßĞÎ
+     * è·å–çº¿å½¢
      *
-     * @return ÏßĞÎÖµ
+     * @return çº¿å½¢å€¼
      */
     public int getLinePattern() {
         return linePattern;
     }
 
     /**
-     * ÉèÖÃÏß¿í
+     * è®¾ç½®çº¿å®½
      *
-     * @param lineSize Ïß¿íÖµ
+     * @param lineSize çº¿å®½å€¼
      */
     public void setLineSize(float lineSize) {
         this.lineSize = lineSize;
     }
 
     /**
-     * »ñÈ¡Ïß¿í
+     * è·å–çº¿å®½
      *
-     * @return Ïß¿íÖµ
+     * @return çº¿å®½å€¼
      */
     public float getLineSize() {
         return lineSize;
@@ -112,9 +112,9 @@ public class Line extends Component {
     }
 
     /**
-    * ÏßµÄÊôĞÔ¼¯
+    * çº¿çš„å±æ€§é›†
     *
-    * @return ÏßÊôĞÔ
+    * @return çº¿å±æ€§
     */
     public PropertyDescriptor[] getRegistrableProperties() {
         return new PropertyDescriptor[] {

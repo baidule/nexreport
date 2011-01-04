@@ -52,7 +52,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
      * @param userCols DOCUMENT ME!
      */
     public UserDefinedColumnDialog(Frame f, Column[] sysCols, UserDefinedColumn[] userCols) {
-        super(f, "×Ô¶¨Òå×Ö¶Î", true);
+        super(f, "è‡ªå®šä¹‰å­—æ®µ", true);
 
         JPanel topPanel = getCenterPanel();
         getContentPane().add(topPanel, BorderLayout.CENTER);
@@ -77,9 +77,9 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
 
     private String getColumnType(UserDefinedColumn ufc) {
         if (ufc instanceof DateIntervalColumn) {
-            return "ÈÕÆÚ";
+            return "æ—¥æœŸ";
         } else if (ufc instanceof FormulaIntervalColumn) {
-            return "¹«Ê½";
+            return "å…¬å¼";
         } else {
             return null;
         }
@@ -101,8 +101,8 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
         JPanel formulsPanel = new JPanel(new BorderLayout());
 
         CustomTable table = new CustomTable(new String[] {
-                    "Ãû³Æ",
-                    "ÀàĞÍ"
+                    "åç§°",
+                    "ç±»å‹"
                 });
 
         table.getColumnModel().getColumn(0).setPreferredWidth(125);
@@ -119,7 +119,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
 
         JButton b = null;
 
-        p.add(b = new JButton("ĞÂÔö"), gbc);
+        p.add(b = new JButton("æ–°å¢"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     Component c = (Component) e.getSource();
@@ -128,13 +128,13 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
             });
 
         gbc.insets.top = 0;
-        p.add(b = editButton = new JButton("±à¼­"), gbc);
+        p.add(b = editButton = new JButton("ç¼–è¾‘"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     edit();
                 }
             });
-        p.add(b = deleteButton = new JButton("É¾³ı"), gbc);
+        p.add(b = deleteButton = new JButton("åˆ é™¤"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     sortTable.delete();
@@ -142,14 +142,14 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
             });
 
         gbc.insets.top = 10;
-        p.add(b = upButton = new JButton("ÉÏÒÆ"), gbc);
+        p.add(b = upButton = new JButton("ä¸Šç§»"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     sortTable.up();
                 }
             });
         gbc.insets.top = 0;
-        p.add(b = downButton = new JButton("ÏÂÒÆ"), gbc);
+        p.add(b = downButton = new JButton("ä¸‹ç§»"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     sortTable.down();
@@ -159,7 +159,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
         gbc.weighty = 1;
         p.add(Box.createVerticalGlue(), gbc);
         gbc.weighty = 0;
-        p.add(b = new JButton("È·¶¨"), gbc);
+        p.add(b = new JButton("ç¡®å®š"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done();
@@ -167,7 +167,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
             });
 
         gbc.insets.bottom = 20;
-        p.add(b = new JButton("È¡Ïû"), gbc);
+        p.add(b = new JButton("å–æ¶ˆ"), gbc);
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     cancel();
@@ -185,7 +185,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
         if (this.menu == null) {
             this.menu = new JPopupMenu();
 
-            JMenuItem m = new JMenuItem("ÈÕÆÚÇø¼ä×Ö¶Î");
+            JMenuItem m = new JMenuItem("æ—¥æœŸåŒºé—´å­—æ®µ");
             m.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         newDateGroupColumn();
@@ -194,7 +194,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
 
             menu.add(m);
 
-            m = new JMenuItem("¹«Ê½Çø¼ä×Ö¶Î");
+            m = new JMenuItem("å…¬å¼åŒºé—´å­—æ®µ");
             m.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         newIntervalColumn();
@@ -207,7 +207,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
     }
 
     protected void newIntervalColumn() {
-        FormulaIntevalColumnDialog d = new FormulaIntevalColumnDialog(Main.getInstance(), "ĞÂ½¨¹«Ê½Çø¼ä×Ö¶Î");
+        FormulaIntevalColumnDialog d = new FormulaIntevalColumnDialog(Main.getInstance(), "æ–°å»ºå…¬å¼åŒºé—´å­—æ®µ");
         d.show();
 
         if (d.getFormulaIntervalColumn() != null) {
@@ -238,7 +238,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
     }
 
     private void editDateColumn(CustomTable table, int row, DateIntervalColumn date) {
-        DateIntervalDialog d = new DateIntervalDialog(Main.getInstance(), "±à¼­ÈÕÆÚÇø¼ä×Ö¶Î", this.sysCols);
+        DateIntervalDialog d = new DateIntervalDialog(Main.getInstance(), "ç¼–è¾‘æ—¥æœŸåŒºé—´å­—æ®µ", this.sysCols);
         d.setDateGroupColumn(date);
 
         d.show();
@@ -250,7 +250,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
     }
     
     private void editFormulaColumn(CustomTable table, int row, FormulaIntervalColumn formula) {
-    	FormulaIntevalColumnDialog d = new FormulaIntevalColumnDialog(Main.getInstance(), "±à¼­¹«Ê½Çø¼ä×Ö¶Î");
+    	FormulaIntevalColumnDialog d = new FormulaIntevalColumnDialog(Main.getInstance(), "ç¼–è¾‘å…¬å¼åŒºé—´å­—æ®µ");
         d.setFormulaIntervalColumn (formula);
 
         d.show();
@@ -262,7 +262,7 @@ public class UserDefinedColumnDialog extends JDialog implements ListSelectionLis
     }
 
     protected void newDateGroupColumn() {
-        DateIntervalDialog d = new DateIntervalDialog(Main.getInstance(), "ĞÂ½¨ÈÕÆÚÇø¼ä×Ö¶Î", this.sysCols);
+        DateIntervalDialog d = new DateIntervalDialog(Main.getInstance(), "æ–°å»ºæ—¥æœŸåŒºé—´å­—æ®µ", this.sysCols);
         d.show();
 
         if (d.getDateGroupColumn() != null) {

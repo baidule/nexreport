@@ -34,24 +34,24 @@ public class DynamicColumnTableBuilder implements ProtectPublic {
     /**
     * DOCUMENT ME!
     *
-    * @param table ±í¸ñ¶ÔÏó,±ØĞëÎªÁ½ĞĞ,Ò»ÁĞ,ÇÒµÚÒ»¸öµ¥Ôª¸ñÎª±êÇ©¶ÔÏó,µÚ¶şĞĞµ¥Ôª¸ñÎªÎÄ±¾¶ÔÏó
-    * @param dataset Êı¾İ¼¯¶ÔÏó
-    * @param fields Ñ¡ÖĞÊı¾İ¼¯µÄÄÄĞ©×Ö¶ÎÀ´ÏÔÊ¾
-    * @param titles ±íÍ·ÏÔÊ¾ÄÚÈİ
-    * @param classes ÒıÓÃÑùÊ½Àà
+    * @param table è¡¨æ ¼å¯¹è±¡,å¿…é¡»ä¸ºä¸¤è¡Œ,ä¸€åˆ—,ä¸”ç¬¬ä¸€ä¸ªå•å…ƒæ ¼ä¸ºæ ‡ç­¾å¯¹è±¡,ç¬¬äºŒè¡Œå•å…ƒæ ¼ä¸ºæ–‡æœ¬å¯¹è±¡
+    * @param dataset æ•°æ®é›†å¯¹è±¡
+    * @param fields é€‰ä¸­æ•°æ®é›†çš„å“ªäº›å­—æ®µæ¥æ˜¾ç¤º
+    * @param titles è¡¨å¤´æ˜¾ç¤ºå†…å®¹
+    * @param classes å¼•ç”¨æ ·å¼ç±»
     * @throws JatoolsException
     */
     public void build() throws JatoolsException {
         if (table == null) {
-            throw new JatoolsException("²»ÄÜ´´½¨¶¯Ì¬ÁĞ±í¸ñ,Ô´±í¸ñÎª¿Õ!");
+            throw new JatoolsException("ä¸èƒ½åˆ›å»ºåŠ¨æ€åˆ—è¡¨æ ¼,æºè¡¨æ ¼ä¸ºç©º!");
         } else if (table.getRowCount() >2 ||      (table.getColumnCount() != 1)) {
-            throw new JatoolsException("²»ÄÜ´´½¨¶¯Ì¬ÁĞ±í¸ñ,Ô´±í¸ñ±ØĞëÎªÁ½ĞĞÒ»ÁĞ!");
+            throw new JatoolsException("ä¸èƒ½åˆ›å»ºåŠ¨æ€åˆ—è¡¨æ ¼,æºè¡¨æ ¼å¿…é¡»ä¸ºä¸¤è¡Œä¸€åˆ—!");
         } /*else if (!(table.getComponent(0, 0) instanceof Label) ||
             !(table.getComponent(1, 0) instanceof Text)) {
-        throw new JatoolsException("²»ÄÜ´´½¨¶¯Ì¬ÁĞ±í¸ñ,[0,0]µ¥Ôª¸ñ²»Îª±êÇ©¶ÔÏó,»ò[1,0]µ¥Ôª¸ñ²»ÎªÎÄ±¾!");
+        throw new JatoolsException("ä¸èƒ½åˆ›å»ºåŠ¨æ€åˆ—è¡¨æ ¼,[0,0]å•å…ƒæ ¼ä¸ä¸ºæ ‡ç­¾å¯¹è±¡,æˆ–[1,0]å•å…ƒæ ¼ä¸ä¸ºæ–‡æœ¬!");
         }*/
         if (dataset == null) {
-            throw new JatoolsException("²»ÄÜ´´½¨¶¯Ì¬ÁĞ±í¸ñ,Êı¾İ¼¯Îª¿Õ!");
+            throw new JatoolsException("ä¸èƒ½åˆ›å»ºåŠ¨æ€åˆ—è¡¨æ ¼,æ•°æ®é›†ä¸ºç©º!");
         }
 
         String[] fieldsArray = null;
@@ -59,7 +59,7 @@ public class DynamicColumnTableBuilder implements ProtectPublic {
         if (fields != null) {
             fieldsArray = fields.split(";");
         } else {
-            // Èç¹ûÃ»Ö¸¶¨ÏÔÊ¾ÁĞ,ÏÔÊ¾ËùÓĞdatasetÖĞµÄÁĞ
+            // å¦‚æœæ²¡æŒ‡å®šæ˜¾ç¤ºåˆ—,æ˜¾ç¤ºæ‰€æœ‰datasetä¸­çš„åˆ—
             fieldsArray = new String[dataset.getColumnCount()];
 
             for (int i = 0; i < fieldsArray.length; i++) {
@@ -73,10 +73,10 @@ public class DynamicColumnTableBuilder implements ProtectPublic {
             titlesArray = titles.split(";");
 
             if (titlesArray.length != fieldsArray.length) {
-                throw new JatoolsException("²»ÄÜ´´½¨¶¯Ì¬ÁĞ±í¸ñ,Ö¸¶¨µÄÁĞÊıÓë±êÌâÊı²»Ò»ÖÂ.");
+                throw new JatoolsException("ä¸èƒ½åˆ›å»ºåŠ¨æ€åˆ—è¡¨æ ¼,æŒ‡å®šçš„åˆ—æ•°ä¸æ ‡é¢˜æ•°ä¸ä¸€è‡´.");
             }
         } else {
-            // Èç¹ûÃ»Ö¸¶¨Ì§Í·,ÔòÒÔÁĞÃû×÷±êÌâ
+            // å¦‚æœæ²¡æŒ‡å®šæŠ¬å¤´,åˆ™ä»¥åˆ—åä½œæ ‡é¢˜
             titlesArray = fieldsArray;
         }
 
@@ -86,12 +86,12 @@ public class DynamicColumnTableBuilder implements ProtectPublic {
             classesArray = classes.split(";");
 
             if (classesArray.length != fieldsArray.length) {
-                throw new JatoolsException("²»ÄÜ´´½¨¶¯Ì¬ÁĞ±í¸ñ,Ö¸¶¨µÄÑùÊ½Àà¸öÊıÓëÏÔÊ¾ÁĞÊı²»Ò»ÖÂ.");
+                throw new JatoolsException("ä¸èƒ½åˆ›å»ºåŠ¨æ€åˆ—è¡¨æ ¼,æŒ‡å®šçš„æ ·å¼ç±»ä¸ªæ•°ä¸æ˜¾ç¤ºåˆ—æ•°ä¸ä¸€è‡´.");
             }
         }
 
-        // ¿ªÊ¼´´½¨
-        // ÖØĞÂÈ·¶¨ÁĞÊı
+        // å¼€å§‹åˆ›å»º
+        // é‡æ–°ç¡®å®šåˆ—æ•°
         for (int i = 0; i < (fieldsArray.length - 1); i++) {
             table.insertColumnAfter(0, table.getColumnWidth(0));
         }

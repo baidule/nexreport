@@ -1,7 +1,7 @@
 /*
  *   Author: John.
  *
- *   º¼Öİ½Ü´´Èí¼ş   All Copyrights Reserved.
+ *   æ­å·æ°åˆ›è½¯ä»¶   All Copyrights Reserved.
  */
 package jatools.viewer;
 

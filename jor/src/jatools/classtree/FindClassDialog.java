@@ -96,15 +96,15 @@ public class FindClassDialog extends JDialog{
 				{
 					int index= e.getLastIndex();
 					ClassItem item=(ClassItem) classItemModel.getElementAt(index);
-					jarName.setText("ËùÔÚµÄjar°üÎª: "+item.getJarName());
+					jarName.setText("æ‰€åœ¨çš„jaråŒ…ä¸º: "+item.getJarName());
 				}
 			}});
 		classItemList.setModel(classItemModel);
 		classScroll = new JScrollPane();
 		classScroll.getViewport().add(classItemList);
 
-		//className = new JLabel("ÀàÃû");
-		JButton okButton = new JButton("È·¶¨");
+		//className = new JLabel("ç±»å");
+		JButton okButton = new JButton("ç¡®å®š");
 		okButton.addActionListener(new ActionListener(){
 
 			public void actionPerformed(ActionEvent e) {
@@ -119,7 +119,7 @@ public class FindClassDialog extends JDialog{
 
                  hide();
 			}});
-		JButton cancelButton = new JButton("È¡Ïû");
+		JButton cancelButton = new JButton("å–æ¶ˆ");
 		cancelButton.addActionListener(new ActionListener(){
 
 			public void actionPerformed(ActionEvent e) {
@@ -135,7 +135,7 @@ public class FindClassDialog extends JDialog{
 		GridBagConstraints northgbc=new GridBagConstraints();
 		northgbc.gridwidth=1;
 		northgbc.anchor=GridBagConstraints.WEST;
-		northPanel.add(new JLabel("ÀàÃû³Æ:"),northgbc);
+		northPanel.add(new JLabel("ç±»åç§°:"),northgbc);
 		northPanel.add(Box.createHorizontalStrut(5));
 		northgbc.fill=GridBagConstraints.HORIZONTAL;
 		northgbc.weightx=40;
@@ -204,12 +204,12 @@ public class FindClassDialog extends JDialog{
            }
       catch(Exception e)
      {}
-    JFrame frame=new JFrame("²éÕÒÀàĞÍ");
+    JFrame frame=new JFrame("æŸ¥æ‰¾ç±»å‹");
     //frame.setSize(new Dimension(350,300));//new Dimension(200,100)
 	 frame.pack();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
-      FindClassDialog fc=new FindClassDialog(null,"²éÕÒÀàĞÍ");
+      FindClassDialog fc=new FindClassDialog(null,"æŸ¥æ‰¾ç±»å‹");
        fc.pack();
       fc.addWindowListener(new WindowAdapter()
       {

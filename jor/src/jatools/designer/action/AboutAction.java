@@ -68,7 +68,7 @@ public class AboutAction extends ReportAction {
 
 			String html = App.messages.getString("res.571");
 
-//www.jatools.com'>www.jatools.com</a><br>ÏúÊÛ×ÉÑ¯:0571-88254255/57-18<br>¼¼ÊõÖ§³Ö:0571-88254255/57-13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MSN: <a href='#' >jatools0571@hotmail.com</a><br>±±¾©°ìÊÂ´¦:010-51297501";
+//www.jatools.com'>www.jatools.com</a><br>é”€å”®å’¨è¯¢:0571-88254255/57-18<br>æŠ€æœ¯æ”¯æŒ:0571-88254255/57-13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MSN: <a href='#' >jatools0571@hotmail.com</a><br>åŒ—äº¬åŠäº‹å¤„:010-51297501";
 			panel.add(new JLabel(html), gbc);
 
 			CommandPanel commandPanel = CommandPanel.createPanel();

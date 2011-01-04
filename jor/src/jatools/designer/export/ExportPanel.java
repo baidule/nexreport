@@ -45,15 +45,15 @@ public class ExportPanel extends JPanel implements ActionListener {
     public static final int PNG = 8;
     private static ExportPanel instance;
     JatoolsFileFilter htmlFilter = new JatoolsFileFilter(new String[] { "html", "htm" },
-            "html文件 (*.htm,*.html)");
-    JatoolsFileFilter mhtFilter = new JatoolsFileFilter(new String[] { "mht" }, "html 单一文档(*.mht)");
-    JatoolsFileFilter pdfFilter = new JatoolsFileFilter(new String[] { "pdf" }, "pdf文件 (*.pdf)");
-    JatoolsFileFilter xlsFilter = new JatoolsFileFilter(new String[] { "xls" }, "Excel文件 (*.xls)");
-    JatoolsFileFilter xls1Filter = new JatoolsFileFilter(new String[] { "xls" }, "Excel文件-分页(*.xls)");
-    JatoolsFileFilter rtfFilter = new JatoolsFileFilter(new String[] { "rtf" }, "Word rtf 文件(*.rtf)");
-    JatoolsFileFilter csvFilter = new JatoolsFileFilter(new String[] { "txt" }, "csv文件 (*.txt)");
-    JatoolsFileFilter psFilter = new JatoolsFileFilter(new String[] { "ps" }, "PostScript 文件(*.ps)");
-    JatoolsFileFilter pngFilter = new JatoolsFileFilter(new String[] { "png" }, "图片文件(*.png)");
+            "html鏂囦欢 (*.htm,*.html)");
+    JatoolsFileFilter mhtFilter = new JatoolsFileFilter(new String[] { "mht" }, "html 鍗曚竴鏂囨。(*.mht)");
+    JatoolsFileFilter pdfFilter = new JatoolsFileFilter(new String[] { "pdf" }, "pdf鏂囦欢 (*.pdf)");
+    JatoolsFileFilter xlsFilter = new JatoolsFileFilter(new String[] { "xls" }, "Excel鏂囦欢 (*.xls)");
+    JatoolsFileFilter xls1Filter = new JatoolsFileFilter(new String[] { "xls" }, "Excel鏂囦欢-鍒嗛〉(*.xls)");
+    JatoolsFileFilter rtfFilter = new JatoolsFileFilter(new String[] { "rtf" }, "Word rtf 鏂囦欢(*.rtf)");
+    JatoolsFileFilter csvFilter = new JatoolsFileFilter(new String[] { "txt" }, "csv鏂囦欢 (*.txt)");
+    JatoolsFileFilter psFilter = new JatoolsFileFilter(new String[] { "ps" }, "PostScript 鏂囦欢(*.ps)");
+    JatoolsFileFilter pngFilter = new JatoolsFileFilter(new String[] { "png" }, "鍥剧墖鏂囦欢(*.png)");
     private JFileChooser chooser;
     private JDialog dialog;
     private PageProvider provider;

@@ -44,14 +44,14 @@ public class IntervalFormulaDialog extends JDialog {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.anchor = GridBagConstraints.WEST;
 
-        topPanel.add(new JLabel("Çø¼äÌõ¼ş:"), gbc);
+        topPanel.add(new JLabel("åŒºé—´æ¡ä»¶:"), gbc);
 
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         //     gbc.add( nameText,100);
         topPanel.add(this.formulaText, gbc);
 
         gbc.gridwidth = 1;
-        topPanel.add(new JLabel("Çø¼äÖµ:"), gbc);
+        topPanel.add(new JLabel("åŒºé—´å€¼:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         topPanel.add(this.asText, gbc);
@@ -112,7 +112,7 @@ public class IntervalFormulaDialog extends JDialog {
         String as = this.asText.getText();
 
         if ((as == null) || (as.trim().length() == 0)) {
-            throw new JatoolsException("Çø¼äÖµ²»ÄÜÎª¿Õ.", asText);
+            throw new JatoolsException("åŒºé—´å€¼ä¸èƒ½ä¸ºç©º.", asText);
         }
 
         return new IntervalFormula(expression, as);

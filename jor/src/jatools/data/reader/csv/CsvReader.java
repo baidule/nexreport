@@ -70,7 +70,7 @@ public class CsvReader extends AbstractDatasetReader {
     /**
      * DOCUMENT ME!
      */
-    public static final String TYPE = "CsvÊı¾İ¼¯"; //
+    public static final String TYPE = "Csvæ•°æ®é›†"; //
     String filePath;
     int currentRow1;
 
@@ -231,17 +231,17 @@ public class CsvReader extends AbstractDatasetReader {
             String[] classes = CsvParser.parse(reader); // 
 
             if ((classes == null) || (classes.length == 0)) {
-                throw new DatasetException("csvÎÄ¼ş " + filePath + "Î´¶¨Òå×Ö¶ÎÀàĞÍ");
+                throw new DatasetException("csvæ–‡ä»¶ " + filePath + "æœªå®šä¹‰å­—æ®µç±»å‹");
             }
 
             String[] columnNames = CsvParser.parse(reader);
 
             if ((columnNames == null) || (columnNames.length == 0)) {
-                throw new DatasetException("csvÎÄ¼ş " + filePath + "Î´¶¨Òå×Ö¶ÎÃû³Æ");
+                throw new DatasetException("csvæ–‡ä»¶ " + filePath + "æœªå®šä¹‰å­—æ®µåç§°");
             }
 
             if (classes.length != columnNames.length) {
-                throw new DatasetException("csvÎÄ¼ş " + filePath + "×Ö¶ÎÀàĞÍÓë×Ö¶ÎÃû³ÆÊıÁ¿²»Ò»ÖÂ");
+                throw new DatasetException("csvæ–‡ä»¶ " + filePath + "å­—æ®µç±»å‹ä¸å­—æ®µåç§°æ•°é‡ä¸ä¸€è‡´");
             }
 
             int columnCount = classes.length;
@@ -253,7 +253,7 @@ public class CsvReader extends AbstractDatasetReader {
                     Class cls = TypeUtil.getClass(classes[i].trim().toLowerCase());
 
                     if (cls == null) {
-                        throw new DatasetException("csvÎÄ¼ş " + filePath + "²»Ö§³Ö×Ö¶ÎÀàĞÍ:" + classes[i]);
+                        throw new DatasetException("csvæ–‡ä»¶ " + filePath + "ä¸æ”¯æŒå­—æ®µç±»å‹:" + classes[i]);
                     }
 
                     columnInfos[i] = new Column(columnNames[i].trim() /*.toUpperCase()*/, cls);
@@ -266,10 +266,10 @@ public class CsvReader extends AbstractDatasetReader {
 
                 return meta;
             } else {
-                throw new DatasetException("csvÎÄ¼ş " + filePath + "µÄÁĞÊıÎª0"); // //$NON-NLS-2$
+                throw new DatasetException("csvæ–‡ä»¶ " + filePath + "çš„åˆ—æ•°ä¸º0"); // //$NON-NLS-2$
             }
         } catch (Exception e) {
-            throw new jatools.dataset.DatasetException("³õÊ¼»¯csvÎÄ¼ş " + filePath + "Ê±³ö´í.", e); // //$NON-NLS-2$
+            throw new jatools.dataset.DatasetException("åˆå§‹åŒ–csvæ–‡ä»¶ " + filePath + "æ—¶å‡ºé”™.", e); // //$NON-NLS-2$
         }
     }
 

@@ -5,7 +5,7 @@ package jatools.swingx.dnd;
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2002</p>
  * <p>Company: EZSoft.</p>
- * @author ÖÜÎÄ¾ü
+ * @author å‘¨æ–‡å†›
  * @version 1.0
  */
 import java.awt.Component;

@@ -21,8 +21,8 @@ import javax.swing.table.TableCellRenderer;
 
 
 /**
- * boolean Öµtable cell ±à¼­Æ÷
- * ÓÃÒ»¸öJCheckBox ×é¼şÊµÏÖ
+ * boolean å€¼table cell ç¼–è¾‘å™¨
+ * ç”¨ä¸€ä¸ªJCheckBox ç»„ä»¶å®ç°
  * @version $Revision: 1.2 $
  * @author $author$
  */
@@ -82,17 +82,17 @@ public class RadioButtonsCellEditorRX extends AbstractCellEditor implements Acti
     }
 
     /**
-    * JTable ÒªÇóÒ»¸öcell»æÖÆÆ÷
-    * <p>TableCellRenderer µÄÎ¨Ò»·½·¨</p>
+    * JTable è¦æ±‚ä¸€ä¸ªcellç»˜åˆ¶å™¨
+    * <p>TableCellRenderer çš„å”¯ä¸€æ–¹æ³•</p>
     *
-    * @param table ÊÇÄÄÒ»¸ötableÒªÇó»æÖÆÆ÷
-    * @param value µ¥Ôª¸ñÖĞµÄÏÖÖµ
-    * @param isSelected µ¥Ôª¸ñÊÇ·ñ±»Ñ¡ÖĞ
-    * @param hasFocus  µ±Ç°µ¥Ôª¸ñÊÇ·ñÓĞ½¹µã
-    * @param row µ¥Ôª¸ñËùÔÚĞĞ!
-    * @param column µ¥Ôª¸ñËùÔÚÁĞ
+    * @param table æ˜¯å“ªä¸€ä¸ªtableè¦æ±‚ç»˜åˆ¶å™¨
+    * @param value å•å…ƒæ ¼ä¸­çš„ç°å€¼
+    * @param isSelected å•å…ƒæ ¼æ˜¯å¦è¢«é€‰ä¸­
+    * @param hasFocus  å½“å‰å•å…ƒæ ¼æ˜¯å¦æœ‰ç„¦ç‚¹
+    * @param row å•å…ƒæ ¼æ‰€åœ¨è¡Œ!
+    * @param column å•å…ƒæ ¼æ‰€åœ¨åˆ—
     *
-    * @return ·µ»Ø±à¼­Æ÷²¿¼ş£¨colorCombo£©
+    * @return è¿”å›ç¼–è¾‘å™¨éƒ¨ä»¶ï¼ˆcolorComboï¼‰
     */
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus,
         int row, int column) {
@@ -103,16 +103,16 @@ public class RadioButtonsCellEditorRX extends AbstractCellEditor implements Acti
     }
 
     /**
-    * JTable ÒªÇóÒ»¸öcell±à¼­Æ÷
-    * <p>TableCellEditor ·½·¨</p>
+    * JTable è¦æ±‚ä¸€ä¸ªcellç¼–è¾‘å™¨
+    * <p>TableCellEditor æ–¹æ³•</p>
     *
-    * @param table ÊÇÄÄÒ»¸ötableÒªÇó±à¼­Æ÷
-    * @param value µ¥Ôª¸ñÖĞµÄÏÖÖµ
-    * @param isSelected µ¥Ôª¸ñÊÇ·ñ±»Ñ¡ÖĞ
-    * @param row µ¥Ôª¸ñËùÔÚĞĞ!
-    * @param column µ¥Ôª¸ñËùÔÚÁĞ
+    * @param table æ˜¯å“ªä¸€ä¸ªtableè¦æ±‚ç¼–è¾‘å™¨
+    * @param value å•å…ƒæ ¼ä¸­çš„ç°å€¼
+    * @param isSelected å•å…ƒæ ¼æ˜¯å¦è¢«é€‰ä¸­
+    * @param row å•å…ƒæ ¼æ‰€åœ¨è¡Œ!
+    * @param column å•å…ƒæ ¼æ‰€åœ¨åˆ—
     *
-    * @return ·µ»Ø±à¼­Æ÷²¿¼ş£¨colorCombo£©
+    * @return è¿”å›ç¼–è¾‘å™¨éƒ¨ä»¶ï¼ˆcolorComboï¼‰
     */
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
         setSelectedValueIs(value);
@@ -121,10 +121,10 @@ public class RadioButtonsCellEditorRX extends AbstractCellEditor implements Acti
     }
 
     /**
-    * table µÃÖª±à¼­Æ÷±à¼­½áÊøºó£¬À´ÌáÈ¡ÏÖÖµ
+    * table å¾—çŸ¥ç¼–è¾‘å™¨ç¼–è¾‘ç»“æŸåï¼Œæ¥æå–ç°å€¼
     *
-    * <p>TableCellEditor ·½·¨</p>
-    * @return ÏÖÖµ
+    * <p>TableCellEditor æ–¹æ³•</p>
+    * @return ç°å€¼
     */
     public Object getCellEditorValue() {
         return value;

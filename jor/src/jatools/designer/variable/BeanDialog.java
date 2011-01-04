@@ -45,7 +45,7 @@ public class BeanDialog extends JDialog {
 	
 	private JButton okButton,cancelButton;
     public BeanDialog(Dialog owner){
-    	super(owner,"Àà·½·¨ÃûÑ¡Ôñ");
+    	super(owner,"ç±»æ–¹æ³•åé€‰æ‹©");
     	exitedOk=false;
     	setSize(350,450);
     	Dimension d=Toolkit.getDefaultToolkit().getScreenSize();
@@ -82,7 +82,7 @@ public class BeanDialog extends JDialog {
 				}
 			} catch (ClassNotFoundException e1) {
 				// TODO Auto-generated catch block
-				JOptionPane.showConfirmDialog(this, "ÕÒ²»µ½ÀàÃû£º"+beanName,"´íÎóÌáÊ¾",JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showConfirmDialog(this, "æ‰¾ä¸åˆ°ç±»åï¼š"+beanName,"é”™è¯¯æç¤º",JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
 				//e1.printStackTrace();
 			}
 //    	for(int i=0;i<methods.size();i++){
@@ -101,7 +101,7 @@ public class BeanDialog extends JDialog {
     	beanTree.setRowHeight(17);
     	beanTree.setCellRenderer(new NodeRenderer());
     	JScrollPane treePane=new JScrollPane(beanTree);
-    	tab.addTab("Ñ¡ÔñÀàÃû", treePane);
+    	tab.addTab("é€‰æ‹©ç±»å", treePane);
     	
     	nameField=new JTextField();
     	listModel=new DefaultListModel();
@@ -130,7 +130,7 @@ public class BeanDialog extends JDialog {
 //    	center.add(tab);
     	
     	
-    	JLabel nameLabel=new JLabel("ÀàÃû£º");
+    	JLabel nameLabel=new JLabel("ç±»åï¼š");
     	Box b1=Box.createHorizontalBox();
     	b1.add(nameLabel);
     	b1.add(Box.createHorizontalStrut(5));
@@ -154,10 +154,10 @@ public class BeanDialog extends JDialog {
     	this.getContentPane().add(splitPane,BorderLayout.CENTER);
     	this.getContentPane().add(south,BorderLayout.SOUTH);
     	
-    	listPanel.setBorder(BorderFactory.createTitledBorder("·½·¨Ãû"));
+    	listPanel.setBorder(BorderFactory.createTitledBorder("æ–¹æ³•å"));
     	
-    	okButton=new JButton("È·¶¨");
-    	cancelButton=new JButton("È¡Ïû");
+    	okButton=new JButton("ç¡®å®š");
+    	cancelButton=new JButton("å–æ¶ˆ");
     	south.add(Box.createHorizontalGlue());
     	south.add(okButton);
     	south.add(Box.createHorizontalStrut(20));
@@ -170,8 +170,8 @@ public class BeanDialog extends JDialog {
 			public void actionPerformed(ActionEvent arg0) {
 				// TODO Auto-generated method stub
 				if(nameField.getText()==null||nameField.getText().trim().equals("")){
-					JOptionPane.showConfirmDialog(BeanDialog.this, "ÀàÃû²»ÄÜÎª¿Õ£¡",
-							"´íÎóÌáÊ¾",JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showConfirmDialog(BeanDialog.this, "ç±»åä¸èƒ½ä¸ºç©ºï¼",
+							"é”™è¯¯æç¤º",JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				try {
@@ -181,8 +181,8 @@ public class BeanDialog extends JDialog {
 				} catch (ClassNotFoundException e) {
 					// TODO Auto-generated catch block
 //					e.printStackTrace();
-					JOptionPane.showConfirmDialog(BeanDialog.this, "ÀàÃû²»ºÏ·¨£¡",
-							"´íÎóÌáÊ¾",JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showConfirmDialog(BeanDialog.this, "ç±»åä¸åˆæ³•ï¼",
+							"é”™è¯¯æç¤º",JOptionPane.CLOSED_OPTION,JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				

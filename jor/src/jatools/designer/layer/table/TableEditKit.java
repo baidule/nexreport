@@ -482,7 +482,7 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
                     ex.printStackTrace();
                 }
             } else {
-                MessageBox.error(tablePeer.getOwner(), "²»ÄÜ¶ÔÈ«²¢µ¥Ôª¸ñ×÷²¿·ÖĞŞ¸Ä!");
+                MessageBox.error(tablePeer.getOwner(), "ä¸èƒ½å¯¹å…¨å¹¶å•å…ƒæ ¼ä½œéƒ¨åˆ†ä¿®æ”¹!");
             }
         }
 
@@ -502,7 +502,7 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
             tablePeer.getSelection().setLocation(cellMover.x, cellMover.y);
         } else {
-            MessageBox.error(tablePeer.getOwner(), "²»ÄÜ¶ÔÈ«²¢µ¥Ôª¸ñ×÷²¿·ÖĞŞ¸Ä!");
+            MessageBox.error(tablePeer.getOwner(), "ä¸èƒ½å¯¹å…¨å¹¶å•å…ƒæ ¼ä½œéƒ¨åˆ†ä¿®æ”¹!");
         }
 
         this.cellsRubber = null;
@@ -744,7 +744,7 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
     }
 
     private Component getParentCandidateForSelecton(Component c, Cell sel) {
-        // ÕÒµ½ÁË²¿¼şµÄËùÓĞ¸¸¶ÔÏó
+        // æ‰¾åˆ°äº†éƒ¨ä»¶çš„æ‰€æœ‰çˆ¶å¯¹è±¡
         for (int i = 0; i < c.getChildCount(); i++) {
             Component child = c.getChild(i);
 
@@ -754,7 +754,7 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
             Cell cell = (Cell) child.getCell().clone();
 
-            if (cell.contains(sel)) { // ×Ó²¿¼ş°üÀ¨ËùÑ¡ÇøÓò
+            if (cell.contains(sel)) { // å­éƒ¨ä»¶åŒ…æ‹¬æ‰€é€‰åŒºåŸŸ
 
                 return getParentCandidateForSelecton(child, sel);
             }
@@ -1546,7 +1546,7 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         return (tablePeer == null) ? null : (TableBase) tablePeer.getComponent();
     }
 
-    private void nextFocusedCell(boolean z /* ´Ó×óµ½ÓÒ´ÓÉÏµ½ÏÂ */) {
+    private void nextFocusedCell(boolean z /* ä»å·¦åˆ°å³ä»ä¸Šåˆ°ä¸‹ */) {
         TableBase grid = getTable();
 
         Cell focusedCell = (Cell) tablePeer.getFocusedCell();

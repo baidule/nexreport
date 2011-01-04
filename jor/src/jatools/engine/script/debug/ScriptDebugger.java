@@ -65,9 +65,9 @@ import bsh.UtilEvalError;
  * @version $Revision$
  */
 public class ScriptDebugger extends JDialog {
-    private final static String STEPOUT = "ÍË³ö´úÂë";
-    private final static String STOP = "Í£Ö¹µ÷ÊÔ";
-    private final static String WATCH = "¼´Ê±²é¿´Öµ,ÇëÏÈÔÚµ±Ç°½Å±¾ÖĞÑ¡ÔñÒª²é¿´µÄ±í´ïÊ½,\n»òÔÚ´ËÊäÈë±í´ïÊ½";
+    private final static String STEPOUT = "é€€å‡ºä»£ç ";
+    private final static String STOP = "åœæ­¢è°ƒè¯•";
+    private final static String WATCH = "å³æ—¶æŸ¥çœ‹å€¼,è¯·å…ˆåœ¨å½“å‰è„šæœ¬ä¸­é€‰æ‹©è¦æŸ¥çœ‹çš„è¡¨è¾¾å¼,\næˆ–åœ¨æ­¤è¾“å…¥è¡¨è¾¾å¼";
     private final static Object[] PROPERTY_GET_PARAMS = new Object[0];
     private JXTreeTable treeTable = null;
     private final Interpreter it;
@@ -259,7 +259,7 @@ public class ScriptDebugger extends JDialog {
 
         gbc.weighty = 0.0;
         p.add(Box.createVerticalStrut(30), gbc);
-        p.add(new JLabel("µ±Ç°½Å±¾:"), gbc);
+        p.add(new JLabel("å½“å‰è„šæœ¬:"), gbc);
         gbc.weighty = 0.5;
 
         this.editor = new ScriptEditor();
@@ -290,7 +290,7 @@ public class ScriptDebugger extends JDialog {
                 result = val.toString();
             }
         } catch (EvalError e) {
-            setError("³ö´í:" + e.getMessage());
+            setError("å‡ºé”™:" + e.getMessage());
 
             return;
         }
@@ -325,7 +325,7 @@ public class ScriptDebugger extends JDialog {
             text = watchText.getText();
 
             if ((text == null) || (text.trim().length() == 0)) {
-                setError("ÇëÏÈÔÚµ±Ç°½Å±¾ÖĞÑ¡ÔñÒª²é¿´µÄ±í´ïÊ½,»òÔÚÎÄ±¾¿òÖĞÊäÈë±í´ïÊ½.");
+                setError("è¯·å…ˆåœ¨å½“å‰è„šæœ¬ä¸­é€‰æ‹©è¦æŸ¥çœ‹çš„è¡¨è¾¾å¼,æˆ–åœ¨æ–‡æœ¬æ¡†ä¸­è¾“å…¥è¡¨è¾¾å¼.");
             }
         } else {
             watchText.setText(text);

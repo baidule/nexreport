@@ -68,7 +68,7 @@ public class DefaultReportsTreePanel extends JScrollPane {
 
                     if (path != null) {
                         if (e.getClickCount() == 2) {
-                            openReport(path,(mods & InputEvent.SHIFT_MASK) == 0); // 如果按了 shift,则不要切换到property panel
+                            openReport(path,(mods & InputEvent.SHIFT_MASK) == 0); // 濡傛灉鎸変簡 shift,鍒欎笉瑕佸垏鎹㈠埌property panel
                         } else if ((mods & InputEvent.BUTTON3_MASK) != 0) {
                             jpopupMenu.show(tree, e.getX(), e.getY());
                         }

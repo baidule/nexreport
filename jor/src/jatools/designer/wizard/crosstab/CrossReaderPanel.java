@@ -80,13 +80,13 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
      * Creates a new ZCrossTabPanel object.
      *
      * @param colFields
-     *            ×÷ÎªÁĞ±íÍ·µÄ×Ö¶Î
+     *            ä½œä¸ºåˆ—è¡¨å¤´çš„å­—æ®µ
      * @param rowFields
-     *            ×÷ÎªĞĞ±íÍ·µÄ×Ö¶Î
+     *            ä½œä¸ºè¡Œè¡¨å¤´çš„å­—æ®µ
      * @param calcField
-     *            ±»Í³¼ÆµÄ×Ö¶Î
+     *            è¢«ç»Ÿè®¡çš„å­—æ®µ
      * @param calcFunction
-     *            ¼ÆËãº¯Êı ,²Î¿¼±¾Àà³£Á¿¶¨Òå
+     *            è®¡ç®—å‡½æ•° ,å‚è€ƒæœ¬ç±»å¸¸é‡å®šä¹‰
      */
     public CrossReaderPanel() {
         
@@ -260,7 +260,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * ´´½¨ĞĞ×Ö¶ÎÉ¾³ı°´Å¥
+     * åˆ›å»ºè¡Œå­—æ®µåˆ é™¤æŒ‰é’®
      * @return JButton
      */
     private JButton createReleteButton() {
@@ -282,7 +282,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * ´´½¨ĞĞ×Ö¶Î±í
+     * åˆ›å»ºè¡Œå­—æ®µè¡¨
      * @return CustomTable
      */
     private CustomTable createRowTabel() {
@@ -312,7 +312,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * ÁĞ×Ö¶ÎÉ¾³ı°´Å¥
+     * åˆ—å­—æ®µåˆ é™¤æŒ‰é’®
      * @return JButton
      */
     private JButton createCdeleteButton() {
@@ -333,7 +333,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * ´´½¨ÁĞ×Ö¶Î±í
+     * åˆ›å»ºåˆ—å­—æ®µè¡¨
      * @return CustomTable
      */
     private CustomTable createColumnTable() {
@@ -362,7 +362,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * Í³¼Æ±íÉ¾³ı¼ÇÂ¼°´Å¥
+     * ç»Ÿè®¡è¡¨åˆ é™¤è®°å½•æŒ‰é’®
      * @return JButton
      */
     private JButton createAdeleteButton() {
@@ -383,7 +383,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * ´´½¨Í³¼ÆÏî±í
+     * åˆ›å»ºç»Ÿè®¡é¡¹è¡¨
      * @return CustomTable
      */
     private CustomTable createcalcTable() {
@@ -411,7 +411,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * ÁĞ°´Å¥
+     * åˆ—æŒ‰é’®
      * @return JButton
      */
     private JButton createColumnButton() {
@@ -433,7 +433,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * ĞĞ°´Å¥
+     * è¡ŒæŒ‰é’®
      * @return JButton
      */
     private JButton createRowButton() {
@@ -455,7 +455,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * Ìí¼ÓÍ³¼ÆÏî°´Å¥
+     * æ·»åŠ ç»Ÿè®¡é¡¹æŒ‰é’®
      * @return JButton
      */
     private JButton createAggregationButton() {
@@ -517,7 +517,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * È¡µÃÁĞ·Ö×é
+     * å–å¾—åˆ—åˆ†ç»„
      * @return ArrayList
      */
     private ArrayList getColumnFields() {
@@ -535,7 +535,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * È¡µÃĞĞ·Ö×é
+     * å–å¾—è¡Œåˆ†ç»„
      * @return ArrayList
      */
     private ArrayList getRowFields() {
@@ -553,7 +553,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * È¡µÃÍ³¼Æ
+     * å–å¾—ç»Ÿè®¡
      * @return ArrayList
      */
     private ArrayList getSums() {
@@ -575,7 +575,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * µ±Êı¾İ¼¯±ä»¯Ê±ºò£¬µ÷ÓÃ´Ë·½·¨
+     * å½“æ•°æ®é›†å˜åŒ–æ—¶å€™ï¼Œè°ƒç”¨æ­¤æ–¹æ³•
      * @param reader DatasetReader
      */
     void setCachedReader(DatasetReader reader) {
@@ -631,7 +631,7 @@ public class CrossReaderPanel extends JPanel implements ListSelectionListener, C
     }
 
     /**
-     * µã»÷Íê³ÉºóÉèÖÃÊı¾İµ½context£¬ÒÔ±ãºóÍ·È¡
+     * ç‚¹å‡»å®Œæˆåè®¾ç½®æ•°æ®åˆ°contextï¼Œä»¥ä¾¿åå¤´å–
      * @param context BuilderContext
      */
     public void apply(BuilderContext context) {

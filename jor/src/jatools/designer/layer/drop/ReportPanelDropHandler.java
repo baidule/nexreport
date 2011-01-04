@@ -33,10 +33,10 @@ import java.io.IOException;
 
 
 /**
- * ����drop����������ϵ��¼��������ɱ���������󣬻�򿪱���ģ��
+ * 监听drop到报表面板上的事件，可生成报表组件对象，或打开报表模板
  * 
- * ���Դӽڵ������������У����ɱ������
- * ���Դ�ϵͳ�ļ��У������һ������ģ�壬����ReportDocumentFileDropHandler
+ * 可以从节点树或变量面板中，生成报表组件
+ * 可以从系统文件中，拖入打开一个报表模板，参照ReportDocumentFileDropHandler
  *
  * @author $author$
  * @version $Revision$

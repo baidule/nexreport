@@ -82,14 +82,14 @@ public class IndexFieldSelectPanel extends JPanel implements ActionListener {
      */
     public void requiredCheck() throws Exception {
         if (this.rowModel.getSize() == 0) {
-            String rowIndexTitle = (this.isCrossIndex()) ? "ÐÐË÷Òý×Ö¶Î" : "Ë÷Òý×Ö¶Î";
+            String rowIndexTitle = (this.isCrossIndex()) ? "è¡Œç´¢å¼•å­—æ®µ" : "ç´¢å¼•å­—æ®µ";
             this.rightTab.setSelectedIndex(0);
-            throw new Exception(rowIndexTitle + "²»ÄÜÎª¿Õ!");
+            throw new Exception(rowIndexTitle + "ä¸èƒ½ä¸ºç©º!");
         }
 
         if ((this.columnModel.getSize() == 0) && this.isCrossIndex()) {
             this.rightTab.setSelectedIndex(1);
-            throw new Exception("ÁÐË÷Òý×Ö¶Î²»ÄÜÎª¿Õ!");
+            throw new Exception("åˆ—ç´¢å¼•å­—æ®µä¸èƒ½ä¸ºç©º!");
         }
     }
 
@@ -248,13 +248,13 @@ public class IndexFieldSelectPanel extends JPanel implements ActionListener {
     public void setCrossIndex(boolean crossIndex) {
         if (crossIndex) {
             if (this.rightTab.getTabCount() == 1) {
-                this.rightTab.addTab("ÁÐË÷Òý×Ö¶Î", columnListScroll);
-                this.rightTab.setTitleAt(0, "ÐÐË÷Òý×Ö¶Î");
+                this.rightTab.addTab("åˆ—ç´¢å¼•å­—æ®µ", columnListScroll);
+                this.rightTab.setTitleAt(0, "è¡Œç´¢å¼•å­—æ®µ");
             }
         } else {
             if (this.rightTab.getTabCount() > 1) {
                 this.rightTab.removeTabAt(1);
-                this.rightTab.setTitleAt(0, "Ë÷Òý×Ö¶Î");
+                this.rightTab.setTitleAt(0, "ç´¢å¼•å­—æ®µ");
             }
         }
 

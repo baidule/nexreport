@@ -330,9 +330,9 @@ public class NodeSourceTree extends JTree implements NameChecker, DragSourceList
             return;
         }
 
-        // ÒÆ¶¯½Úµã¿ªÊ¼£¬ÂäµãÒ»£º±¾Ê÷£¬±íÊ¾ÒÆ¶¯½Úµã
-        //             Âäµã¶ş: Éè¼ÆÃæ°åÉÏ£¬ÔòÊÇÉú³ÉLabel,Text,Table
-        //             ÂäµãÈı: Script Editor ,ÓÃÀ´Éú³É±äÁ¿
+        // ç§»åŠ¨èŠ‚ç‚¹å¼€å§‹ï¼Œè½ç‚¹ä¸€ï¼šæœ¬æ ‘ï¼Œè¡¨ç¤ºç§»åŠ¨èŠ‚ç‚¹
+        //             è½ç‚¹äºŒ: è®¾è®¡é¢æ¿ä¸Šï¼Œåˆ™æ˜¯ç”ŸæˆLabel,Text,Table
+        //             è½ç‚¹ä¸‰: Script Editor ,ç”¨æ¥ç”Ÿæˆå˜é‡
         // 
         NodeSourceTransferable trans = createTransferable(dge.getTriggerEvent().getModifiers());
         dge.startDrag(CursorUtil.CLICK_PLAY_CURSOR, trans);
@@ -804,8 +804,8 @@ public class NodeSourceTree extends JTree implements NameChecker, DragSourceList
 
         public void mouseReleased(MouseEvent e) {
             if (enablePopup) {
-                if (e.isPopupTrigger() || ( // Èç¹ûÔÚlinux,mac osÖĞ£¬ÒÔmouseReleasedÖ±½Ó´¥·¢popupmenu
-                                                // ²ÎÕÕ
+                if (e.isPopupTrigger() || ( // å¦‚æœåœ¨linux,mac osä¸­ï¼Œä»¥mouseReleasedç›´æ¥è§¦å‘popupmenu
+                                                // å‚ç…§
                                                 // http://bbs.jatools.com/viewthread.php?tid=554&page=1&extra=page%3D1
                     System.getProperty("os.name").indexOf("Windows") == -1)) {
                     int row = getRowForLocation(e.getX(), e.getY());

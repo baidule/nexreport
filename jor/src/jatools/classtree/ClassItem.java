@@ -57,15 +57,15 @@ public class ClassItem implements Comparable{
 		al.add(a);
 		al.add(b);
 		al.add(c);
-		System.out.println("ÅÅĞòÇ°");
+		System.out.println("æ’åºå‰");
 		System.out.println(al);
-		System.out.println("ÅÅĞòºó");
+		System.out.println("æ’åºå");
 		Collections.sort(al);
 		System.out.println(al);
 //		ClassItem[] d=new ClassItem[]{a,b,c};
-//		System.out.println("ÅÅĞòÇ°");
+//		System.out.println("æ’åºå‰");
 //		System.out.println(Arrays.asList(d));
-//		System.out.println("ÅÅĞòºó");
+//		System.out.println("æ’åºå");
 //		Arrays.sort(d); 
 //		System.out.println(Arrays.asList(d));
 		

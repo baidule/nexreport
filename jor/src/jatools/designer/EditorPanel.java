@@ -15,16 +15,16 @@ import javax.swing.event.ChangeListener;
 
 
 /**
- * ±¨±íÉè¼ÆÃæ°å
+ * æŠ¥è¡¨è®¾è®¡é¢æ¿
  *
  *
  * @author $author$
  * @version $Revision$
   */
 public class EditorPanel extends JSplitPane {
-    EditorTabPanel editorTabs; // ±à¼­Æ÷tab´°¿Ú,Ã¿Ò»¸ö´ò¿ªµÄ±¨±íÓÃÆäÖÐÒ»¸ötabÏÔÊ¾
-    PropertyPanel propPanel; // ÊôÐÔÃæ°å£¬°üÀ¨ÊôÐÔ£¬ÊÂ¼þ£¬±äÁ¿Èý¸ötab
-    private JTabbedPane propTab; // ×óÃæµÄtab,°üÀ¨Éè¼Æ¡¢Ê¾Àý±¨±íÁ½¸ötab
+    EditorTabPanel editorTabs; // ç¼–è¾‘å™¨tabçª—å£,æ¯ä¸€ä¸ªæ‰“å¼€çš„æŠ¥è¡¨ç”¨å…¶ä¸­ä¸€ä¸ªtabæ˜¾ç¤º
+    PropertyPanel propPanel; // å±žæ€§é¢æ¿ï¼ŒåŒ…æ‹¬å±žæ€§ï¼Œäº‹ä»¶ï¼Œå˜é‡ä¸‰ä¸ªtab
+    private JTabbedPane propTab; // å·¦é¢çš„tab,åŒ…æ‹¬è®¾è®¡ã€ç¤ºä¾‹æŠ¥è¡¨ä¸¤ä¸ªtab
     private double lastProportion;
 
     /**

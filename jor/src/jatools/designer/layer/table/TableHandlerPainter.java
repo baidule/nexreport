@@ -160,7 +160,7 @@ public class TableHandlerPainter {
 
         handlers.add(handler);
 
-        // // ÌáÊ¾ÍÏ¶¯
+        // // æç¤ºæ‹–åŠ¨
         if (focused == c) {
             Point p1 = new Point(r.x - r.width + 1, r.y + padding);
             MovePicker movePicker = new MovePicker(p1);

@@ -38,7 +38,7 @@ public class IndexDialog
   private Component c;
   private static boolean exitedOK;
   private JLabel infoLabel;
-  static final String info = "Ñ¡ÔñË÷Òı×Ö¶Î£¬²»ÄÜÖØ¸´£¬²»ÄÜÎª¿Õ";
+  static final String info = "é€‰æ‹©ç´¢å¼•å­—æ®µï¼Œä¸èƒ½é‡å¤ï¼Œä¸èƒ½ä¸ºç©º";
 
   private JTextField nameField;
   private IndexDialog(DatasetNodeSource parentSrc, IndexNodeSource indexSource,
@@ -47,7 +47,7 @@ public class IndexDialog
     super( (Frame) javax.swing.SwingUtilities.getWindowAncestor(parent));
     exitedOK = false;
     this.setModal(true);
-    this.setTitle("Ë÷Òı¶¨Òå");
+    this.setTitle("ç´¢å¼•å®šä¹‰");
     this.indexSource = indexSource;
     this.c = parent;
     initUI();
@@ -73,7 +73,7 @@ public class IndexDialog
 
     centerPanel.add(center, BorderLayout.CENTER);
 
-    JLabel nameLabel = new JLabel("Ãû³Æ£º");
+    JLabel nameLabel = new JLabel("åç§°ï¼š");
     nameField = new JTextField();
     Box nameBox = Box.createHorizontalBox();
     nameBox.add(nameLabel);
@@ -93,9 +93,9 @@ public class IndexDialog
     rightList = new JList();
 
     JTabbedPane leftTab = new JTabbedPane();
-    leftTab.addTab("¿ÉÑ¡×Ö¶Î", new JScrollPane(leftList));
+    leftTab.addTab("å¯é€‰å­—æ®µ", new JScrollPane(leftList));
     JTabbedPane rightTab = new JTabbedPane();
-    rightTab.addTab("Ë÷Òı×Ö¶Î", new JScrollPane(rightList));
+    rightTab.addTab("ç´¢å¼•å­—æ®µ", new JScrollPane(rightList));
     leftTab.setPreferredSize(new Dimension(200, 350));
     rightTab.setPreferredSize(new Dimension(200, 350));
 
@@ -103,8 +103,8 @@ public class IndexDialog
     center.add(controlPanel());
     center.add(rightTab);
 
-    JButton ok = new JButton("È·¶¨");
-    JButton cancel = new JButton("È¡Ïû");
+    JButton ok = new JButton("ç¡®å®š");
+    JButton cancel = new JButton("å–æ¶ˆ");
     ok.setActionCommand("ok");
     ok.setPreferredSize(new Dimension(78, 23));
     cancel.setActionCommand("cancel");
@@ -153,7 +153,7 @@ public class IndexDialog
   }
 
   /**
-   * È¡µÃËùÓĞ×Ö¶Î
+   * å–å¾—æ‰€æœ‰å­—æ®µ
    * @param reader DatasetReader
    * @return String[]
    */
@@ -263,14 +263,14 @@ public class IndexDialog
       String indexs[] = new String[rightModel.getSize()];
 
       if (nameField.getText() == null || nameField.getText().trim().equals("")) {
-        JOptionPane.showConfirmDialog(nameField, "Ãû³Æ²»ÄÜÎª¿Õ£¡", "ÌáÊ¾",
+        JOptionPane.showConfirmDialog(nameField, "åç§°ä¸èƒ½ä¸ºç©ºï¼", "æç¤º",
                                       JOptionPane.CLOSED_OPTION,
                                       JOptionPane.ERROR_MESSAGE);
         return;
 
       }
       if (indexs.length == 0) {
-        JOptionPane.showConfirmDialog(nameField, "Ë÷Òı×Ö¶Î²»ÄÜÎª¿Õ£¡", "ÌáÊ¾",
+        JOptionPane.showConfirmDialog(nameField, "ç´¢å¼•å­—æ®µä¸èƒ½ä¸ºç©ºï¼", "æç¤º",
                                       JOptionPane.CLOSED_OPTION,
                                       JOptionPane.ERROR_MESSAGE);
         return;

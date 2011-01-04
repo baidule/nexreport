@@ -52,14 +52,14 @@ public class DocumentSettingsDialog extends JDialog {
 
         gbc.weightx = 0;
         gbc.gridwidth = 1;
-        p.add(new JLabel("Ä¬ÈÏµ¼³öÎÄ¼şÃû:"), gbc);
+        p.add(new JLabel("é»˜è®¤å¯¼å‡ºæ–‡ä»¶å:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         p.add(exportNameField, gbc);
 
         gbc.weightx = 0;
         gbc.gridwidth = 1;
-        p.add(new JLabel("²»ÔÚ¿ØÖÆÌ¨ÏÔÊ¾´íÎó:"), gbc);
+        p.add(new JLabel("ä¸åœ¨æ§åˆ¶å°æ˜¾ç¤ºé”™è¯¯:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         p.add(this.debugOffChk, gbc);

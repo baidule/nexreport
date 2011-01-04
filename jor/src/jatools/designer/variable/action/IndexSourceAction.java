@@ -90,7 +90,7 @@ public class IndexSourceAction extends AbstractAction {
 
             if (dataSrc.getIndexFields() == null) {
                 int option = JOptionPane.showConfirmDialog(Main.getInstance(),
-                        "±¾Êı¾İ¼¯½Úµã²»´æÔÚÈÎºÎË÷Òı,½¨ÒéÄú½«±¾Ë÷Òı¼ÓÈëµ½Êı¾İ¼¯½Úµã,ÊÇ·ñ¼ÓÈë?", "ÌáÊ¾", JOptionPane.YES_NO_OPTION,
+                        "æœ¬æ•°æ®é›†èŠ‚ç‚¹ä¸å­˜åœ¨ä»»ä½•ç´¢å¼•,å»ºè®®æ‚¨å°†æœ¬ç´¢å¼•åŠ å…¥åˆ°æ•°æ®é›†èŠ‚ç‚¹,æ˜¯å¦åŠ å…¥?", "æç¤º", JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE);
 
                 if (option == JOptionPane.YES_OPTION) {
@@ -111,7 +111,7 @@ public class IndexSourceAction extends AbstractAction {
     }
 
     private void deleteIndex() {
-        //        int option = JOptionPane.showConfirmDialog(c, "É¾³ıÖ®ºó²»ÄÜ»Ö¸´£¬È·¶¨É¾³ı£¿", "ÌáÊ¾",
+        //        int option = JOptionPane.showConfirmDialog(c, "åˆ é™¤ä¹‹åä¸èƒ½æ¢å¤ï¼Œç¡®å®šåˆ é™¤ï¼Ÿ", "æç¤º",
         //                JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
         //
         //        if (option == JOptionPane.OK_OPTION) {

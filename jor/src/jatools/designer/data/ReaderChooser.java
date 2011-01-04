@@ -47,8 +47,8 @@ public class ReaderChooser extends JDialog implements ChangeListener {
     private JButton addButton;
     DatasetReaderConfigureTree datasetTree;
     private NodeSourceTree nodeSourceTree;
-    private DatasetReader reader0; // Ô¤¶¨ÒåÊı¾İÔ´
-    private DatasetReader reader1; // À´×Ô±¾±¨±íÊı¾İ¼¯½Úµã
+    private DatasetReader reader0; // é¢„å®šä¹‰æ•°æ®æº
+    private DatasetReader reader1; // æ¥è‡ªæœ¬æŠ¥è¡¨æ•°æ®é›†èŠ‚ç‚¹
     private JTabbedPane tab;
     boolean cancel;
 
@@ -115,8 +115,8 @@ public class ReaderChooser extends JDialog implements ChangeListener {
             });
 
         tab = new JTabbedPane();
-        tab.addTab("ÏµÍ³Ô¤¶¨ÒåÊı¾İ¼¯", new JScrollPane(datasetTree));
-        tab.addTab("µ±Ç°±¨±íÊı¾İ¼¯", new JScrollPane(nodeSourceTree));
+        tab.addTab("ç³»ç»Ÿé¢„å®šä¹‰æ•°æ®é›†", new JScrollPane(datasetTree));
+        tab.addTab("å½“å‰æŠ¥è¡¨æ•°æ®é›†", new JScrollPane(nodeSourceTree));
         tab.addChangeListener(new ChangeListener() {
                 public void stateChanged(ChangeEvent e) {
                     enableButtons();

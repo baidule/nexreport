@@ -132,7 +132,7 @@ public class FillRowPanel extends RowPanel {
      * @return DOCUMENT ME!
      */
     public int getRowHeight(int from, int to) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeight");
+        throw new UnsupportedOperationException("涓嶆敮鎸佽鎿嶄綔,HeaderTable.getRowHeight");
     }
 
     /**
@@ -144,7 +144,7 @@ public class FillRowPanel extends RowPanel {
      * @return DOCUMENT ME!
      */
     public int getRowHeight(int row) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeight");
+        throw new UnsupportedOperationException("涓嶆敮鎸佽鎿嶄綔,HeaderTable.getRowHeight");
     }
 
     /**
@@ -153,7 +153,7 @@ public class FillRowPanel extends RowPanel {
      * @return DOCUMENT ME!
      */
     public int[] getRowHeights() {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException("涓嶆敮鎸佽鎿嶄綔,HeaderTable.getRowHeights");
     }
 
     /**
@@ -165,7 +165,7 @@ public class FillRowPanel extends RowPanel {
      * @return DOCUMENT ME!
      */
     public int getRowY(int row) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException("涓嶆敮鎸佽鎿嶄綔,HeaderTable.getRowHeights");
     }
 
     /**
@@ -174,7 +174,7 @@ public class FillRowPanel extends RowPanel {
      * @return DOCUMENT ME!
      */
     public int getTotalRowHeights() {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException("涓嶆敮鎸佽鎿嶄綔,HeaderTable.getRowHeights");
     }
 
     /**
@@ -188,7 +188,7 @@ public class FillRowPanel extends RowPanel {
      * @return DOCUMENT ME!
      */
     public int getWidth(int col, int span) {
-        throw new UnsupportedOperationException("不支持该操作,HeaderTable.getRowHeights");
+        throw new UnsupportedOperationException("涓嶆敮鎸佽鎿嶄綔,HeaderTable.getRowHeights");
     }
 
     /**

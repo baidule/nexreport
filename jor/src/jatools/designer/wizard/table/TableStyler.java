@@ -1,7 +1,7 @@
 /*
  *   Author: John.
  *
- *   º¼Öİ½Ü´´Èí¼ş   All Copyrights Reserved.
+ *   æ­å·æ°åˆ›è½¯ä»¶   All Copyrights Reserved.
  */
 
 /*
@@ -69,7 +69,7 @@ public class TableStyler implements ReportStyler {
     TableReportBuilder builder;
 
     /**
-     * È¡µÃ·Ö×éµÄÀÛ¼ÆËùÓĞµÄĞĞÊı
+     * å–å¾—åˆ†ç»„çš„ç´¯è®¡æ‰€æœ‰çš„è¡Œæ•°
      * @param old int
      * @param groupFields CustomGroup[]
      * @param summaries CustomSummary[]
@@ -107,13 +107,13 @@ public class TableStyler implements ReportStyler {
     /**
      *
      *
-     *  * ¸ù¾İÖ¸¶¨µÄ½âÎöÉÏÏÂÎÄÀ´Éú³ÉÒ»¸ö±¨±í
+     *  * æ ¹æ®æŒ‡å®šçš„è§£æä¸Šä¸‹æ–‡æ¥ç”Ÿæˆä¸€ä¸ªæŠ¥è¡¨
      * @param report
-     *            ±¨±í
+     *            æŠ¥è¡¨
      * @param context
-     *            ½âÎöÉÏÏÂÎÄ
+     *            è§£æä¸Šä¸‹æ–‡
      *
-     * @return Éú³ÉµÄ±¨±í
+     * @return ç”Ÿæˆçš„æŠ¥è¡¨
      */
     public void format(ReportDocument doc, BuilderContext context) {
         
@@ -155,7 +155,7 @@ public class TableStyler implements ReportStyler {
     }
 
     /**
-     * È¡µÃÏÔÊ¾ÁĞ,Éè¼ÆÆ÷µÄÏÔÊ¾ÁĞ+Í³¼ÆÏî¶à³öµÄÁĞ£¨×î¶à²»³¬¹ı£©
+     * å–å¾—æ˜¾ç¤ºåˆ—,è®¾è®¡å™¨çš„æ˜¾ç¤ºåˆ—+ç»Ÿè®¡é¡¹å¤šå‡ºçš„åˆ—ï¼ˆæœ€å¤šä¸è¶…è¿‡ï¼‰
      * @param disPlayItems String[]
      * @param summaries CustomSummary[]
      * @return ArrayList
@@ -502,7 +502,7 @@ public class TableStyler implements ReportStyler {
     }
 
     /**
-     * Ó¦¸Ãµ÷ÓÃÕâ¸ö·½·¨
+     * åº”è¯¥è°ƒç”¨è¿™ä¸ªæ–¹æ³•
      * @param fieldName String
      * @param CustomSummarys ArrayList
      * @return ArrayList
@@ -522,7 +522,7 @@ public class TableStyler implements ReportStyler {
     }
 
     /**
-      * panel Ö®¼äµş¼Ó
+      * panel ä¹‹é—´å åŠ 
       * @param panels ArrayList
       * @param first Panel
       */
@@ -543,7 +543,7 @@ public class TableStyler implements ReportStyler {
     }
 
     /**
-     * groupNodeSourceÖ®¼äµÄ²ã´Î¹ØÏµ
+     * groupNodeSourceä¹‹é—´çš„å±‚æ¬¡å…³ç³»
      * @param list ArrayList
      * @param root GroupNodeSource
      */
@@ -565,7 +565,7 @@ public class TableStyler implements ReportStyler {
     }
 
     /**
-     * Éú³ÉÊı¾İ¼¯
+     * ç”Ÿæˆæ•°æ®é›†
      * @param context BuilderContext
      * @return RootNodeSource
      */

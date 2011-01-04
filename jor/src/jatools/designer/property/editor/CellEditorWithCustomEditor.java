@@ -38,11 +38,11 @@ public class CellEditorWithCustomEditor extends AbstractCellEditor
 
     /**
     * Creates a new ZCellEditorWithCustomEditor object.
-    * @param inplaceEditor_ Ç¶Èëµ¥Ôª¸ñÖĞµÄ±à¼­Æ÷
-    * @param chooser_ µã»÷ [...] ºóÓ¦µ¯³öµÄÑ¡ÔñÆ÷
+    * @param inplaceEditor_ åµŒå…¥å•å…ƒæ ¼ä¸­çš„ç¼–è¾‘å™¨
+    * @param chooser_ ç‚¹å‡» [...] ååº”å¼¹å‡ºçš„é€‰æ‹©å™¨
     *
-    * <p> ×¢Òâ£¬¹¹Ôìº¯Êı²»¸ºÔğ½«Êµ¼ÊµÄ±à¼­Æ÷×é¼ş£¬ÈçJTextField,JComboBox ¶ÔÏó¼ÓÈëµ½editorContainerÖĞ</p>
-    * <p> ±à¼­²¿¼ş½«ÔÚ  getTableCellEditorComponent ÖĞ¼ÓÈë</p>
+    * <p> æ³¨æ„ï¼Œæ„é€ å‡½æ•°ä¸è´Ÿè´£å°†å®é™…çš„ç¼–è¾‘å™¨ç»„ä»¶ï¼Œå¦‚JTextField,JComboBox å¯¹è±¡åŠ å…¥åˆ°editorContainerä¸­</p>
+    * <p> ç¼–è¾‘éƒ¨ä»¶å°†åœ¨  getTableCellEditorComponent ä¸­åŠ å…¥</p>
     * @see #getTableCellEditorComponent
     */
     public CellEditorWithCustomEditor(JComponent owner, Chooser chooser) {
@@ -122,19 +122,19 @@ public class CellEditorWithCustomEditor extends AbstractCellEditor
     }
 
     /**
-    * JTable ÒªÇóÒ»¸öcell±à¼­Æ÷
+    * JTable è¦æ±‚ä¸€ä¸ªcellç¼–è¾‘å™¨
     *
-    * ´ÓÇ¶Èë±à¼­Æ÷ÖĞÈ¡µÃ±à¼­Æ÷²¿¼ş£¬²¢×°Èë±à¼­Æ÷ÈİÆ÷£¬²¢½«ÈİÆ÷·µ»Ø¸øtable,ËùÒÔµ¥Ôª¸ñÖĞÊµ¼ÊÇ¶ÈëµÄÊÇÒ»¸öÈİÆ÷
+    * ä»åµŒå…¥ç¼–è¾‘å™¨ä¸­å–å¾—ç¼–è¾‘å™¨éƒ¨ä»¶ï¼Œå¹¶è£…å…¥ç¼–è¾‘å™¨å®¹å™¨ï¼Œå¹¶å°†å®¹å™¨è¿”å›ç»™table,æ‰€ä»¥å•å…ƒæ ¼ä¸­å®é™…åµŒå…¥çš„æ˜¯ä¸€ä¸ªå®¹å™¨
     *
-    * <p>TableCellEditor ·½·¨</p>
+    * <p>TableCellEditor æ–¹æ³•</p>
     *
-    * @param table ÊÇÄÄÒ»¸ötableÒªÇó±à¼­Æ÷
-    * @param value µ¥Ôª¸ñÖĞµÄÏÖÖµ
-    * @param isSelected µ¥Ôª¸ñÊÇ·ñ±»Ñ¡ÖĞ
-    * @param row µ¥Ôª¸ñËùÔÚĞĞ!
-    * @param column µ¥Ôª¸ñËùÔÚÁĞ
+    * @param table æ˜¯å“ªä¸€ä¸ªtableè¦æ±‚ç¼–è¾‘å™¨
+    * @param value å•å…ƒæ ¼ä¸­çš„ç°å€¼
+    * @param isSelected å•å…ƒæ ¼æ˜¯å¦è¢«é€‰ä¸­
+    * @param row å•å…ƒæ ¼æ‰€åœ¨è¡Œ!
+    * @param column å•å…ƒæ ¼æ‰€åœ¨åˆ—
     *
-    * @return ·µ»Ø±à¼­Æ÷²¿¼ş£¨editorContainer£©
+    * @return è¿”å›ç¼–è¾‘å™¨éƒ¨ä»¶ï¼ˆeditorContainerï¼‰
     */
     public Component getTableCellEditorComponent(JTable table,
                                                  Object value,
@@ -169,10 +169,10 @@ public class CellEditorWithCustomEditor extends AbstractCellEditor
 		return super.isCellEditable(e);
 	}
     /**
-    * table µÃÖª±à¼­Æ÷±à¼­½áÊøºó£¬À´ÌáÈ¡ÏÖÖµ
+    * table å¾—çŸ¥ç¼–è¾‘å™¨ç¼–è¾‘ç»“æŸåï¼Œæ¥æå–ç°å€¼
     *
-    * <p>TableCellEditor ·½·¨</p>
-    * @return ÏÖÖµ
+    * <p>TableCellEditor æ–¹æ³•</p>
+    * @return ç°å€¼
     */
     public Object getCellEditorValue() {
         return value;

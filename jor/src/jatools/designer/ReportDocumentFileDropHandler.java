@@ -5,7 +5,6 @@ import jatools.ReportDocument;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -14,8 +13,8 @@ import javax.swing.TransferHandler;
 
 
 /**
- * ÓÃÓÚ¼àÌıÏµÍ³ÎÄ¼şÍÏ·Åµ½Éè¼ÆÆ÷£¬×Ô¶¯´ò¿ª±»ÍÏ·ÅReportDocument µÄxmlÎÄ¼ş
- * ÔÚMain,ºÍReportPanelÖĞÊ¹ÓÃ
+ * ç”¨äºç›‘å¬ç³»ç»Ÿæ–‡ä»¶æ‹–æ”¾åˆ°è®¾è®¡å™¨ï¼Œè‡ªåŠ¨æ‰“å¼€è¢«æ‹–æ”¾ReportDocument çš„xmlæ–‡ä»¶
+ * åœ¨Main,å’ŒReportPanelä¸­ä½¿ç”¨
  *
  * @author $author$
  * @version $Revision$
@@ -106,4 +105,6 @@ public class ReportDocumentFileDropHandler extends TransferHandler {
 
         return false;
     }
+
+   
 }

@@ -85,8 +85,8 @@ public class IndexEditor extends JDialog implements ActionListener {
 
         JPanel options = new JPanel(new FlowLayout(FlowLayout.LEFT));
 
-        this.indexRadio = new JRadioButton("Ë÷Òı");
-        this.crossIndexRadio = new JRadioButton("½»²æË÷Òı");
+        this.indexRadio = new JRadioButton("ç´¢å¼•");
+        this.crossIndexRadio = new JRadioButton("äº¤å‰ç´¢å¼•");
 
         this.indexRadio.addActionListener(this);
         this.crossIndexRadio.addActionListener(this);
@@ -99,7 +99,7 @@ public class IndexEditor extends JDialog implements ActionListener {
         group.add(crossIndexRadio);
         this.indexRadio.setSelected(true);
 
-        options.add(new JLabel("Ë÷ÒıÀàĞÍ:"));
+        options.add(new JLabel("ç´¢å¼•ç±»å‹:"));
         options.add(this.indexRadio);
         options.add(this.crossIndexRadio);
 
@@ -109,7 +109,7 @@ public class IndexEditor extends JDialog implements ActionListener {
         p.add(indexFieldSelectPanel, gbc);
         this.getContentPane().add(p, BorderLayout.CENTER);
 
-        JButton clear = new JButton("Çå³ı");
+        JButton clear = new JButton("æ¸…é™¤");
         clear.setActionCommand("clear");
 
         JButton ok = new JButton(Messages.getString("res.3"));
@@ -149,7 +149,7 @@ public class IndexEditor extends JDialog implements ActionListener {
     }
 
     /**
-    * È¡µÃËùÓĞ×Ö¶Î
+    * å–å¾—æ‰€æœ‰å­—æ®µ
     * @param reader DatasetReader
     * @return String[]
     */
@@ -187,7 +187,7 @@ public class IndexEditor extends JDialog implements ActionListener {
             try {
                 indexFieldSelectPanel.requiredCheck();
             } catch (Exception e1) {
-                JOptionPane.showConfirmDialog(Main.getInstance(), e1.getMessage(), "´íÎó",
+                JOptionPane.showConfirmDialog(Main.getInstance(), e1.getMessage(), "é”™è¯¯",
                     JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
 
                 return;

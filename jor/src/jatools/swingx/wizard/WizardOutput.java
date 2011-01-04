@@ -4,39 +4,39 @@ import javax.swing.event.ChangeListener;
 
 
 /**
- * Êä³ö¾«Áé
- * Ö÷ÒªÓÃÓÚ¼àÌıÀ´×Ô±à¼­Æ÷×é¼şµÄ±ä»¯£¬²¢Éú³ÉÕıÈ·µÄÊä³ö£¬²¢½«Êä³öÊôĞÔµÄ±ä»¯£¬Í¨Öª¸ø¼àÌıÆ÷
+ * è¾“å‡ºç²¾çµ
+ * ä¸»è¦ç”¨äºç›‘å¬æ¥è‡ªç¼–è¾‘å™¨ç»„ä»¶çš„å˜åŒ–ï¼Œå¹¶ç”Ÿæˆæ­£ç¡®çš„è¾“å‡ºï¼Œå¹¶å°†è¾“å‡ºå±æ€§çš„å˜åŒ–ï¼Œé€šçŸ¥ç»™ç›‘å¬å™¨
  * @version $Revision: 1.1 $
  * @author $author$
  */
 public interface WizardOutput {
     /**
-     * È¡µÃÎ¨Ò»µÄÊä³öÀàĞÍ
+     * å–å¾—å”¯ä¸€çš„è¾“å‡ºç±»å‹
      *
-     * @return Êä³öÀàĞÍ
+     * @return è¾“å‡ºç±»å‹
      */
     public int getOutputType();
 
     public void checkAvailable() throws Exception;
 
     /**
-     * È¡µÃÊä³ö
+     * å–å¾—è¾“å‡º
      *
-     * @return Êä³ö¶ÔÏó
+     * @return è¾“å‡ºå¯¹è±¡
      */
     public Object output() throws Exception;
 
     /**
-     * ×¢²á±ä»¯¼àÌıÆ÷
+     * æ³¨å†Œå˜åŒ–ç›‘å¬å™¨
      *
-     * @param lst ¼àÌıÆ÷
+     * @param lst ç›‘å¬å™¨
      */
     public void addChangeListener(ChangeListener lst);
 
     /**
-     * ×¢Ïú±ä»¯¼àÌıÆ÷
+     * æ³¨é”€å˜åŒ–ç›‘å¬å™¨
      *
-     * @param lst ¼àÌıÆ÷
+     * @param lst ç›‘å¬å™¨
      */
     public void removeChangeListener(ChangeListener lst);
 }

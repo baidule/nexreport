@@ -212,7 +212,7 @@ public class SqlReader extends AbstractDatasetReader {
                 }
             }
             
-            Util.debug(logger,sqlcopy);  // 合并后的sql输出到控制台
+            Util.debug(logger,sqlcopy);  // 鍚堝苟鍚庣殑sql杈撳嚭鍒版帶鍒跺彴
 
             conn = getConnection2(script);
 
@@ -221,7 +221,7 @@ public class SqlReader extends AbstractDatasetReader {
                       sqlcopy = sqlcopy.substring(0, sqlcopy.length() - 1);
                   }
                 if (!withdata) {
-                    // 修正bug,当输入的sql以分号结束时
+                    // 淇bug,褰撹緭鍏ョ殑sql浠ュ垎鍙风粨鏉熸椂
                   
 
                     //sqlcopy = "select * from (" + sqlcopy + ") a where 1=0";

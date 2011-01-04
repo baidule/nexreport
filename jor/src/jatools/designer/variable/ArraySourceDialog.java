@@ -66,7 +66,7 @@ public class ArraySourceDialog extends JDialog implements ActionListener {
      */
     public ArraySourceDialog(Component c) {
         super((Frame) javax.swing.SwingUtilities.getWindowAncestor(c));
-        this.setTitle("javaÊı×é¶¨Òå");
+        this.setTitle("javaæ•°ç»„å®šä¹‰");
         this.c = c;
         exitedOk = false;
         initUI();
@@ -139,7 +139,7 @@ public class ArraySourceDialog extends JDialog implements ActionListener {
         Box tagBox = Box.createHorizontalBox();
         tagBox.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
 
-        JLabel tagLabel = new JLabel("Ãû³Æ£º");
+        JLabel tagLabel = new JLabel("åç§°ï¼š");
         tagField = new JTextField();
         tagField.setPreferredSize(new Dimension(150, 25));
         tagField.setMaximumSize(new Dimension(150, 25));
@@ -156,15 +156,15 @@ public class ArraySourceDialog extends JDialog implements ActionListener {
         JPanel panel = new JPanel(new BorderLayout());
         JPanel west = new JPanel(new BorderLayout());
         JPanel center = new JPanel(new BorderLayout());
-        west.add(new JLabel("¹«Ê½£º"), BorderLayout.NORTH);
-        //        panel.setBorder(BorderFactory.createTitledBorder(null, "Êı×é¹«Ê½±à¼­", TitledBorder.CENTER,
+        west.add(new JLabel("å…¬å¼ï¼š"), BorderLayout.NORTH);
+        //        panel.setBorder(BorderFactory.createTitledBorder(null, "æ•°ç»„å…¬å¼ç¼–è¾‘", TitledBorder.CENTER,
         //                TitledBorder.CENTER));
 
         //        JToolBar bar = new JToolBar();
-        //        bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "ĞÂ½¨", NEWACTION));
-        //        bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "²åÈë³£ÓÃÊı×é", INSERTACTION));
-        //     //   bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "ºÏ·¨ĞÔ¼ì²â", VALIDATEACTION));
-        //        bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "¸ß¼¶", BEANACTION));
+        //        bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "æ–°å»º", NEWACTION));
+        //        bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "æ’å…¥å¸¸ç”¨æ•°ç»„", INSERTACTION));
+        //     //   bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "åˆæ³•æ€§æ£€æµ‹", VALIDATEACTION));
+        //        bar.add(createButton(Util.getIcon("/com/jatools/icons/new.gif"), "é«˜çº§", BEANACTION));
         expressionArea = new JTextArea();
 
         JScrollPane pane = new JScrollPane(expressionArea);
@@ -179,10 +179,10 @@ public class ArraySourceDialog extends JDialog implements ActionListener {
 
         gbc.gridwidth = gbc.REMAINDER;
 
-        south.add(new JLabel("·µ»ØµÄ¶ÔÏóÀàĞÍ¿ÉÒÔÎªjavaÊı×é,¼¯ºÏ,Iterator,ResultSet,TableModel¶ÔÏó."), gbc);
+        south.add(new JLabel("è¿”å›çš„å¯¹è±¡ç±»å‹å¯ä»¥ä¸ºjavaæ•°ç»„,é›†åˆ,Iterator,ResultSet,TableModelå¯¹è±¡."), gbc);
         south.add(Box.createVerticalStrut(30), gbc);
 
-        south.add(new JLabel("Êı×éÔªËØµÄjavaBeanÂ·¾¶(ÓÃÓÚ×Ô¶¯³éÈ¡javaBeanµÄÊôĞÔÁĞ±í):"), gbc);
+        south.add(new JLabel("æ•°ç»„å…ƒç´ çš„javaBeanè·¯å¾„(ç”¨äºè‡ªåŠ¨æŠ½å–javaBeançš„å±æ€§åˆ—è¡¨):"), gbc);
         gbc.gridwidth = 1;
         gbc.weightx = 1.0;
         elementClass = new JTextField();
@@ -240,7 +240,7 @@ public class ArraySourceDialog extends JDialog implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals(OKACTION)) {
             if ((tagField.getText() == null) || tagField.getText().trim().equals("")) {
-                JOptionPane.showConfirmDialog(this, "Ãû³Æ²»ÄÜÎª¿Õ£¡", "´íÎóÌáÊ¾", JOptionPane.CLOSED_OPTION,
+                JOptionPane.showConfirmDialog(this, "åç§°ä¸èƒ½ä¸ºç©ºï¼", "é”™è¯¯æç¤º", JOptionPane.CLOSED_OPTION,
                     JOptionPane.ERROR_MESSAGE);
 
                 return;
@@ -329,7 +329,7 @@ public class ArraySourceDialog extends JDialog implements ActionListener {
     class OKActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if ((tagField.getText() == null) || tagField.getText().trim().equals("")) {
-                JOptionPane.showConfirmDialog(ArraySourceDialog.this, "Ãû³Æ²»ÄÜÎª¿Õ£¡", "´íÎóÌáÊ¾",
+                JOptionPane.showConfirmDialog(ArraySourceDialog.this, "åç§°ä¸èƒ½ä¸ºç©ºï¼", "é”™è¯¯æç¤º",
                     JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
 
                 return;
@@ -367,15 +367,15 @@ public class ArraySourceDialog extends JDialog implements ActionListener {
         private JMenuItem provinceItem;
 
         ArrayPopop() {
-            JMenu timeMenu = new JMenu("Ê±¼äÀàÊı×é");
-            JMenu areaMenu = new JMenu("µØÇøÀàÊı×é");
+            JMenu timeMenu = new JMenu("æ—¶é—´ç±»æ•°ç»„");
+            JMenu areaMenu = new JMenu("åœ°åŒºç±»æ•°ç»„");
 
-            quaterItem = new JMenuItem("°´¼¾¶È");
-            monthlyItem = new JMenuItem("°´ÔÂ");
-            weeklyItem = new JMenuItem("°´ÖÜ");
+            quaterItem = new JMenuItem("æŒ‰å­£åº¦");
+            monthlyItem = new JMenuItem("æŒ‰æœˆ");
+            weeklyItem = new JMenuItem("æŒ‰å‘¨");
 
-            continentItem = new JMenuItem("°´ÖŞ");
-            provinceItem = new JMenuItem("°´ÖĞ¹úÊ¡·İ");
+            continentItem = new JMenuItem("æŒ‰æ´²");
+            provinceItem = new JMenuItem("æŒ‰ä¸­å›½çœä»½");
 
             timeMenu.add(quaterItem);
             timeMenu.add(monthlyItem);

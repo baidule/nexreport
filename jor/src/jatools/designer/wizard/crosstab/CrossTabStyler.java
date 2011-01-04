@@ -377,7 +377,7 @@ public class CrossTabStyler implements ReportStyler {
             }
 
             if (multiRows) {
-                table.add(new Label("合计"), rowsList.size() * sums.size(), 0, rowsList.size(),
+                table.add(new Label("鍚堣"), rowsList.size() * sums.size(), 0, rowsList.size(),
                     sums.size());
             } else {
                 table.add(new Label(App.messages.getString("res.255")), rowsList.size(), 0, rowsList.size(), 1);
@@ -516,7 +516,7 @@ public class CrossTabStyler implements ReportStyler {
             }
 
             if (mutilColumns) {
-                table.add(new Label("合计"), 0, columnsList.size() * sums.size(), sums.size(),
+                table.add(new Label("鍚堣"), 0, columnsList.size() * sums.size(), sums.size(),
                     columnsList.size());
             } else {
                 table.add(new Label(App.messages.getString("res.255")), 0, columnsList.size(), 1, columnsList.size());

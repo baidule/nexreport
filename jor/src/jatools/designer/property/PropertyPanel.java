@@ -26,7 +26,7 @@ import javax.swing.event.ChangeListener;
 
 
 /**
- * 属性面板，包括属性，事件，变量三个tab
+ * 灞炴�ч潰鏉匡紝鍖呮嫭灞炴�э紝浜嬩欢锛屽彉閲忎笁涓猼ab
  *
  * @author $author$
  * @version $Revision$

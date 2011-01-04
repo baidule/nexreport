@@ -44,42 +44,42 @@ import bsh.Interpreter;
  */
 public class HZUtil {
     static String[] HanDigiStr = new String[] {
-            "Áã",
-            "Ò¼",
-            "·¡",
-            "Èş",
-            "ËÁ",
-            "Îé", // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
-            "Â½",
-            "Æâ",
-            "°Æ", // //$NON-NLS-2$ //$NON-NLS-3$
-            "¾Á" // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$
+            "é›¶",
+            "å£¹",
+            "è´°",
+            "å",
+            "è‚†",
+            "ä¼", // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
+            "é™†",
+            "æŸ’",
+            "æŒ", // //$NON-NLS-2$ //$NON-NLS-3$
+            "ç–" // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$
         };
     static String[] HanDiviStr = new String[] {
             "",
-            "Ê°",
-            "°Û",
-            "Çª",
-            "Íò",
-            "Ê°",
-            "°Û",
-            "Çª",
-            "ÒÚ",
-            "Ê°",
-            "°Û",
-            "Çª",
-            "Íò",
-            "Ê°", // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$ //$NON-NLS-11$ //$NON-NLS-12$ //$NON-NLS-13$ //$NON-NLS-14$
-            "°Û",
-            "Çª",
-            "ÒÚ",
-            "Ê°",
-            "°Û",
-            "Çª",
-            "Íò",
-            "Ê°",
-            "°Û", // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$
-            "Çª" // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$
+            "æ‹¾",
+            "ä½°",
+            "ä»Ÿ",
+            "ä¸‡",
+            "æ‹¾",
+            "ä½°",
+            "ä»Ÿ",
+            "äº¿",
+            "æ‹¾",
+            "ä½°",
+            "ä»Ÿ",
+            "ä¸‡",
+            "æ‹¾", // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$ //$NON-NLS-11$ //$NON-NLS-12$ //$NON-NLS-13$ //$NON-NLS-14$
+            "ä½°",
+            "ä»Ÿ",
+            "äº¿",
+            "æ‹¾",
+            "ä½°",
+            "ä»Ÿ",
+            "ä¸‡",
+            "æ‹¾",
+            "ä½°", // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$
+            "ä»Ÿ" // //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$ //$NON-NLS-7$ //$NON-NLS-8$ //$NON-NLS-9$ //$NON-NLS-10$
         };
     static SimpleDateFormat format;
 
@@ -91,17 +91,17 @@ public class HZUtil {
      *
      * @return DOCUMENT ME!
      */
-    static String PositiveIntegerToHanStr(String NumStr) { // ÊäÈë×Ö·û´®±ØĞëÕıÕûÊı£¬Ö»ÔÊĞíÇ°µ¼¿Õ¸ñ(±ØĞëÓÒ¶ÔÆë)£¬²»ÒËÓĞÇ°µ¼Áã
+    static String PositiveIntegerToHanStr(String NumStr) { // è¾“å…¥å­—ç¬¦ä¸²å¿…é¡»æ­£æ•´æ•°ï¼Œåªå…è®¸å‰å¯¼ç©ºæ ¼(å¿…é¡»å³å¯¹é½)ï¼Œä¸å®œæœ‰å‰å¯¼é›¶
 
         String RMBStr = ""; //
         boolean lastzero = false;
-        boolean hasvalue = false; // ÒÚ¡¢Íò½øÎ»Ç°ÓĞÊıÖµ±ê¼Ç
+        boolean hasvalue = false; // äº¿ã€ä¸‡è¿›ä½å‰æœ‰æ•°å€¼æ ‡è®°
         int len;
         int n;
         len = NumStr.length();
 
         if (len > 15) {
-            return "ÊıÖµ¹ı´ó!"; //
+            return "æ•°å€¼è¿‡å¤§!"; //
         }
 
         for (int i = len - 1; i >= 0; i--) {
@@ -112,35 +112,35 @@ public class HZUtil {
             n = NumStr.charAt(len - i - 1) - '0';
 
             if ((n < 0) || (n > 9)) {
-                return "ÊäÈëº¬·ÇÊı×Ö×Ö·û!"; //
+                return "è¾“å…¥å«éæ•°å­—å­—ç¬¦!"; //
             }
 
             if (n != 0) {
                 if (lastzero) {
-                    RMBStr += HanDigiStr[0]; // Èô¸ÉÁãºóÈô¸ú·ÇÁãÖµ£¬Ö»ÏÔÊ¾Ò»¸öÁã
+                    RMBStr += HanDigiStr[0]; // è‹¥å¹²é›¶åè‹¥è·Ÿéé›¶å€¼ï¼Œåªæ˜¾ç¤ºä¸€ä¸ªé›¶
                 }
 
-                if (!((n == 1) && ((i % 4) == 1) && (i == (len - 1)))) { // Ê®½øÎ»´¦ÓÚµÚÒ»Î»²»·¢Ò¼Òô
+                if (!((n == 1) && ((i % 4) == 1) && (i == (len - 1)))) { // åè¿›ä½å¤„äºç¬¬ä¸€ä½ä¸å‘å£¹éŸ³
                     RMBStr += HanDigiStr[n];
                 }
 
-                RMBStr += HanDiviStr[i]; // ·ÇÁãÖµºó¼Ó½øÎ»£¬¸öÎ»Îª¿Õ
-                hasvalue = true; // ÖÃÍò½øÎ»Ç°ÓĞÖµ±ê¼Ç
+                RMBStr += HanDiviStr[i]; // éé›¶å€¼ååŠ è¿›ä½ï¼Œä¸ªä½ä¸ºç©º
+                hasvalue = true; // ç½®ä¸‡è¿›ä½å‰æœ‰å€¼æ ‡è®°
             } else {
-                if (((i % 8) == 0) || (((i % 8) == 4) && hasvalue)) { // ÒÚÍòÖ®¼ä±ØĞëÓĞ·ÇÁãÖµ·½ÏÔÊ¾Íò
-                    RMBStr += HanDiviStr[i]; // ¡°ÒÚ¡±»ò¡°Íò¡±
+                if (((i % 8) == 0) || (((i % 8) == 4) && hasvalue)) { // äº¿ä¸‡ä¹‹é—´å¿…é¡»æœ‰éé›¶å€¼æ–¹æ˜¾ç¤ºä¸‡
+                    RMBStr += HanDiviStr[i]; // â€œäº¿â€æˆ–â€œä¸‡â€
                 }
             }
 
             if ((i % 8) == 0) {
-                hasvalue = false; // Íò½øÎ»Ç°ÓĞÖµ±ê¼Ç·êÒÚ¸´Î»
+                hasvalue = false; // ä¸‡è¿›ä½å‰æœ‰å€¼æ ‡è®°é€¢äº¿å¤ä½
             }
 
             lastzero = (n == 0) && ((i % 4) != 0);
         }
 
         if (RMBStr.length() == 0) {
-            return HanDigiStr[0]; // ÊäÈë¿Õ×Ö·û»ò"0"£¬·µ»Ø"Áã"
+            return HanDigiStr[0]; // è¾“å…¥ç©ºå­—ç¬¦æˆ–"0"ï¼Œè¿”å›"é›¶"
         }
 
         return RMBStr;
@@ -339,14 +339,14 @@ public class HZUtil {
 
         if (val < 0) {
             val = -val;
-            SignStr = "¸º"; //
+            SignStr = "è´Ÿ"; //
         }
 
         if ((val > 99999999999999.999) || (val < -99999999999999.999)) {
-            return "ÊıÖµÎ»Êı¹ı´ó!"; //
+            return "æ•°å€¼ä½æ•°è¿‡å¤§!"; //
         }
 
-        // ËÄÉáÎåÈëµ½·Ö
+        // å››èˆäº”å…¥åˆ°åˆ†
         long temp = Math.round(val * 100);
         integer = temp / 100;
         fraction = temp % 100;
@@ -354,27 +354,27 @@ public class HZUtil {
         fen = (int) fraction % 10;
 
         if ((jiao == 0) && (fen == 0)) {
-            TailStr = "Õû"; //
+            TailStr = "æ•´"; //
         } else {
             TailStr = HanDigiStr[jiao];
 
             if (jiao != 0) {
-                TailStr += "½Ç"; //
+                TailStr += "è§’"; //
             }
 
-            if ((integer == 0) && (jiao == 0)) { // ÁãÔªºó²»Ğ´Áã¼¸·Ö
+            if ((integer == 0) && (jiao == 0)) { // é›¶å…ƒåä¸å†™é›¶å‡ åˆ†
                 TailStr = ""; //
             }
 
             if (fen != 0) {
-                TailStr += (HanDigiStr[fen] + "·Ö"); //
+                TailStr += (HanDigiStr[fen] + "åˆ†"); //
             }
         }
 
-        // ÏÂÒ»ĞĞ¿ÉÓÃÓÚ·ÇÕı¹æ½ğÈÚ³¡ºÏ£¬0.03Ö»ÏÔÊ¾¡°Èş·Ö¡±¶ø²»ÊÇ¡°ÁãÔªÈş·Ö¡±
+        // ä¸‹ä¸€è¡Œå¯ç”¨äºéæ­£è§„é‡‘èåœºåˆï¼Œ0.03åªæ˜¾ç¤ºâ€œååˆ†â€è€Œä¸æ˜¯â€œé›¶å…ƒååˆ†â€
         // if( !integer ) return SignStr+TailStr;
-        return "£¤" + SignStr + //
-        PositiveIntegerToHanStr(String.valueOf(integer)) + "Ôª" + TailStr; //
+        return "ï¿¥" + SignStr + //
+        PositiveIntegerToHanStr(String.valueOf(integer)) + "å…ƒ" + TailStr; //
     }
 
     /**
@@ -398,8 +398,8 @@ public class HZUtil {
     }
 
     /*
-     * Æ±¾İµÄ³öÆ±ÈÕÆÚ±ØĞëÊ¹ÓÃÖĞÎÄ´óĞ´¡£Îª·ÀÖ¹±äÔìÆ±¾İµÄ³öÆ±ÈÕÆÚ£¬ÔÚÌîĞ´ÔÂ¡¢ÈÕÊ±£¬ÔÂÎªÒ¼¡¢·¡ºÍÒ¼Ê°µÄ£¬ ÈÕÎªÒ¼ÖÁ¾ÁºÍÒ¼Ê°¡¢·¡Ê°ºÍÈşÊ°µÄ£¬Ó¦ÔÚÆäÇ°¼Ó"Áã"£»
-     * ÈÕÎªÊ°Ò¼ÖÁÊ°¾ÁµÄ£¬Ó¦ÔÚÆäÇ°¼Ó"Ò¼"¡£ Èç1ÔÂ15ÈÕ£¬Ó¦Ğ´³ÉÁãÒ¼ÔÂÒ¼Ê°ÎéÈÕ¡£ÔÙÈç10ÔÂ20ÈÕ£¬Ó¦Ğ´³ÉÁãÒ¼Ê°ÔÂÁã·¡Ê°ÈÕ¡£
+     * ç¥¨æ®çš„å‡ºç¥¨æ—¥æœŸå¿…é¡»ä½¿ç”¨ä¸­æ–‡å¤§å†™ã€‚ä¸ºé˜²æ­¢å˜é€ ç¥¨æ®çš„å‡ºç¥¨æ—¥æœŸï¼Œåœ¨å¡«å†™æœˆã€æ—¥æ—¶ï¼Œæœˆä¸ºå£¹ã€è´°å’Œå£¹æ‹¾çš„ï¼Œ æ—¥ä¸ºå£¹è‡³ç–å’Œå£¹æ‹¾ã€è´°æ‹¾å’Œåæ‹¾çš„ï¼Œåº”åœ¨å…¶å‰åŠ "é›¶"ï¼›
+     * æ—¥ä¸ºæ‹¾å£¹è‡³æ‹¾ç–çš„ï¼Œåº”åœ¨å…¶å‰åŠ "å£¹"ã€‚ å¦‚1æœˆ15æ—¥ï¼Œåº”å†™æˆé›¶å£¹æœˆå£¹æ‹¾ä¼æ—¥ã€‚å†å¦‚10æœˆ20æ—¥ï¼Œåº”å†™æˆé›¶å£¹æ‹¾æœˆé›¶è´°æ‹¾æ—¥ã€‚
      */
 
     /**
@@ -565,6 +565,6 @@ public class HZUtil {
      * @param args DOCUMENT ME!
      */
     public static void main(String[] args) {
-        System.out.print(utf8("ÖĞ¹úÈË"));
+        System.out.print(utf8("ä¸­å›½äºº"));
     }
 }

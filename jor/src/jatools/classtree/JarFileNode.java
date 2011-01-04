@@ -24,7 +24,7 @@ public class JarFileNode extends AbstractNode {
 			try {
 				jar = new JarFile((String) getUserObject());
 			} catch (IOException e1) {
-				// TODO ×Ô¶¯Éú³É catch ¿é
+				// TODO è‡ªåŠ¨ç”Ÿæˆ catch å—
 				e1.printStackTrace();
 			}
 			if (jar == null) {
@@ -58,7 +58,7 @@ public class JarFileNode extends AbstractNode {
 //		try {
 //			jar = new JarFile((String) getUserObject());
 //		} catch (IOException e1) {
-//			// TODO ×Ô¶¯Éú³É catch ¿é
+//			// TODO è‡ªåŠ¨ç”Ÿæˆ catch å—
 //			e1.printStackTrace();
 //		}
 //		if (jar == null) {

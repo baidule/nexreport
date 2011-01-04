@@ -47,7 +47,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
     * @param datasetNodeSrc DOCUMENT ME!
     */
     public CrossIndexDialog(DatasetNodeSource datasetNodeSrc, CrossIndexNodeSource crossIndexSrc) {
-        super((Frame) Main.getInstance(), "½»²æË÷Òı¶¨Òå", true);
+        super((Frame) Main.getInstance(), "äº¤å‰ç´¢å¼•å®šä¹‰", true);
 
         initUI();
         setNodeSource(datasetNodeSrc, crossIndexSrc);
@@ -65,7 +65,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         gbc.weightx = 1.0;
 
         JPanel options = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        options.add(new JLabel("Ãû³Æ:"));
+        options.add(new JLabel("åç§°:"));
         nameText = new JTextField();
         nameText.setPreferredSize(new Dimension(350,25));
         options.add(nameText);
@@ -114,7 +114,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
     }
 
     /**
-    * È¡µÃËùÓĞ×Ö¶Î
+    * å–å¾—æ‰€æœ‰å­—æ®µ
     * @param reader DatasetReader
     * @return String[]
     */
@@ -151,7 +151,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         if (e.getActionCommand().equals("ok")) {
             if ((this.nameText.getText() == null) ||
                     (this.nameText.getText().trim().length() == 0)) {
-                JOptionPane.showConfirmDialog(Main.getInstance(), "Ãû³Æ²»ÄÜÎª¿Õ", "´íÎó",
+                JOptionPane.showConfirmDialog(Main.getInstance(), "åç§°ä¸èƒ½ä¸ºç©º", "é”™è¯¯",
                     JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
 
                 nameText.requestFocus();
@@ -162,7 +162,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
             try {
                 indexFieldSelectPanel.requiredCheck();
             } catch (Exception e1) {
-                JOptionPane.showConfirmDialog(Main.getInstance(), e1.getMessage(), "´íÎó",
+                JOptionPane.showConfirmDialog(Main.getInstance(), e1.getMessage(), "é”™è¯¯",
                     JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
 
                 return;

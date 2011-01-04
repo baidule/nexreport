@@ -53,8 +53,8 @@ public class Student {
     public List getMembers() {
     	
         List result = new ArrayList();
-        result.add(new Person("¸¸Ç×", "´Ş°Ö", 40, "ÄĞ"));
-        result.add(new Person("Ä¸Ç×", "´ŞÂè", 38, "Å®"));
+        result.add(new Person("çˆ¶äº²", "å´”çˆ¸", 40, "ç”·"));
+        result.add(new Person("æ¯äº²", "å´”å¦ˆ", 38, "å¥³"));
 
         return result;
     }

@@ -75,13 +75,13 @@ public class NodeSourceTreePopup extends JPopupMenu implements SourceType {
         addDatasetMenu = new JMenu(App.messages.getString("res.261"));
         addJdbcItem = new JMenuItem(new DataSourceAction(App.messages.getString("res.262"), c,
                     defaultMutableTreeNode, DataSourceAction.ADD_JDBC));
-        addCsvItem = new JMenuItem(new DataSourceAction("CSV ˝æ›ºØ", c, defaultMutableTreeNode,
+        addCsvItem = new JMenuItem(new DataSourceAction("CSVÊï∞ÊçÆÈõÜ", c, defaultMutableTreeNode,
                     DataSourceAction.ADD_CSV));
 
-        defineColumnItem = new JMenuItem(new DataSourceAction("◊‘∂®“Â◊÷∂Œ", c, defaultMutableTreeNode,
+        defineColumnItem = new JMenuItem(new DataSourceAction("Ëá™ÂÆö‰πâÂ≠óÊÆµ", c, defaultMutableTreeNode,
                     DataSourceAction.DEFINE_COLUMN));
 
-        editIndexItem = new JMenuItem(new DataSourceAction("∂®“ÂÀ˜“˝", c, defaultMutableTreeNode,
+        editIndexItem = new JMenuItem(new DataSourceAction("ÂÆö‰πâÁ¥¢Âºï", c, defaultMutableTreeNode,
                     DataSourceAction.EDIT_INDEX));
 
         addDatasetMenu.add(addJdbcItem);
@@ -98,7 +98,7 @@ public class NodeSourceTreePopup extends JPopupMenu implements SourceType {
                     defaultMutableTreeNode, IndexSourceAction.ADD));
         delIndexItem = new JMenuItem(new IndexSourceAction(App.messages.getString("res.96"), c,
                     defaultMutableTreeNode, IndexSourceAction.DELETE));
-        modifyIndexItem = new JMenuItem(new IndexSourceAction("±‡º≠", c, defaultMutableTreeNode,
+        modifyIndexItem = new JMenuItem(new IndexSourceAction("ÁºñËæë", c, defaultMutableTreeNode,
                     IndexSourceAction.MODIFY));
 
         addCrossItem = new JMenuItem(new CrossSourceAction(App.messages.getString("res.265"), c,
@@ -115,11 +115,11 @@ public class NodeSourceTreePopup extends JPopupMenu implements SourceType {
 
         delRowItem = new JMenuItem(new RowSourceAction(App.messages.getString("res.96"), c,
                     defaultMutableTreeNode, RowSourceAction.DELETE_ROW));
-        addArrayItem = new JMenuItem(new ArraySourceAction("ÃÌº”java ˝◊È", c, defaultMutableTreeNode,
+        addArrayItem = new JMenuItem(new ArraySourceAction("Ê∑ªÂä†javaÊï∞ÁªÑ", c, defaultMutableTreeNode,
                     ArraySourceAction.ADD));
-        delArrayItem = new JMenuItem(new ArraySourceAction("…æ≥˝", c, defaultMutableTreeNode,
+        delArrayItem = new JMenuItem(new ArraySourceAction("Âà†Èô§", c, defaultMutableTreeNode,
                     ArraySourceAction.DELETE));
-        modifyArrayItem = new JMenuItem(new ArraySourceAction("±‡º≠", c, defaultMutableTreeNode,
+        modifyArrayItem = new JMenuItem(new ArraySourceAction("ÁºñËæë", c, defaultMutableTreeNode,
                     ArraySourceAction.MODIFY));
         addGroupItem = new JMenuItem(new GroupSourceAction(App.messages.getString("res.223"), c,
                     defaultMutableTreeNode, GroupSourceAction.ADD_GROUP));

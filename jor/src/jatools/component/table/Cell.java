@@ -1,7 +1,7 @@
 /*
  *   Author: John.
  *
- *   º¼Öİ½Ü´´Èí¼ş   All Copyrights Reserved.
+ *   æ­å·æ°åˆ›è½¯ä»¶   All Copyrights Reserved.
  */
 package jatools.component.table;
 
@@ -266,12 +266,12 @@ public class Cell implements Comparable, PropertyAccessor, Cloneable {
     }
 
     /**
-     * ¶Ô±ÈÓëÁíÒ»¸ö ZCell ÏàµÈ£¬ »òÆäÖĞµÄ component ³ÉÔ±ÓëÁíÒ»¸ö _Component ÏàµÈ
+     * å¯¹æ¯”ä¸å¦ä¸€ä¸ª ZCell ç›¸ç­‰ï¼Œ æˆ–å…¶ä¸­çš„ component æˆå‘˜ä¸å¦ä¸€ä¸ª _Component ç›¸ç­‰
      *
      * @param object
-     *            ÁíÒ»¸öZCell »ò _Component
+     *            å¦ä¸€ä¸ªZCell æˆ– _Component
      *
-     * @return true/false ÏàµÈ/²»µÈ
+     * @return true/false ç›¸ç­‰/ä¸ç­‰
      */
     public boolean equals(Object object) {
         boolean equal = false;

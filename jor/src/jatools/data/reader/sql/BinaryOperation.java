@@ -35,7 +35,7 @@ public class BinaryOperation implements ParserConstants {
 
             if (isLhsWrapper && isRhsWrapper) {
                 //                if ((isLhsWrapper && isRhsWrapper && (kind == EQ))) {
-                //                    // ÑÓÊ±
+                //                    // å»¶æ—¶
                 //                } else {
                 return Primitive.binaryOperation(lhs, rhs, kind);
 

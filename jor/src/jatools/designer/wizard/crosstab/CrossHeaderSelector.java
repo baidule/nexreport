@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 /**
  * <p>Title:CrossHeaderSelector </p>
- * <p>Description: 交叉报表行列表头选择</p
+ * <p>Description: 浜ゅ弶鎶ヨ〃琛屽垪琛ㄥご閫夋嫨</p
  * <p>Copyright: Copyright (c) 2007</p>
  * <p>Company: Jatools</p>
  * @author Jiang Dehua

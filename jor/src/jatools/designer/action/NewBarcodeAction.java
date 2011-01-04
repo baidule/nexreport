@@ -24,7 +24,7 @@ public class NewBarcodeAction extends ReportAction {
      * @param owner DOCUMENT ME!
      */
     public NewBarcodeAction() {
-        super("Ãı–Œ¬Î", getIcon("/jatools/icons/barcode.gif"), getIcon("/jatools/icons/barcode2.gif")); // //$NON-NLS-2$
+        super("Êù°ÂΩ¢Á†Å", getIcon("/jatools/icons/barcode.gif"), getIcon("/jatools/icons/barcode2.gif")); // //$NON-NLS-2$
 
         putValue(CLASS, BarCode.class);
     }

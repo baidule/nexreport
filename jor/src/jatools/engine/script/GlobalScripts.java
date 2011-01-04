@@ -799,7 +799,7 @@ public class GlobalScripts implements ProtectPublic {
         try {
             Class.forName("org.hsqldb.jdbcDriver");
             con = DriverManager.getConnection("jdbc:hsqldb:./demosdb/mydb", "sa", null);
-            p = con.prepareStatement("SELECT * FROM ∂©µ•≤È—Ø");
+            p = con.prepareStatement("SELECT * FROM ËÆ¢ÂçïÊü•ËØ¢");
             rs = p.executeQuery();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

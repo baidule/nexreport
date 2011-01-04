@@ -60,7 +60,7 @@ public abstract class AbstractPrinterLayout implements PrinterLayout {
     
 
     /**
-     * 是否超出了容器的可用高度
+     * 鏄惁瓒呭嚭浜嗗鍣ㄧ殑鍙敤楂樺害
      *
      * @param ymax DOCUMENT ME!
      *

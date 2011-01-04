@@ -29,7 +29,7 @@ import javax.swing.event.ChangeListener;
 
 /**
  * <p>Title: CrossSqlBuilder</p>
- * <p>Description: ½»²æ±¨±íÏòµ¼</p>
+ * <p>Description: äº¤å‰æŠ¥è¡¨å‘å¯¼</p>
  * <p>Copyright: Copyright (c) 2007</p>
  * <p>Company: </p>
  * @author Jiang Dehua
@@ -57,8 +57,8 @@ public class CrossTableBuilder
   private DatasetReader selectedReader;
 
   static final String[] PROMPT_STRINGS = {
-      App.messages.getString("res.247"), //Êı¾İ¼¯ÌáÊ¾ĞÅÏ¢
-      App.messages.getString("res.248"), //ÏÔÊ¾ÏîÌáÊ¾ĞÅÏ¢
+      App.messages.getString("res.247"), //æ•°æ®é›†æç¤ºä¿¡æ¯
+      App.messages.getString("res.248"), //æ˜¾ç¤ºé¡¹æç¤ºä¿¡æ¯
       App.messages.getString("res.249")
   };
 
@@ -125,7 +125,7 @@ public class CrossTableBuilder
   }
 
   /**
-   * Ìí¼ÓÏàÓ¦
+   * æ·»åŠ ç›¸åº”
    */
   void setAction() {
     prevCommand.addActionListener(new ActionListener() {
@@ -173,7 +173,7 @@ public class CrossTableBuilder
   }
 
   /**
-   * Íê³É
+   * å®Œæˆ
    */
   protected void finish() {
     apply();
@@ -182,21 +182,21 @@ public class CrossTableBuilder
   }
 
   /**
-   * È¡Ïû
+   * å–æ¶ˆ
    */
   private void cancel() {
     dispose();
   }
 
   /**
-   * ÏÂÒ»²½
+   * ä¸‹ä¸€æ­¥
    */
   private void next() {
     steps.setSelectedIndex(steps.getSelectedIndex() + 1);
   }
 
   /**
-   * ÉÏÒ»²½
+   * ä¸Šä¸€æ­¥
    */
   private void previous() {
     steps.setSelectedIndex(steps.getSelectedIndex() - 1);

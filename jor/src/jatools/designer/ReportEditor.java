@@ -28,6 +28,7 @@ import javax.swing.tree.TreeModel;
  * @author $author$
  * @version $Revision$
   */
+
 public class ReportEditor extends JPanel {
     public final static String DIRTY_PROP = "dirty.prop";
     public static final String CLOSE = "close";

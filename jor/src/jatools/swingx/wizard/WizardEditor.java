@@ -5,38 +5,38 @@ package jatools.swingx.wizard;
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2002</p>
  * <p>Company: EZSoft.</p>
- * @author ÖÜÎÄ¾ü
+ * @author å‘¨æ–‡å†›
  * @version 1.0
  */
 import java.awt.Component;
 
 
 /**
- * ±à¼­¾«Áé
+ * ç¼–è¾‘ç²¾çµ
  *
- * <p>ÓÃÓÚ¶¨Òå±à¼­Æ÷µÄ×é¼şÌØĞÔ£¬ÈçÈ¡±à¼­Æ÷×é¼ş¼°½¹µã¹ÜÀí</p>
+ * <p>ç”¨äºå®šä¹‰ç¼–è¾‘å™¨çš„ç»„ä»¶ç‰¹æ€§ï¼Œå¦‚å–ç¼–è¾‘å™¨ç»„ä»¶åŠç„¦ç‚¹ç®¡ç†</p>
  * @version $Revision: 1.1 $
  * @author $author$
  */
 public interface WizardEditor {
     /**
-     * µÃµ½±à¼­Æ÷×é¼ş
+     * å¾—åˆ°ç¼–è¾‘å™¨ç»„ä»¶
      *
-     * @return ±à¼­Æ÷×é¼ş
+     * @return ç¼–è¾‘å™¨ç»„ä»¶
      */
     public Component getEditorComponent();
 
     /**
-     * Í¨Öª±à¼­Æ÷½¹µãÒªÀë¿ªÁË
+     * é€šçŸ¥ç¼–è¾‘å™¨ç„¦ç‚¹è¦ç¦»å¼€äº†
      *
-     * @throws Exception Èç¹û±¾±à¼­Æ÷»¹Ã»ÓĞ×¼±¸ºÃÊı¾İ
+     * @throws Exception å¦‚æœæœ¬ç¼–è¾‘å™¨è¿˜æ²¡æœ‰å‡†å¤‡å¥½æ•°æ®
      */
     public void leave() throws Exception;
 
     /**
-     * Í¨Öª±à¼­Æ÷½¹µãÒª½øÈëÁË
+     * é€šçŸ¥ç¼–è¾‘å™¨ç„¦ç‚¹è¦è¿›å…¥äº†
      *
-     * @throws Exception Èç¹û±¾±à¼­Æ÷»¹Ã»×¼±¸ºÃ½øÈë
+     * @throws Exception å¦‚æœæœ¬ç¼–è¾‘å™¨è¿˜æ²¡å‡†å¤‡å¥½è¿›å…¥
      */
     public void enter() throws Exception;
 }

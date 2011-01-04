@@ -16,7 +16,7 @@ public class NewChartAction extends ReportAction {
      * Creates a new NewChartAction object.
      */
     public NewChartAction() {
-        super("ͳ��ͼ", getIcon("/jatools/icons/chart.gif"), getIcon("/jatools/icons/chart2.gif")); // //$NON-NLS-2$
+        super("统计图", getIcon("/jatools/icons/chart.gif"), getIcon("/jatools/icons/chart2.gif")); // //$NON-NLS-2$
         putValue(CLASS, Chart.class);
     }
 

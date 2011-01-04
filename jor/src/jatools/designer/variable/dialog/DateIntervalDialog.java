@@ -37,16 +37,16 @@ public class DateIntervalDialog extends JDialog {
      */
 
     final static String[] SUPPORT_FUNCTIONS = {
-            "Äê",
-            "°ëÄê",
-            "¼¾",
-            "ÔÂ",
-            "ÖÜ",
-            "Ìì",
-            "°ëÌì",
-            "Ğ¡Ê±",
-            "·ÖÖÓ",
-            "Ãë"
+            "å¹´",
+            "åŠå¹´",
+            "å­£",
+            "æœˆ",
+            "å‘¨",
+            "å¤©",
+            "åŠå¤©",
+            "å°æ—¶",
+            "åˆ†é’Ÿ",
+            "ç§’"
         };
     private JTextField nameText = new JTextField();
     private JComboBox fieldCombo;
@@ -65,7 +65,7 @@ public class DateIntervalDialog extends JDialog {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.anchor = GridBagConstraints.WEST;
 
-        topPanel.add(new JLabel("Ãû³Æ:"), gbc);
+        topPanel.add(new JLabel("åç§°:"), gbc);
 
         fieldCombo = new JComboBox(columns);
         fieldCombo.setEditable(false);
@@ -74,18 +74,18 @@ public class DateIntervalDialog extends JDialog {
         //     gbc.add( nameText,100);
         topPanel.add(nameText, gbc);
         gbc.gridwidth = 1;
-        topPanel.add(new JLabel("Ô´×Ö¶Î:"), gbc);
+        topPanel.add(new JLabel("æºå­—æ®µ:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 1.0;
         topPanel.add(fieldCombo, gbc);
 
-        // ¼ÆËã·½·¨
+        // è®¡ç®—æ–¹æ³•
         funcCombo = new JComboBox(SUPPORT_FUNCTIONS);
         funcCombo.setEditable(false);
 
         gbc.weightx = 0.0;
         gbc.gridwidth = 1;
-        topPanel.add(new JLabel("·Ö×éÒÀ¾İ:"), gbc);
+        topPanel.add(new JLabel("åˆ†ç»„ä¾æ®:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.add(funcCombo, 80);
 
@@ -151,15 +151,15 @@ public class DateIntervalDialog extends JDialog {
         String name = this.nameText.getText();
 
         if ((name == null) || (name.trim().length() == 0)) {
-            throw new JatoolsException("Ãû³Æ²»ÄÜÎª¿Õ.", this.nameText);
+            throw new JatoolsException("åç§°ä¸èƒ½ä¸ºç©º.", this.nameText);
         }
 
         Column col = (Column) this.fieldCombo.getSelectedItem();
 
         if (col == null) {
-            throw new JatoolsException("ÇëÑ¡ÔñÔ´×Ö¶Î.", this.fieldCombo);
+            throw new JatoolsException("è¯·é€‰æ‹©æºå­—æ®µ.", this.fieldCombo);
         } else if (!isDateColumn(col)) {
-            throw new JatoolsException("Ô´×Ö¶Î [" + col.getName() + "] ²»ÊÇÈÕÆÚĞÍ.", this.fieldCombo);
+            throw new JatoolsException("æºå­—æ®µ [" + col.getName() + "] ä¸æ˜¯æ—¥æœŸå‹.", this.fieldCombo);
         }
 
         String srcField = col.getName();

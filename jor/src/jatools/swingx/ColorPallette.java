@@ -30,8 +30,8 @@ public class ColorPallette extends JLabel {
     final static int OTHER_COLOR_INDEX = 65; 
     final static int COLUMN = 8; 
     final static int ROW = 8;
-    final static String NULL_COLOR_TEXT = App.messages.getString("res.13"); // "¿ÕÉ«¿ò"ÖĞÏÔÊ¾µÄ×Ö·û //
-    final static String OTHER_COLOR_TEXT = App.messages.getString("res.14"); // "ÆäËûÉ«¿ò"ÖĞÏÔÊ¾µÄ×Ö·û //
+    final static String NULL_COLOR_TEXT = App.messages.getString("res.13"); // "ç©ºè‰²æ¡†"ä¸­æ˜¾ç¤ºçš„å­—ç¬¦ //
+    final static String OTHER_COLOR_TEXT = App.messages.getString("res.14"); // "å…¶ä»–è‰²æ¡†"ä¸­æ˜¾ç¤ºçš„å­—ç¬¦ //
     final static int COLOR_DROP_SIZE = 12; 
     final static int DROP_GAP = 7; 
     final static int TEXT_BOX_HEIGHT = 25; 
@@ -130,25 +130,25 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * ¼ÓÈë±ä»¯ÕìÌıÆ÷
+ * åŠ å…¥å˜åŒ–ä¾¦å¬å™¨
  *
- * @param lst ±ä»¯ÕìÌıÆ÷
+ * @param lst å˜åŒ–ä¾¦å¬å™¨
  */
     public void addChangeListener(ChangeListener lst) {
         listeners.add(lst);
     }
 
     /**
- * ÒÆÈ¥±ä»¯ÕìÌıÆ÷
+ * ç§»å»å˜åŒ–ä¾¦å¬å™¨
  *
- * @param lst ÒªÒÆ×ßµÄÕìÌıÆ÷
+ * @param lst è¦ç§»èµ°çš„ä¾¦å¬å™¨
  */
     public void removeChangeListener(ChangeListener lst) {
         listeners.remove(lst);
     }
 
     /**
- * ¼¤·¢±ä»¯ÕìÌıÆ÷£¬Í¨Öªµ±Ç°É«¸Ä±ä
+ * æ¿€å‘å˜åŒ–ä¾¦å¬å™¨ï¼Œé€šçŸ¥å½“å‰è‰²æ”¹å˜
  */
     public void fireChangeListener() {
         ChangeEvent evt = new ChangeEvent(this);
@@ -160,8 +160,8 @@ public class ColorPallette extends JLabel {
     }
 
     /**
-	 * Í¨ÖªÊÇ·ñÒÔÇ¶Èë·½Ê½»æÖÆ Èç¹ûÓë×éºÏ¿òÅäºÏÊ¹ÓÃÊ±£¬¾­³£ÊÇ×éºÏ¿òÍ¨µ÷ÓÃ´Ë·½·¨
-	 * @param atHeader   true/false ÊÇ/·ñ´¦ÓÚÇ¶Èë·½Ê½
+	 * é€šçŸ¥æ˜¯å¦ä»¥åµŒå…¥æ–¹å¼ç»˜åˆ¶ å¦‚æœä¸ç»„åˆæ¡†é…åˆä½¿ç”¨æ—¶ï¼Œç»å¸¸æ˜¯ç»„åˆæ¡†é€šè°ƒç”¨æ­¤æ–¹æ³•
+	 * @param atHeader   true/false æ˜¯/å¦å¤„äºåµŒå…¥æ–¹å¼
 	 * @see #paintComponent
 	 * @uml.property   name="atHeader"
 	 */
@@ -170,8 +170,8 @@ public class ColorPallette extends JLabel {
     }
 
     /**
-	 * ÉèÖÃµ±Ç°ÑÕÉ«Öµ
-	 * @param color   µ±Ç°ÑÕÉ«
+	 * è®¾ç½®å½“å‰é¢œè‰²å€¼
+	 * @param color   å½“å‰é¢œè‰²
 	 * @uml.property   name="color"
 	 */
     public void setColor(Color color) {
@@ -179,8 +179,8 @@ public class ColorPallette extends JLabel {
     }
 
     /**
-	 * È¡µÃÑ¡¶¨µÄÑÕÉ«
-	 * @return   µ±Ç°Ñ¡¶¨É«
+	 * å–å¾—é€‰å®šçš„é¢œè‰²
+	 * @return   å½“å‰é€‰å®šè‰²
 	 * @uml.property   name="color"
 	 */
     public Color getColor() {
@@ -197,9 +197,9 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * Êó±êÀë¿ªÊ±£¬»÷ÖĞÉ«Ğò»Ö¸´
+ * é¼ æ ‡ç¦»å¼€æ—¶ï¼Œå‡»ä¸­è‰²åºæ¢å¤
  *
- * @param e Êó±êÊÂ¼ş
+ * @param e é¼ æ ‡äº‹ä»¶
  */
     public void mouseExited(MouseEvent e) {
         hittedIndex = -1; 
@@ -210,9 +210,9 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * Êó±êÊÂ¼ş°´ÏÂÊ±£¬Í¨ÖªÉ«Öµ±»¸Ä±ä
+ * é¼ æ ‡äº‹ä»¶æŒ‰ä¸‹æ—¶ï¼Œé€šçŸ¥è‰²å€¼è¢«æ”¹å˜
  *
- * @param e Êó±êÊÂ¼ş
+ * @param e é¼ æ ‡äº‹ä»¶
  */
     public void mousePressed(MouseEvent e) {
         int i = hitIndex(e.getX(), e.getY());
@@ -242,9 +242,9 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * Êó±êÒÆ¶¯Ê±¼ì²â»÷ÖĞµÄÉ«Ğò£¬ÒÔ³ÊÏÖROLLOVER·ç¸ñ
+ * é¼ æ ‡ç§»åŠ¨æ—¶æ£€æµ‹å‡»ä¸­çš„è‰²åºï¼Œä»¥å‘ˆç°ROLLOVERé£æ ¼
  *
- * @param e Êó±êÊÂ¼ş
+ * @param e é¼ æ ‡äº‹ä»¶
  */
     public void mouseMoved(MouseEvent e) {
         int i = hitIndex(e.getX(), e.getY());
@@ -258,10 +258,10 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * ÕìÌıÊó±êÊÂ¼ş
+ * ä¾¦å¬é¼ æ ‡äº‹ä»¶
  *
- * Èç¹ûÊÇstandalone·½Ê½Ê¹ÓÃÊ±£¬¿ÉÒÔÖ±½Ó´Ó»ú°åÖĞ½ÓÊÕÊó±êÊÂ¼ş£¬
- * Èç¹ûÅäºÏ×éºÏ¿òÊ¹ÓÃ£¬Ôò¸Ã·½·¨²»»áÓĞÈÎºÎĞ§¹û
+ * å¦‚æœæ˜¯standaloneæ–¹å¼ä½¿ç”¨æ—¶ï¼Œå¯ä»¥ç›´æ¥ä»æœºæ¿ä¸­æ¥æ”¶é¼ æ ‡äº‹ä»¶ï¼Œ
+ * å¦‚æœé…åˆç»„åˆæ¡†ä½¿ç”¨ï¼Œåˆ™è¯¥æ–¹æ³•ä¸ä¼šæœ‰ä»»ä½•æ•ˆæœ
  *
  */
     private void listenToMouse() {
@@ -282,12 +282,12 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * °´¸ø¶¨×ù±êÈ¡µÃ±»»÷ÖĞµÄÑÕÉ«ĞòºÅ
+ * æŒ‰ç»™å®šåº§æ ‡å–å¾—è¢«å‡»ä¸­çš„é¢œè‰²åºå·
  *
- * @param x Ä£×ù±ê
- * @param y ×İ×ù±ê
+ * @param x æ¨¡åº§æ ‡
+ * @param y çºµåº§æ ‡
  *
- * @return »÷ÖĞµÄÑÕÉ«ĞòºÅ
+ * @return å‡»ä¸­çš„é¢œè‰²åºå·
  */
     public int hitIndex(int x, int y) {
         //-----------------------------
@@ -317,12 +317,12 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * »­µ÷É«°å
+ * ç”»è°ƒè‰²æ¿
  *
- * µ÷É«°åÓĞÁ½ÖÖ»­·¨£¬Èç¹ûÕı±»Ç¶Èë£¬Ôò½ö»­Ò»¸öÉ«µã£¬Èç¹û²»±»Ç¶Èë£¬Ôò»­Õû¸öÉ«µã¼°ÎÄ×Ö¿ò£¬
- * ÎÄ×Ö¿òÊÇ·ñ»­³ö¿ÉÑ¡£¬¸ù¾İ¹¹Ôìº¯Êı²ÎÊı¶ø¶¨
+ * è°ƒè‰²æ¿æœ‰ä¸¤ç§ç”»æ³•ï¼Œå¦‚æœæ­£è¢«åµŒå…¥ï¼Œåˆ™ä»…ç”»ä¸€ä¸ªè‰²ç‚¹ï¼Œå¦‚æœä¸è¢«åµŒå…¥ï¼Œåˆ™ç”»æ•´ä¸ªè‰²ç‚¹åŠæ–‡å­—æ¡†ï¼Œ
+ * æ–‡å­—æ¡†æ˜¯å¦ç”»å‡ºå¯é€‰ï¼Œæ ¹æ®æ„é€ å‡½æ•°å‚æ•°è€Œå®š
  *
- * @param g_ Í¼ĞÎ¶ÔÏó
+ * @param g_ å›¾å½¢å¯¹è±¡
  */
     public void paintComponent(Graphics g_) {
         Graphics2D g2 = (Graphics2D) g_;
@@ -425,11 +425,11 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * ÒÔÇ¶Èë·½Ê½»­³öµ÷É«°å
+ * ä»¥åµŒå…¥æ–¹å¼ç”»å‡ºè°ƒè‰²æ¿
  *
- * Óë×éºÏ¿òÒ»ÆğÊ¹ÓÃÊ±ÒªÇó£¬´ËÊ±½ö»­µ±Ç°É«Ò»¸öÉ«µã
+ * ä¸ç»„åˆæ¡†ä¸€èµ·ä½¿ç”¨æ—¶è¦æ±‚ï¼Œæ­¤æ—¶ä»…ç”»å½“å‰è‰²ä¸€ä¸ªè‰²ç‚¹
  *
- * @param g2 Í¼ĞÎ¶ÔÏó
+ * @param g2 å›¾å½¢å¯¹è±¡
  */
     private void paintAtHeader(Graphics2D g2) {
         Rectangle box = new Rectangle(1, 2, 18, 10);
@@ -440,13 +440,13 @@ public class ColorPallette extends JLabel {
     }
 
     /**
- * »­³öÒ»¸öÁ¢ÌåµÄ±ß¿ò
+ * ç”»å‡ºä¸€ä¸ªç«‹ä½“çš„è¾¹æ¡†
  *
- * @param g2 Í¼ĞÎ¶ÔÏó
- * @param b ±ß¿ò
- * @param gx ºá×ù±ê·Å´óÁ¿
- * @param gy ×İ×ù±ê·Å´óÁ¿
- * @param raised ÊÇ·ñÍ»³öÏÔÊ¾
+ * @param g2 å›¾å½¢å¯¹è±¡
+ * @param b è¾¹æ¡†
+ * @param gx æ¨ªåº§æ ‡æ”¾å¤§é‡
+ * @param gy çºµåº§æ ‡æ”¾å¤§é‡
+ * @param raised æ˜¯å¦çªå‡ºæ˜¾ç¤º
  */
     public void draw3DBox(Graphics2D g2, Rectangle b, int gx, int gy, boolean raised) {
         Rectangle border = (Rectangle) b.clone();

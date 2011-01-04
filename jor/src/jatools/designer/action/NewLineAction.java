@@ -1,7 +1,7 @@
 /*
  *   Author: John.
  *
- *   º¼Öİ½Ü´´Èí¼ş   All Copyrights Reserved.
+ *   æ­å·æ°åˆ›è½¯ä»¶   All Copyrights Reserved.
  */
 package jatools.designer.action;
 
@@ -21,7 +21,7 @@ public class NewLineAction extends ReportAction {
      * Creates a new NewLineAction object.
      */
     public NewLineAction() {
-        super("Ïß", getIcon("/com/jatools/icons/line.gif")); // //$NON-NLS-2$
+        super("çº¿", getIcon("/com/jatools/icons/line.gif")); // //$NON-NLS-2$
     }
 
     /**

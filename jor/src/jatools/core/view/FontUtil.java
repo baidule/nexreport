@@ -33,7 +33,7 @@ public class FontUtil {
     public static java.awt.Font getFont(Font f) {
         List list = getSystemFonts();
 
-        if (!list.contains(f.getName())) { //ÏµÍ³Ã»ÓĞ°²×°ËÎÌå£¬ÓÃ×ÖÌåÎÄ¼ş´´½¨Ò»¸ö 
+        if (!list.contains(f.getName())) { //ç³»ç»Ÿæ²¡æœ‰å®‰è£…å®‹ä½“ï¼Œç”¨å­—ä½“æ–‡ä»¶åˆ›å»ºä¸€ä¸ª 
 
             Font _f = getDefault();
 

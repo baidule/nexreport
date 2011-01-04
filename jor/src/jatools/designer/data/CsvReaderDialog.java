@@ -95,7 +95,7 @@ public class CsvReaderDialog extends JDialog implements Chooser {
         gbc.gridwidth = 1;
         gbc.anchor = GridBagConstraints.WEST;
 
-        propertyPane.add(new JLabel("名称:"), gbc);
+        propertyPane.add(new JLabel("鍚嶇О:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
 
         gbc.add(this.nameText, 150);
@@ -103,13 +103,13 @@ public class CsvReaderDialog extends JDialog implements Chooser {
         gbc.weightx = 0.0f;
         gbc.gridwidth = 1;
 
-        propertyPane.add(new JLabel("位置类型:"), gbc);
+        propertyPane.add(new JLabel("浣嶇疆绫诲瀷:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100.0f;
 
         JPanel optionpanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        localfile = new JRadioButton("本地");
-        remotefile = new JRadioButton("网络");
+        localfile = new JRadioButton("鏈湴");
+        remotefile = new JRadioButton("缃戠粶");
 
         ButtonGroup group = new ButtonGroup();
         group.add(localfile);
@@ -123,7 +123,7 @@ public class CsvReaderDialog extends JDialog implements Chooser {
         gbc.weightx = 0.0f;
         gbc.gridwidth = 1;
 
-        propertyPane.add(new JLabel("Csv 文件位置:"), gbc);
+        propertyPane.add(new JLabel("Csv 鏂囦欢浣嶇疆:"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         gbc.weightx = 100.0f;
 
@@ -134,12 +134,12 @@ public class CsvReaderDialog extends JDialog implements Chooser {
         propertyPane.add(chooserpanel, gbc);
         gbc.weightx = 0.0f;
         gbc.gridwidth = 1;
-        propertyPane.add(new JLabel("过滤条件(Where):"), gbc);
+        propertyPane.add(new JLabel("杩囨护鏉′欢(Where):"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         propertyPane.add(whereText, gbc);
 
         gbc.gridwidth = 1;
-        propertyPane.add(new JLabel("排序(Order By):"), gbc);
+        propertyPane.add(new JLabel("鎺掑簭(Order By):"), gbc);
         gbc.gridwidth = GridBagConstraints.REMAINDER;
         propertyPane.add(orderByText, gbc);
 
@@ -151,7 +151,7 @@ public class CsvReaderDialog extends JDialog implements Chooser {
 
         CommandPanel commandPane = CommandPanel.createPanel();
 
-        JButton b = new JButton("预览");
+        JButton b = new JButton("棰勮");
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     dataPreview();
@@ -160,7 +160,7 @@ public class CsvReaderDialog extends JDialog implements Chooser {
 
         commandPane.addComponent(b);
 
-        b = new JButton("确认");
+        b = new JButton("纭");
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     done();
@@ -169,7 +169,7 @@ public class CsvReaderDialog extends JDialog implements Chooser {
 
         commandPane.addComponent(b);
 
-        b = new JButton("取消");
+        b = new JButton("鍙栨秷");
         b.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     exitOK = false;
@@ -224,7 +224,7 @@ public class CsvReaderDialog extends JDialog implements Chooser {
     protected void selectFile() {
         JFileChooser fc = getFileChooser();
 
-        if (JFileChooser.APPROVE_OPTION == fc.showDialog(this, "导入")) {
+        if (JFileChooser.APPROVE_OPTION == fc.showDialog(this, "瀵煎叆")) {
             File file = fc.getSelectedFile();
 
             this.filePathText.setText(file.getAbsolutePath());

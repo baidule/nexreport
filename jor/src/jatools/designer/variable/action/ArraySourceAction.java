@@ -90,7 +90,7 @@ public class ArraySourceAction extends AbstractAction {
     }
 
     private void deleteAction() {
-        //        int option = JOptionPane.showConfirmDialog(c, "删除之后不能恢复，确定删除？", "提示",
+        //        int option = JOptionPane.showConfirmDialog(c, "鍒犻櫎涔嬪悗涓嶈兘鎭㈠锛岀‘瀹氬垹闄わ紵", "鎻愮ず",
         //                      JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
         //              if (option == JOptionPane.OK_OPTION) {
         ArrayList brother = nodeSource.getParent().getChildren();

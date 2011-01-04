@@ -27,7 +27,7 @@ public class CsvReaderFactory implements DatasetReaderFactory {
         CsvReader result = new CsvReader();
         result.setLocalFile( true);
 
-        CsvReaderDialog editor = new CsvReaderDialog("´´½¨CSVÊı¾İ¼¯", (CsvReader) result,
+        CsvReaderDialog editor = new CsvReaderDialog("åˆ›å»ºCSVæ•°æ®é›†", (CsvReader) result,
                 Util.getCDF(parent));
         editor.setNameChecker(checker);
         editor.setLocationRelativeTo(parent);
@@ -52,7 +52,7 @@ public class CsvReaderFactory implements DatasetReaderFactory {
      * @return DOCUMENT ME!
      */
     public boolean edit(DatasetReader reader, Component parent, NameChecker checker) {
-        CsvReaderDialog editor = new CsvReaderDialog("±à¼­CSVÊı¾İ¼¯", (CsvReader) reader,
+        CsvReaderDialog editor = new CsvReaderDialog("ç¼–è¾‘CSVæ•°æ®é›†", (CsvReader) reader,
                 Util.getCDF(parent));
         editor.setNameChecker(checker);
         editor.setLocationRelativeTo(parent);

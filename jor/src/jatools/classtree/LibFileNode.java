@@ -25,7 +25,7 @@ public class LibFileNode extends AbstractNode {
 					continue;
 				/*
 				 * JarFile jar = null; try { jar = new JarFile(string); } catch
-				 * (IOException e) { // TODO ×Ô¶¯Éú³É catch ¿é e.printStackTrace(); }
+				 * (IOException e) { // TODO è‡ªåŠ¨ç”Ÿæˆ catch å— e.printStackTrace(); }
 				 */
 				JarFileNode j = new JarFileNode(string);
 

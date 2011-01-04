@@ -49,8 +49,8 @@ public class SqlUtil {
 	
 	  public static void main(String[] args) {
 			try {
-				Statement stat = new CCJSqlParserManager().parse(new StringReader("select * from a where amount >1 and id='2' order by 年份,月份") );
-				System.out.println(SqlUtil.toNodataSql("select * from (select  年份,月份,sum(金额)  from 订单查询  group by 年份,月份  order by 年份,月份) a"));
+				Statement stat = new CCJSqlParserManager().parse(new StringReader("select * from a where amount >1 and id='2' order by 骞翠唤,鏈堜唤") );
+				System.out.println(SqlUtil.toNodataSql("select * from (select  骞翠唤,鏈堜唤,sum(閲戦)  from 璁㈠崟鏌ヨ  group by 骞翠唤,鏈堜唤  order by 骞翠唤,鏈堜唤) a"));
 				
 			} catch (JSQLParserException e) {
 				// TODO Auto-generated catch block

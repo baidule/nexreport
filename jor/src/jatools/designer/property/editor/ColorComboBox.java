@@ -23,7 +23,7 @@ import javax.swing.ListCellRenderer;
 /**
  * @author   java9
  */
-public class ColorComboBox extends JComboBox implements ListCellRenderer/*×Ô¶¨ÒåµÄµ¯³ölist»æÖÆÆ÷*/
+public class ColorComboBox extends JComboBox implements ListCellRenderer/*è‡ªå®šä¹‰çš„å¼¹å‡ºlistç»˜åˆ¶å™¨*/
 {
     public static final int NULL_BOX_VISIBLE = 1;
     public static final int OTHER_BOX_VISIBLE = 2;
@@ -129,11 +129,11 @@ public class ColorComboBox extends JComboBox implements ListCellRenderer/*×Ô¶¨Òå
     }
 
     /**
-    * ÕìÌıµ¯³öÊ½ÁĞ±í
+    * ä¾¦å¬å¼¹å‡ºå¼åˆ—è¡¨
     *
-    * È¡µ½ÁĞ±í£¬ÒÔ±ã½«Êó±êÊÂ¼ş´«¸øµ÷É«°å£¬ÕâÑùµ÷É«°å¿ÉÒÔ³ÊÏÖrollover·ç¸ñ
+    * å–åˆ°åˆ—è¡¨ï¼Œä»¥ä¾¿å°†é¼ æ ‡äº‹ä»¶ä¼ ç»™è°ƒè‰²æ¿ï¼Œè¿™æ ·è°ƒè‰²æ¿å¯ä»¥å‘ˆç°rolloveré£æ ¼
     *
-    * @param list µ¯³öÊ½ÁĞ±í
+    * @param list å¼¹å‡ºå¼åˆ—è¡¨
     */
     private void listenToList(JList list) {
         list.addMouseListener(new MouseAdapter() {

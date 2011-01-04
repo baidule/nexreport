@@ -484,7 +484,7 @@ public class ReportDocument implements PropertyAccessor, ListenToXmlWrite,
 	}
 
 	/**
-	 * ÉèÖÃÍ³¼ÆÍ¼Ä³Ò»ÊôĞÔ
+	 * è®¾ç½®ç»Ÿè®¡å›¾æŸä¸€å±æ€§
 	 * 
 	 * @param prop
 	 *            DOCUMENT ME!

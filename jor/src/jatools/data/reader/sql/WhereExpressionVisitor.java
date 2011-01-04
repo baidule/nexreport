@@ -95,19 +95,19 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      */
     public static void main(String[] args) {
         try {
-            // ×¼±¸Êı¾İ¼¯
+            // å‡†å¤‡æ•°æ®é›†
             Object[][] data = {
-                    { "´ŞÓÀÔ¶", 18 },
-                    { "ÍõĞ¡Ñ¼", 16 }
+                    { "å´”æ°¸è¿œ", 18 },
+                    { "ç‹å°é¸­", 16 }
                 };
             jatools.dataset.Column[] columns = new jatools.dataset.Column[2];
-            columns[0] = new jatools.dataset.Column("ĞÕÃû", String.class);
-            columns[1] = new jatools.dataset.Column("ÄêÁä", Integer.class);
+            columns[0] = new jatools.dataset.Column("å§“å", String.class);
+            columns[1] = new jatools.dataset.Column("å¹´é¾„", Integer.class);
 
             RowMeta rowMeta = new RowMeta(columns);
 
             Statement stat = new CCJSqlParserManager().parse(new StringReader(
-                        "select * from a where ĞÕÃû='´ŞÓÀÔ¶'"));
+                        "select * from a where å§“å='å´”æ°¸è¿œ'"));
             Select select = (Select) stat;
             Expression where = ((PlainSelect) select.getSelectBody()).getWhere();
 
@@ -122,9 +122,9 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
                 Object result = visitor.eval(data[i]);
 
                 if (result instanceof Boolean && ((Boolean) result).booleanValue()) {
-                    System.out.print("Í¨¹ı=====>");
+                    System.out.print("é€šè¿‡=====>");
                 } else {
-                    System.out.print("²»Í¨¹ı=====>");
+                    System.out.print("ä¸é€šè¿‡=====>");
                 }
 
                 System.out.println(StringUtils.join(data[i], ","));
@@ -150,7 +150,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param function DOCUMENT ME!
      */
     public void visit(Function function) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -159,7 +159,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param inverseExpression DOCUMENT ME!
      */
     public void visit(InverseExpression inverseExpression) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -168,7 +168,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param jdbcParameter DOCUMENT ME!
      */
     public void visit(JdbcParameter jdbcParameter) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -443,7 +443,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param inExpression DOCUMENT ME!
      */
     public void visit(InExpression inExpression) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -470,7 +470,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param likeExpression DOCUMENT ME!
      */
     public void visit(LikeExpression likeExpression) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -551,7 +551,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param subSelect DOCUMENT ME!
      */
     public void visit(SubSelect subSelect) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -560,7 +560,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param caseExpression DOCUMENT ME!
      */
     public void visit(CaseExpression caseExpression) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -569,7 +569,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param whenClause DOCUMENT ME!
      */
     public void visit(WhenClause whenClause) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -578,7 +578,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param existsExpression DOCUMENT ME!
      */
     public void visit(ExistsExpression existsExpression) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -587,7 +587,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param allComparisonExpression DOCUMENT ME!
      */
     public void visit(AllComparisonExpression allComparisonExpression) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 
     /**
@@ -596,6 +596,6 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
      * @param anyComparisonExpression DOCUMENT ME!
      */
     public void visit(AnyComparisonExpression anyComparisonExpression) {
-        throw new UnsupportedOperationException("²»Ö§³Ö!");
+        throw new UnsupportedOperationException("ä¸æ”¯æŒ!");
     }
 }

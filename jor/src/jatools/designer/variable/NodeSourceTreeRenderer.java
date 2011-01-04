@@ -297,7 +297,7 @@ public class NodeSourceTreeRenderer extends JPanel implements TreeCellRenderer {
         label.setName(name);
         label.setOpaque(true);
 
-        label.setFont(new Font("ËÎÌå", Font.PLAIN, 12));
+        label.setFont(new Font("å®‹ä½“", Font.PLAIN, 12));
         label.setBorder(labelBorder);
 
         if (selected) {

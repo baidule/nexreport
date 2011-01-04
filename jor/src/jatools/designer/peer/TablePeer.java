@@ -1,7 +1,7 @@
 /*
  * Author: John.
  *
- * º¼Öİ½Ü´´Èí¼ş All Copyrights Reserved.
+ * æ­å·æ°åˆ›è½¯ä»¶ All Copyrights Reserved.
  */
 package jatools.designer.peer;
 
@@ -135,7 +135,7 @@ public class TablePeer extends ComponentPeer {
     }
 
     /**
-     * ¼ì²âmouseÔÚÑ¡Ôñ¿òµÄÎ»ÖÃ,ÔÚ¶«ÃæÖĞ¼äÎ»ÖÃµÄ,ÔÚÄÏÃæÖĞ¼äÎ»ÖÃ,
+     * æ£€æµ‹mouseåœ¨é€‰æ‹©æ¡†çš„ä½ç½®,åœ¨ä¸œé¢ä¸­é—´ä½ç½®çš„,åœ¨å—é¢ä¸­é—´ä½ç½®,
      *
      * @param x
      *            DOCUMENT ME!
@@ -175,7 +175,7 @@ public class TablePeer extends ComponentPeer {
             return _SOUTH_EAST;
         }
 
-        // ¼ì²éÊÇ·ñÔÚ±ß¿òÉÏ£¬
+        // æ£€æŸ¥æ˜¯å¦åœ¨è¾¹æ¡†ä¸Šï¼Œ
         int result = NULL;
         sel.grow(2, 2);
 
@@ -371,10 +371,10 @@ public class TablePeer extends ComponentPeer {
             for (int col = toCell.column; col <= toCell.column2(); col++) {
                 Component c = store.getComponentOver(row, col);
 
-                // Èç¹ûÓĞÒ»¸ö×é¼ş£¬ÔÚÄ¿±êÇøÓòÍâÃæ£¬ÇÒÕâ¸ö×é¼ş²»ÔÚÔ´ÇøÓòÄÚ£¬ÔòÈÏÎª²»¿ÉÒÆ¶¯
+                // å¦‚æœæœ‰ä¸€ä¸ªç»„ä»¶ï¼Œåœ¨ç›®æ ‡åŒºåŸŸå¤–é¢ï¼Œä¸”è¿™ä¸ªç»„ä»¶ä¸åœ¨æºåŒºåŸŸå†…ï¼Œåˆ™è®¤ä¸ºä¸å¯ç§»åŠ¨
                 if ((c == null) ||
                         (!toCell.contains(c.getCell()) && !srcCell.contains(c.getCell()))) {
-                    // Èç¹û
+                    // å¦‚æœ
                     c = store.getComponent(row, col);
 
                     if ((c == null) || c.getCell().contains(toCell)) {
@@ -429,7 +429,7 @@ public class TablePeer extends ComponentPeer {
             for (int col = toCell.column; col <= toCell.column2(); col++) {
                 Component c = store.getComponentOver(row, col);
 
-                // Èç¹ûÓĞÒ»¸ö×é¼ş£¬ÔÚÄ¿±êÇøÓòÍâÃæ£¬ÇÒÕâ¸ö×é¼ş²»ÔÚÔ´ÇøÓòÄÚ£¬ÔòÈÏÎª²»¿ÉÒÆ¶¯
+                // å¦‚æœæœ‰ä¸€ä¸ªç»„ä»¶ï¼Œåœ¨ç›®æ ‡åŒºåŸŸå¤–é¢ï¼Œä¸”è¿™ä¸ªç»„ä»¶ä¸åœ¨æºåŒºåŸŸå†…ï¼Œåˆ™è®¤ä¸ºä¸å¯ç§»åŠ¨
                 if ((c != null) && (c != leftTop) && (c != null) && !toCell.contains(c.getCell())) {
                     return false;
                 }

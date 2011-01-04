@@ -93,7 +93,7 @@ public class CrossSourceAction extends AbstractAction {
 
                 if (dataSrc.getIndexFields() == null) {
                     int option = JOptionPane.showConfirmDialog(Main.getInstance(),
-                            "±¾Êý¾Ý¼¯½Úµã²»´æÔÚÈÎºÎË÷Òý,½¨ÒéÄú½«±¾Ë÷Òý¼ÓÈëµ½Êý¾Ý¼¯½Úµã,ÊÇ·ñ¼ÓÈë?", "ÌáÊ¾", JOptionPane.YES_NO_OPTION,
+                            "æœ¬æ•°æ®é›†èŠ‚ç‚¹ä¸å­˜åœ¨ä»»ä½•ç´¢å¼•,å»ºè®®æ‚¨å°†æœ¬ç´¢å¼•åŠ å…¥åˆ°æ•°æ®é›†èŠ‚ç‚¹,æ˜¯å¦åŠ å…¥?", "æç¤º", JOptionPane.YES_NO_OPTION,
                             JOptionPane.QUESTION_MESSAGE);
 
                     if (option == JOptionPane.YES_OPTION) {

@@ -1077,7 +1077,7 @@ public abstract class TableBase extends Component implements GridComponent {
     }
 
     /**
-     * È¡µÃÖ¸¶¨Î»ÖÃµÄµ¥Ôª¸ñ£¬ÓĞ¿ÉÄÜÊÇºÏ²¢µ¥Ôª¸ñ
+     * å–å¾—æŒ‡å®šä½ç½®çš„å•å…ƒæ ¼ï¼Œæœ‰å¯èƒ½æ˜¯åˆå¹¶å•å…ƒæ ¼
      *
      * @param x
      *            DOCUMENT ME!
@@ -1093,7 +1093,7 @@ public abstract class TableBase extends Component implements GridComponent {
         return (cell_ == null) ? cell : cell_;
     }
 
-    // ¿ÉÄÜÖµ [-1,-1,rows,columns]
+    // å¯èƒ½å€¼ [-1,-1,rows,columns]
     /**
      * DOCUMENT ME!
      *
@@ -1137,7 +1137,7 @@ public abstract class TableBase extends Component implements GridComponent {
         return new Cell(row, column);
     }
 
-    // ¿ÉÄÜÖµ [0,0,rows-1,columns-1]
+    // å¯èƒ½å€¼ [0,0,rows-1,columns-1]
     /**
      * DOCUMENT ME!
      *

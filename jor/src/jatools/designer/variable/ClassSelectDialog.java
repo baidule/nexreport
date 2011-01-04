@@ -68,7 +68,7 @@ public class ClassSelectDialog extends JDialog implements DocumentListener {
      *            DOCUMENT ME!
      */
     public ClassSelectDialog(JDialog owner) {
-        super(owner, "≤È’“¿‡", true);
+        super(owner, "Êü•ÊâæÁ±ª", true);
 
         this.model = (DefaultListModel) this.matchedList.getModel();
 
@@ -77,9 +77,9 @@ public class ClassSelectDialog extends JDialog implements DocumentListener {
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
         gbc.gridwidth = GridBagConstraints.REMAINDER;
-        p.add(new JLabel("≤È’“¿‡√˚"), gbc);
+        p.add(new JLabel("Êü•ÊâæÁ±ªÂêç"), gbc);
         p.add(patternText, gbc);
-        p.add(new JLabel("∆•≈‰¿‡"), gbc);
+        p.add(new JLabel("ÂåπÈÖçÁ±ª"), gbc);
         gbc.weighty = 1.0;
         p.add(new JScrollPane(matchedList), gbc);
         gbc.weighty = 0.0;

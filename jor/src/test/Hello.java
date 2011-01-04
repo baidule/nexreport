@@ -18,7 +18,7 @@ public class Hello implements ProtectPublic{
      * @return DOCUMENT ME!
      */
     public static String hello(String user) {
-        return "ÄúºÃ," + user;
+        return "æ‚¨å¥½," + user;
     }
     
     public static String myhello(String yy)
