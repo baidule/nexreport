@@ -1,8 +1,9 @@
 package jatools.designer.variable.action;
 
 import jatools.designer.Main;
-import jatools.designer.variable.TreeNodeValue;
+
 import jatools.designer.variable.NodeSourceTree;
+import jatools.designer.variable.TreeNodeValue;
 import jatools.designer.variable.dialog.CrossIndexDialog;
 
 import jatools.dom.src.CrossIndexNodeSource;
@@ -91,12 +92,11 @@ public class CrossSourceAction extends AbstractAction {
             if (crossIndexNodeSource != null) {
                 DatasetNodeSource dataSrc = (DatasetNodeSource) nodeSource;
 
-                if (dataSrc.getIndexFields() == null) {
-                    int option = JOptionPane.showConfirmDialog(Main.getInstance(),
-                            "本数据集节点不存在任何索引,建议您将本索引加入到数据集节点,是否加入?", "提示", JOptionPane.YES_NO_OPTION,
-                            JOptionPane.QUESTION_MESSAGE);
-
-                    if (option == JOptionPane.YES_OPTION) {
+                if (!dataSrc.hasIndex()) {
+                    if ((crossIndexNodeSource.getTagName() == null) ||
+                            (JOptionPane.YES_OPTION == JOptionPane.showConfirmDialog(
+                                Main.getInstance(), "本数据集节点不存在任何索引,建议您将本索引加入到数据集节点,是否加入?", "提示",
+                                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE))) {
                         dataSrc.setIndexFields(crossIndexNodeSource.getIndexFields());
                         dataSrc.setIndexFields2(crossIndexNodeSource.getIndexFields2());
                         updateTree(defaultMutableTreeNode, MODIFY);

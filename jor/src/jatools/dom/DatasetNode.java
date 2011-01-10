@@ -12,15 +12,14 @@ import jatools.dataset.IndexView;
 import jatools.dataset.RowSet;
 
 import jatools.dom.field.DatasetField;
-import jatools.dom.field.FixedNodeField;
+import jatools.dom.field.IndexField;
 import jatools.dom.field.RowField;
 
 import jatools.dom.src.DatasetNodeSource;
 
 import jatools.engine.script.DebugOff;
+import jatools.engine.script.KeyStack;
 import jatools.engine.script.Script;
-
-import org.apache.xerces.dom3.DOMConfiguration;
 
 import org.w3c.dom.Attr;
 import org.w3c.dom.CDATASection;
@@ -62,6 +61,7 @@ public class DatasetNode extends DatasetBasedNode implements Document {
     private String globalID;
     private RowField[] rowFields;
     private Object indexView;
+    private CrossFieldsCache crossFieldsCache;
 
     /**
     * Creates a new DatasetNode object.
@@ -649,15 +649,69 @@ public class DatasetNode extends DatasetBasedNode implements Document {
     public Object getProperty(String prop, CallStack callstack, Interpreter interpreter) {
         Dataset data = getDataset();
 
-        if (data != null) {
-            int col = data.getColumnIndex(prop);
+        if ((data != null) && (prop != null)) {
+            if (prop.startsWith("@")) {
+                prop = prop.substring(1);
 
-            if (col > -1) {
-                return new DatasetField(col, this);
+                int col = data.getColumnIndex(prop);
+
+                if (col > -1) {
+                    DatasetNodeSource src = (DatasetNodeSource) this.getSource();
+
+                    if (src.isCrossIndex()) { // 如果是交叉索引，那就缓存，提高效率
+
+                        if (this.crossFieldsCache == null) {
+                            this.crossFieldsCache = new CrossFieldsCache(this,
+                                    (CrossIndexView) this.getIndexView());
+                        }
+
+                        return this.crossFieldsCache.getProperty(prop);
+                    } else {
+                        KeyStack keyStack = this.getRoot().getScript()
+                                                .getKeyStack(this.getRoot().getScript()
+                                                                 .getStackType());
+
+                        return new IndexField((IndexView) this.getIndexView(), col, keyStack);
+                    }
+                }
+            } else {
+                int col = data.getColumnIndex(prop);
+
+                if (col > -1) {
+                    return new DatasetField(col, this);
+                }
             }
         }
 
         return Primitive.VOID;
+    }
+
+    private boolean hasIndex() {
+        DatasetNodeSource src = (DatasetNodeSource) this.getSource();
+
+        return src.hasIndex();
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public String[] getPropertyNames() {
+        String[] fields = super.getPropertyNames();
+
+        if ((fields != null) && this.hasIndex()) {
+            String[] ifields = new String[fields.length * 2];
+            System.arraycopy(fields, 0, ifields, 0, fields.length);
+
+            for (int i = 0; i < fields.length; i++) {
+                ifields[fields.length + i] = "@" + fields[i];
+            }
+
+            return ifields;
+        } else {
+            return fields;
+        }
     }
 
     /**

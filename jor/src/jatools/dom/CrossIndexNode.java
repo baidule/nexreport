@@ -1,19 +1,13 @@
 package jatools.dom;
 
-import bsh.CallStack;
-import bsh.Interpreter;
-import bsh.Primitive;
-
-import jatools.dataset.CrossIndexField;
 import jatools.dataset.CrossIndexView;
 import jatools.dataset.Dataset;
 import jatools.dataset.RowSet;
 
-import jatools.engine.script.KeyStack;
-
 import org.w3c.dom.Document;
 
-import java.util.HashMap;
+import bsh.CallStack;
+import bsh.Interpreter;
 
 
 /**
@@ -25,7 +19,7 @@ import java.util.HashMap;
 public class CrossIndexNode extends DatasetBasedNode {
     private String tag;
     private CrossIndexView indexView;
-    private HashMap<String, Object> fieldsCache;
+    private CrossFieldsCache cache;
 
     /**
      * Creates a new CrossIndexNode object.
@@ -119,28 +113,11 @@ public class CrossIndexNode extends DatasetBasedNode {
      * @return DOCUMENT ME!
      */
     public Object getProperty(String prop, CallStack callstack, Interpreter interpreter) {
-        if (this.fieldsCache == null) {
-            this.fieldsCache = new HashMap<String, Object>();
+        if (this.cache != null) {
+            this.cache = new CrossFieldsCache(this, this.indexView);
         }
 
-        Object result = this.fieldsCache.get(prop);
-
-        if (result == null) {
-            int col = getDataset().getColumnIndex(prop);
-
-            if (col > -1) {
-                KeyStack key = this.getRoot().getScript().getKeyStack(0);
-                KeyStack key2 = this.getRoot().getScript().getKeyStack(1);
-
-                result = new CrossIndexField(this.indexView, col, key, key2);
-            } else {
-                result = Primitive.VOID;
-            }
-
-            this.fieldsCache.put(prop, result);
-        }
-
-        return result;
+        return this.cache.getProperty(prop);
     }
 
     /**

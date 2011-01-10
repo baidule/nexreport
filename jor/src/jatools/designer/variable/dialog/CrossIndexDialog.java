@@ -1,13 +1,19 @@
 package jatools.designer.variable.dialog;
 
 import jatools.data.reader.DatasetReader;
+
 import jatools.dataset.Dataset;
 import jatools.dataset.DatasetException;
+
 import jatools.designer.Main;
+
 import jatools.dom.src.CrossIndexNodeSource;
 import jatools.dom.src.DatasetNodeSource;
+
 import jatools.engine.script.ReportContext;
+
 import jatools.resources.Messages;
+
 import jatools.swingx.CommandPanel;
 import jatools.swingx.SwingUtil;
 
@@ -40,6 +46,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
     private boolean success;
     private IndexFieldSelectPanel indexFieldSelectPanel;
     private CrossIndexNodeSource crossIndexSrc;
+    private boolean allowWithDatasetSrc;
 
     /**
     * Creates a new IndexEditor object.
@@ -67,7 +74,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         JPanel options = new JPanel(new FlowLayout(FlowLayout.LEFT));
         options.add(new JLabel("名称:"));
         nameText = new JTextField();
-        nameText.setPreferredSize(new Dimension(350,25));
+        nameText.setPreferredSize(new Dimension(350, 25));
         options.add(nameText);
 
         p.add(options, gbc);
@@ -111,6 +118,10 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
         indexFieldSelectPanel.setCrossIndex(true);
 
         this.crossIndexSrc = crossIndexSrc;
+
+        // 如果是在datasetSource上，则名称可以为空
+        // 如果正在新增，且 datasetSrc还没有定义index，则可以将索引定义装配到datasetSrc上
+        allowWithDatasetSrc = (crossIndexSrc == null) && !datasetNodeSrc.hasIndex();
     }
 
     /**
@@ -141,6 +152,9 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
      *
      * @return DOCUMENT ME!
      */
+    private boolean emptyName() {
+        return (this.nameText.getText() == null) || (this.nameText.getText().trim().length() == 0);
+    }
 
     /**
      * DOCUMENT ME!
@@ -149,8 +163,8 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
      */
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("ok")) {
-            if ((this.nameText.getText() == null) ||
-                    (this.nameText.getText().trim().length() == 0)) {
+            // 如果是允许加到datasetNodeSrc上,则不允许名称为空
+            if (!this.allowWithDatasetSrc && emptyName()) {
                 JOptionPane.showConfirmDialog(Main.getInstance(), "名称不能为空", "错误",
                     JOptionPane.CLOSED_OPTION, JOptionPane.ERROR_MESSAGE);
 
@@ -198,7 +212,7 @@ public class CrossIndexDialog extends JDialog implements ActionListener {
      */
     public CrossIndexNodeSource createNodeSource() {
         if (this.isSuccess()) {
-            return new CrossIndexNodeSource(nameText.getText(),
+            return new CrossIndexNodeSource(emptyName() ? null : nameText.getText(),
                 this.indexFieldSelectPanel.getIndexFields(),
                 this.indexFieldSelectPanel.getIndexFields2());
         } else {

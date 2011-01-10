@@ -1,6 +1,5 @@
 package jatools.designer.wizard.crosstab;
 
-
 import jatools.ReportDocument;
 import jatools.component.ColumnPanel;
 import jatools.component.Component;
@@ -24,11 +23,9 @@ import jatools.designer.wizard.BuilderContext;
 import jatools.designer.wizard.ReportBuilder;
 import jatools.designer.wizard.ReportStyler;
 import jatools.dom.Group;
-import jatools.dom.src.CrossIndexNodeSource;
 import jatools.dom.src.DatasetNodeSource;
 import jatools.dom.src.GroupNodeSource;
 import jatools.dom.src.RootNodeSource;
-import jatools.util.StringUtil;
 import jatools.util.Util;
 
 import java.awt.Frame;
@@ -133,15 +130,12 @@ public class CrossTabStyler implements ReportStyler {
         power.setPrintStyle(css);
 
         createCrossText(power, context);
-
         createCrossHeader(power);
 
         setBorder(power);
 
         power.setX(20);
         power.setY(20);
-
-        power.setInitPrint(StringUtil.format("#=!{#};", reader.getName(), reader.getName()));
 
         return power;
     }
@@ -226,10 +220,9 @@ public class CrossTabStyler implements ReportStyler {
             dataSource.add(columnGroupNodeSource);
         }
 
-        CrossIndexNodeSource crossDaasetNodeSource = new CrossIndexNodeSource(reader.getName() +
-                "_", getUniqueIndexes(indexFields), getUniqueIndexes(indexFields2));
+        dataSource.setIndexFields(getUniqueIndexes(indexFields));
+        dataSource.setIndexFields2(getUniqueIndexes(indexFields2));
 
-        dataSource.add(crossDaasetNodeSource);
         rootNodeSource.add(dataSource);
 
         return rootNodeSource;
@@ -285,7 +278,8 @@ public class CrossTabStyler implements ReportStyler {
 
         if (_isisRowSumTop) {
             if (multiRows) {
-                table.add(new Label(App.messages.getString("res.255")), 0, 0, rowsList.size(), sums.size());
+                table.add(new Label(App.messages.getString("res.255")), 0, 0, rowsList.size(),
+                    sums.size());
             } else {
                 table.add(new Label(App.messages.getString("res.255")), 0, 0, rowsList.size(), 1);
             }
@@ -306,8 +300,9 @@ public class CrossTabStyler implements ReportStyler {
 
                     int rowPosition = multiRows ? ((rowsList.size() - 1 - i) * (sums.size()))
                                                 : (rowsList.size() - 1 - i);
-                    rowPanel.add(new Label(App.messages.getString("res.227")), rowPosition + (multiRows ? sums.size() : 1),
-                        i + 1, rowsList.size() - 1 - i, rowSpane);
+                    rowPanel.add(new Label(App.messages.getString("res.227")),
+                        rowPosition + (multiRows ? sums.size() : 1), i + 1,
+                        rowsList.size() - 1 - i, rowSpane);
                 }
 
                 if (i == (rowsList.size() - 1)) {
@@ -349,8 +344,8 @@ public class CrossTabStyler implements ReportStyler {
 
                     int rowPosition = multiRows ? ((rowsList.size() - 1 - i) * (sums.size()))
                                                 : (rowsList.size() - 1 - i);
-                    rowPanel.add(new Label(App.messages.getString("res.227")), rowPosition, i + 1, rowsList.size() - 1 - i,
-                        rowSpane);
+                    rowPanel.add(new Label(App.messages.getString("res.227")), rowPosition, i + 1,
+                        rowsList.size() - 1 - i, rowSpane);
                 }
 
                 if (i == (rowsList.size() - 1)) {
@@ -380,7 +375,8 @@ public class CrossTabStyler implements ReportStyler {
                 table.add(new Label("合计"), rowsList.size() * sums.size(), 0, rowsList.size(),
                     sums.size());
             } else {
-                table.add(new Label(App.messages.getString("res.255")), rowsList.size(), 0, rowsList.size(), 1);
+                table.add(new Label(App.messages.getString("res.255")), rowsList.size(), 0,
+                    rowsList.size(), 1);
             }
         }
 
@@ -420,7 +416,8 @@ public class CrossTabStyler implements ReportStyler {
 
         if (_isColumnSumLeft) {
             if (mutilColumns) {
-                table.add(new Label(App.messages.getString("res.255")), 0, 0, sums.size(), columnsList.size());
+                table.add(new Label(App.messages.getString("res.255")), 0, 0, sums.size(),
+                    columnsList.size());
             } else {
                 table.add(new Label(App.messages.getString("res.255")), 0, 0, 1, columnsList.size());
             }
@@ -488,8 +485,8 @@ public class CrossTabStyler implements ReportStyler {
 
                     int columnPosition = mutilColumns ? ((columnsList.size() - 1 - i) * sums.size())
                                                       : (columnsList.size() - 1 - i);
-                    columnPanel.add(new Label(App.messages.getString("res.227")), i + 1, columnPosition, columnSpan,
-                        columnsList.size() - 1 - i);
+                    columnPanel.add(new Label(App.messages.getString("res.227")), i + 1,
+                        columnPosition, columnSpan, columnsList.size() - 1 - i);
                 }
 
                 if (i == (columnsList.size() - 1)) {
@@ -519,7 +516,8 @@ public class CrossTabStyler implements ReportStyler {
                 table.add(new Label("合计"), 0, columnsList.size() * sums.size(), sums.size(),
                     columnsList.size());
             } else {
-                table.add(new Label(App.messages.getString("res.255")), 0, columnsList.size(), 1, columnsList.size());
+                table.add(new Label(App.messages.getString("res.255")), 0, columnsList.size(), 1,
+                    columnsList.size());
             }
         }
 
@@ -552,7 +550,7 @@ public class CrossTabStyler implements ReportStyler {
                         String fieldName = sum.getCalcField();
                         Text text = new Text();
 
-                        String nothPath = StringUtil.format("=#_.#.#()", reader.getName(),
+                        String nothPath = String.format("=%s.@%s.DEF2.%s()", reader.getName(),
                                 fieldName, calcName);
                         text.setVariable(nothPath);
 
@@ -573,7 +571,7 @@ public class CrossTabStyler implements ReportStyler {
                         String fieldName = sum.getCalcField();
                         Text text = new Text();
 
-                        String nothPath = StringUtil.format("=#_.#.#()", reader.getName(),
+                        String nothPath = String.format("=%s.@%s.DEF2.%s()", reader.getName(),
                                 fieldName, calcName);
                         text.setVariable(nothPath);
                         power.add(text, i, j + k);
@@ -592,7 +590,6 @@ public class CrossTabStyler implements ReportStyler {
         crossPanel.add(line);
 
         power.add(crossPanel, 0, 0, c, r);
-
     }
 
     void configPanel(ArrayList panels, Panel first) {
