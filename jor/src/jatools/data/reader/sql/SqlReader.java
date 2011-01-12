@@ -224,9 +224,9 @@ public class SqlReader extends AbstractDatasetReader {
                     // 修正bug,当输入的sql以分号结束时
                   
 
-                    sqlcopy = "select * from (" + sqlcopy + ") a where 1=0";
+                 //   sqlcopy = "select * from (" + sqlcopy + ") a where 1=0";
                     
-                //    sqlcopy = SqlUtil.toNodataSql(sqlcopy);
+                   sqlcopy = SqlUtil.toNodataSql(sqlcopy);
                 }
 
                 stmt = conn.prepareStatement(sqlcopy, ResultSet.TYPE_SCROLL_INSENSITIVE,
