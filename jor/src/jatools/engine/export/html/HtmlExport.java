@@ -1013,14 +1013,17 @@ public class HtmlExport extends BasicExport {
             int indexof = hyperlink.indexOf("url:");
             target = hyperlink.substring(0, indexof - 1);
             target = target.replaceAll(":", "='");
-            link = StringUtil.encodeURI(hyperlink.substring(indexof + 4, hyperlink.length()));
+            link = hyperlink.substring(indexof + 4, hyperlink.length());
 
             if (link.startsWith("javascript")) {
+            	// 如果是javascript,不需要转义了
                 link = link.substring(link.indexOf(":") + 1);
 
                 text = "<a href='javascript:' onclick='" + link + "'>" +
-                    (flag ? getEncodedBlankText(text) : text) + "</a>";
+                     text + "</a>";
             } else {
+            	// 普通的超链接，需要转义一下
+            	link = StringUtil.encodeURI(link);
                 text = "<a href='" + link + "' " + target + "'>" +
                     (flag ? getEncodedBlankText(text) : text) + "</a>";
             }

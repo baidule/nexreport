@@ -22,7 +22,7 @@ public class CodeConvert {
     * @param args DOCUMENT ME!
     */
     public static void main(String[] args) {
-        convert(new File("E:\\java\\JOR\\src"), ".java");
+        convert(new File("E:\\java\\ReportDesk"), ".java");
     }
 
     static void convert(File f, String ext) {
