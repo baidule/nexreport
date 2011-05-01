@@ -12,6 +12,7 @@ import org.krysalis.barcode4j.BarcodeClassResolver;
 import org.krysalis.barcode4j.DefaultBarcodeClassResolver;
 
 
+
 /**
  * @author java
  *

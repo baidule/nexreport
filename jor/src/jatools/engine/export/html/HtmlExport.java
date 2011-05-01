@@ -1007,6 +1007,8 @@ public class HtmlExport extends BasicExport {
     }
 
     String encodeHyperlink(String hyperlink, String text, boolean flag) {
+    	
+    	
         if ((hyperlink != null) && (text != null) && (text.trim().length() > 0)) {
             String target = null;
             String link = null;
@@ -1027,6 +1029,10 @@ public class HtmlExport extends BasicExport {
                 text = "<a href='" + link + "' " + target + "'>" +
                     (flag ? getEncodedBlankText(text) : text) + "</a>";
             }
+        }else if( (text != null) && (text.trim().length() > 0)
+        		)
+        {
+        	text = getEncodedBlankText(text);
         }
 
         return (text == null) ? "" : text;

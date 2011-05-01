@@ -1,20 +1,11 @@
 package jatools.dataset;
 
-import bsh.NameSpace;
-import bsh.UtilEvalError;
-
 import jatools.accessor.ProtectPublic;
-
 import jatools.data.reader.DatasetCursor;
 import jatools.data.reader.DatasetReader;
 import jatools.data.reader.ScrollableField;
-
 import jatools.data.sum.Sum;
-
 import jatools.designer.App;
-
-import jatools.dom.Group;
-
 import jatools.engine.script.DebugOff;
 import jatools.engine.script.ReportContext;
 
@@ -23,12 +14,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.io.Reader;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import bsh.NameSpace;
+import bsh.UtilEvalError;
 
 
 /**

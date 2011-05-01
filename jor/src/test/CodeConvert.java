@@ -22,13 +22,13 @@ public class CodeConvert {
     * @param args DOCUMENT ME!
     */
     public static void main(String[] args) {
-        convert(new File("E:\\java\\ReportDesk"), ".java");
+         convert(new File("H:\\backup\\src.jatools"), ".java","UTF-8","GB2312");
     }
 
-    static void convert(File f, String ext) {
+    static void convert(File f, String ext,String from,String to) {
         if (f.isDirectory()) {
             for (File fs : f.listFiles()) {
-                convert(fs, ext);
+                convert(fs, ext,from,to);
             }
         } else if (f.getName().endsWith(ext)) {
             try {
@@ -39,8 +39,8 @@ public class CodeConvert {
                 fis.read(buffers);
                 fis.close();
 
-                OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(f), "UTF-8"); //
-                writer.write(new String(buffers, "GB2312"));
+                OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(f), to); //
+                writer.write(new String(buffers, from));
 
                 writer.close();
             } catch (FileNotFoundException e) {

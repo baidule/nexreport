@@ -40,6 +40,8 @@ public class ReportJob implements ProtectPublic {
     public static String HTML_PAGE_CACHE = "_html_page_cache";
     public static String HTML_REPORT_CACHER = "_html_report_cacher";
     public static String HTML_REPORT_SERVER_PATH = "_html_report_server_path";
+    public static String HTML_CSS_HEAD_ONLY = "_html_css_head_only";
+    
     public static String AS_PARAM = "as";
     public static String FILE_PARAM = "file";
     public static String CACHED_PARAMS = "cached_params";

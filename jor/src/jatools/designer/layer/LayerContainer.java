@@ -20,6 +20,7 @@ import jatools.util.CursorUtil;
 import java.awt.AWTEvent;
 import java.awt.Cursor;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -39,6 +40,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.swing.JPopupMenu;
+import javax.swing.JViewport;
 
 
 /**
@@ -47,7 +49,7 @@ import javax.swing.JPopupMenu;
  * @author $author$
  * @version $Revision$
   */
-public class LayerContainer extends LayerPanel implements ActionListener/*, DropTargetListener*/ {
+public class LayerContainer extends LayerPanel implements ActionListener /*, DropTargetListener*/ {
     private static final int DOUBLE_PRESS = 1000;
     private Layer activeLayer;
     private ArrayList mouseDraggedLayers = new ArrayList();
@@ -69,6 +71,8 @@ public class LayerContainer extends LayerPanel implements ActionListener/*, Drop
     BabyLooker looker;
     private Cursor lockedCursor;
     Object lastLayer;
+    private final javax.swing.Timer scroller;
+    private Point last = new Point();
 
     /**
      * Creates a new LayerContainer object.
@@ -84,8 +88,37 @@ public class LayerContainer extends LayerPanel implements ActionListener/*, Drop
         enableEvents(AWTEvent.MOUSE_MOTION_EVENT_MASK);
 
         this.setToolTipText("tip");
+        this.scroller = new javax.swing.Timer(5,
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        // TODO Auto-generated method stub
+                        autoScroll();
+                    }
+                });
 
         new ReportPanelDropHandler(owner, this);
+    }
+
+    protected void autoScroll() {
+        JViewport vport = this.owner.getScrollPanel().getViewport();
+
+        int w = vport.getWidth();
+        int h = vport.getHeight();
+
+        // System.out.println(last);
+        if (last.x < 0) {
+            last.x -= 3;
+        } else if (last.x > w) {
+            last.x += 3;
+        }
+
+        if (last.y < 0) {
+            last.y -= 3;
+        } else if (last.y > h) {
+            last.y += 3;
+        }
+
+        this.scrollRectToVisible(new Rectangle(last.x, last.y, 10, 10));
     }
 
     /**
@@ -242,11 +275,15 @@ public class LayerContainer extends LayerPanel implements ActionListener/*, Drop
             break;
 
         case MouseEvent.MOUSE_RELEASED:
+            this.scroller.stop();
             mouseReleased(modifier, x, y);
 
             break;
 
         case MouseEvent.MOUSE_DRAGGED:
+            scroller.stop();
+            last.setLocation(evt.getPoint());
+            scroller.start();
             mouseDragged(modifier, x, y, deltaX, deltaY);
 
             break;
@@ -635,11 +672,11 @@ public class LayerContainer extends LayerPanel implements ActionListener/*, Drop
         }
     }
 
-       /**
-     * DOCUMENT ME!
-     *
-     * @return DOCUMENT ME!
-     */
+    /**
+    * DOCUMENT ME!
+    *
+    * @return DOCUMENT ME!
+    */
     public Layer getActiveLayer() {
         return this.activeLayer;
     }
