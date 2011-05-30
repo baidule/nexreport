@@ -113,7 +113,7 @@ public class CrossIndexNode extends DatasetBasedNode {
      * @return DOCUMENT ME!
      */
     public Object getProperty(String prop, CallStack callstack, Interpreter interpreter) {
-        if (this.cache != null) {
+        if (this.cache == null) {
             this.cache = new CrossFieldsCache(this, this.indexView);
         }
 
