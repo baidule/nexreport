@@ -70,6 +70,8 @@ public class TextPrinter extends LabelPrinter implements ExternalEval {
                 }
             }
         }
+        
+
 
         return format(lastValue);
     }

@@ -27,6 +27,9 @@ public class EditorTabPanel extends CloseableTabbedPane implements CloseableTabb
      * Creates a new EditorTabPanel object.
      */
     public EditorTabPanel() {
+    	
+    	
+    	
         this.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         this.addCloseableTabbedPaneListener(this);
         this.addChangeListener(new ChangeListener() {

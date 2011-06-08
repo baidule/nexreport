@@ -109,9 +109,9 @@ public class ReportPrinter implements PrintConstants, ProtectPublic {
         if (model == null) {
             model = new ReportDataModel(doc.getNodeSource(), context.getScript());
 
-            if (!NO_CACHE_MODEL) {
-                parameters.put(MODEL, model);
-            }
+          //  if (!NO_CACHE_MODEL) {
+            //    parameters.put(MODEL, model);
+            //}
             
 
         } else {
