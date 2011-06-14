@@ -7,6 +7,7 @@ import jatools.component.ImageStyle;
 import jatools.component.Size;
 
 import jatools.core.view.AbstractView;
+import jatools.core.view.Border;
 import jatools.core.view.ClipView;
 import jatools.core.view.CompoundView;
 import jatools.core.view.DisplayStyleManager;
@@ -402,7 +403,9 @@ public class HtmlExport extends BasicExport {
 
     private void encodeCompound(CompoundView p) throws IOException {
         if (p.hasShapes()) {
+        	p.getBounds().height -=2;
             encodeImage(p.asImageView());
+            p.getBounds().height +=2;
         } else {
             Rectangle b = p.getBounds();
 
@@ -802,7 +805,21 @@ public class HtmlExport extends BasicExport {
             if (id > -1) {
                 cls = DisplayStyleManager.TD_CLASS_PREFIX + id;
             }
-        }
+        }else {
+			Border b = ((AbstractView) v).getBorder();
+
+			if (b != null) {
+				String[] styles = (String[]) this.borderCache.get(b);
+
+				if (styles == null) {
+					styles = new String[] { "mb" + this.borderCache.size(),
+							"{" + b.toString() + "}\n" };
+					this.borderCache.put(b, styles);
+				}
+
+				return styles[0];
+			}
+		}
 
         return cls;
     }
