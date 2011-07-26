@@ -43,6 +43,8 @@ public interface RowSet extends RowList {
      * @return DOCUMENT ME!
      */
     public Object valueAt(int col);
+    
+    public Object valueAt(int col,boolean def);
 
     /**
      * DOCUMENT ME!

@@ -22,7 +22,7 @@ public class CodeConvert {
     * @param args DOCUMENT ME!
     */
     public static void main(String[] args) {
-         convert(new File("H:\\backup\\src.jatools"), ".java","UTF-8","GB2312");
+         convert(new File("E:\\java\\jatoolsprinterdesigner\\src"), ".java","GB2312","UTF-8");
     }
 
     static void convert(File f, String ext,String from,String to) {

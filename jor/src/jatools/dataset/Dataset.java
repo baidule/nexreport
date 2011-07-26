@@ -1,11 +1,18 @@
 package jatools.dataset;
 
+import bsh.NameSpace;
+import bsh.UtilEvalError;
+
 import jatools.accessor.ProtectPublic;
+
 import jatools.data.reader.DatasetCursor;
 import jatools.data.reader.DatasetReader;
 import jatools.data.reader.ScrollableField;
+
 import jatools.data.sum.Sum;
+
 import jatools.designer.App;
+
 import jatools.engine.script.DebugOff;
 import jatools.engine.script.ReportContext;
 
@@ -14,14 +21,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.io.Reader;
+
+import java.math.BigDecimal;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import bsh.NameSpace;
-import bsh.UtilEvalError;
 
 
 /**
@@ -37,6 +44,7 @@ public class Dataset implements DatasetBase, ProtectPublic {
     public static Dataset nulls;
     public final static int NO_MORE_ROWS = -1;
     public final static int ERROR = 0;
+    private static Map<String, Object> defaults;
     protected RowsVector rows;
     protected RowMeta rowInfo;
     private DatasetReader readerSrc = null;
@@ -1136,5 +1144,24 @@ public class Dataset implements DatasetBase, ProtectPublic {
      */
     public void sort(RowComparator rowComparator) {
         Arrays.sort(this.rows.elementData, rowComparator);
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param col DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public Object getDefaultValue(int col) {
+        if (defaults == null) {
+            defaults = new HashMap<String, Object>();
+            defaults.put(BigDecimal.class.getName(), new BigDecimal(0));
+            defaults.put(Integer.class.getName(), new Integer(0));
+            defaults.put(Double.class.getName(), new Double(0));
+            defaults.put(Float.class.getName(), new Float(0));
+        }
+
+        return defaults.get(this.getColumnClassName(col));
     }
 }

@@ -107,7 +107,7 @@ public class WhereExpressionVisitor implements ExpressionVisitor, ParserConstant
             RowMeta rowMeta = new RowMeta(columns);
 
             Statement stat = new CCJSqlParserManager().parse(new StringReader(
-                        "select * from a where 姓名='崔永远'"));
+                        "select * from a where 姓名='崔永远' and 年龄=18"));
             Select select = (Select) stat;
             Expression where = ((PlainSelect) select.getSelectBody()).getWhere();
 

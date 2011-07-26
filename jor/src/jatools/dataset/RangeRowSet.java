@@ -1,7 +1,6 @@
 package jatools.dataset;
 
 
-
 /**
  * DOCUMENT ME!
  *
@@ -106,14 +105,39 @@ public class RangeRowSet implements RowSet {
      * @return DOCUMENT ME!
      */
     public Row[] toArray() {
-        Row[] rows = new Row[this.length() ];
+        Row[] rows = new Row[this.length()];
+
         for (int i = from; i <= to; i++) {
-			rows[i-from] = this.getDataset().getReferenceToRow( i);
-		}
+            rows[i - from] = this.getDataset().getReferenceToRow(i);
+        }
+
         return rows;
     }
 
-	public int firstRow() {
-		return this.from;
-	}
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public int firstRow() {
+        return this.from;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param col DOCUMENT ME!
+     * @param def DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public Object valueAt(int col, boolean def) {
+        Object result = valueAt(col);
+
+        if (def && (result == null)) {
+            return this.getDataset().getDefaultValue(col);
+        } else {
+            return result;
+        }
+    }
 }

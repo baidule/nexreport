@@ -126,4 +126,22 @@ public class RandomRowSet implements RowSet {
     public int firstRow() {
         return ((this.rows != null) && (this.rows.length > 0)) ? this.rows[0] : (-1);
     }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param col DOCUMENT ME!
+     * @param def DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public Object valueAt(int col, boolean def) {
+        Object result = valueAt(col);
+
+        if (def && (result == null)) {
+            return this.getDataset().getDefaultValue(col);
+        } else {
+            return result;
+        }
+    }
 }
