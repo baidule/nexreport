@@ -15,6 +15,7 @@ import java.math.BigInteger;
  * @version $Revision: 1.3 $
  */
 public class Math implements ProtectPublic {
+	private static final Integer DEFAULTIFNULL = new Integer(0);
     /**
      * DOCUMENT ME!
      *
@@ -157,6 +158,11 @@ public class Math implements ProtectPublic {
                 val = value;
             }
         }
+        
+        if(val == null)
+        {
+        	val = DEFAULTIFNULL;
+        }
 
         return val;
     }
@@ -212,7 +218,7 @@ public class Math implements ProtectPublic {
             return bigDecimal1.add(bigDecimal2);
         }
 
-        return null;
+        return DEFAULTIFNULL;
     }
 
     /**
