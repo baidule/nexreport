@@ -6,6 +6,7 @@ import jatools.data.sum.SumField;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import bsh.Primitive;
 
 
 /**
@@ -15,7 +16,8 @@ import java.math.BigInteger;
  * @version $Revision: 1.3 $
  */
 public class Math implements ProtectPublic {
-	private static final Integer DEFAULTIFNULL = new Integer(0);
+    private static final Double DEFAULTIFNULL = new Double(0);
+
     /**
      * DOCUMENT ME!
      *
@@ -158,10 +160,9 @@ public class Math implements ProtectPublic {
                 val = value;
             }
         }
-        
-        if(val == null)
-        {
-        	val = DEFAULTIFNULL;
+
+        if (val == null) {
+            val = DEFAULTIFNULL;
         }
 
         return val;
@@ -178,6 +179,10 @@ public class Math implements ProtectPublic {
      * @return DOCUMENT ME!
      */
     private static Number sum(Number value1, Number value2) {
+        if ((value1 == null) && (value2 == null)) {
+            return DEFAULTIFNULL;
+        }
+
         if ((value1 == null) && (value2 != null)) {
             return value2;
         }
@@ -185,6 +190,10 @@ public class Math implements ProtectPublic {
         if ((value2 == null) && (value1 != null)) {
             return value1;
         }
+
+        Object[] vals = Primitive.promotePrimitives(value1, value2);
+        value1 = (Number) vals[0];
+        value2 = (Number) vals[1];
 
         if (value1 instanceof Integer) {
             return new Integer(((Integer) value1).intValue() + ((Integer) value2).intValue());
