@@ -246,19 +246,20 @@ public class Util implements ProtectPublic {
         try {
             String prefix = boolGet ? "is" : "get";
             setter = c.getMethod(prefix + prop, new Class[0]);
+            try {
+                return setter.invoke(obj, new Object[0]);
+            } catch (InvocationTargetException ex) {
+                ex.printStackTrace();
+            } catch (IllegalArgumentException ex) {
+                ex.printStackTrace();
+            } catch (IllegalAccessException ex) {
+                ex.printStackTrace();
+            }
         } catch (SecurityException ex) {
         } catch (NoSuchMethodException ex) {
         }
 
-        try {
-            return setter.invoke(obj, new Object[0]);
-        } catch (InvocationTargetException ex) {
-            ex.printStackTrace();
-        } catch (IllegalArgumentException ex) {
-            ex.printStackTrace();
-        } catch (IllegalAccessException ex) {
-            ex.printStackTrace();
-        }
+       
 
         return null;
     }

@@ -240,7 +240,7 @@ class Column {
      */
     public static Object convertString(String s, int type)
         throws SQLException {
-        if (s == null) {
+        if (s == null || "null".equals(s)) {
             return null;
         }
 

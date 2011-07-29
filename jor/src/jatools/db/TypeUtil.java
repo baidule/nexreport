@@ -126,6 +126,7 @@ public class TypeUtil {
      */
     public static Object valueOf(String expr, int sqlID)
         throws SQLException {
+    	
         return Column.convertString(expr, sqlID);
     }
 
