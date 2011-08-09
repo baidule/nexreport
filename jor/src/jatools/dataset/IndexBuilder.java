@@ -72,7 +72,7 @@ public class IndexBuilder {
     public Map build() {
         this.index = new HashMap();
         build(0, 0, this.rows.length - 1);
-        this.index.put(Dataset.STAR, getTotalIndex());
+        this.index.put(Dataset.ANY, getTotalIndex());
 
         return this.index;
     }

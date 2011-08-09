@@ -84,8 +84,8 @@ public class IndexField extends AbstractValuesField implements Filter {
 
             Key key = null;
 
-            if ((keys.length == 1) && (keys[0] == Dataset.STAR)) {
-                key = Dataset.STAR;
+            if ((keys.length == 1) && (keys[0] == Dataset.ANY)) {
+                key = Dataset.ANY;
             } else {
                 key = new Key(keys);
             }

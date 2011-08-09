@@ -57,7 +57,7 @@ public class FilteredCrossIndexField extends AbstractValuesField implements Filt
     public Object[] values() {
         if (this.rowset != null) {
             try {
-                RowSet rowset = this.rowset.locate(Dataset.STAR);
+                RowSet rowset = this.rowset.locate(Dataset.ANY);
 
                 if (rowset != null) {
                     return rowset.valuesAt(col);
@@ -107,7 +107,7 @@ public class FilteredCrossIndexField extends AbstractValuesField implements Filt
     public Object getProperty(String prop, CallStack callstack, Interpreter interpreter)
         throws UtilEvalError {
         if (prop.equals("ALL")) {
-            return new SimpleValuesField(this.locate(Dataset.STAR));
+            return new SimpleValuesField(this.locate(Dataset.ANY));
         } else if (prop.equals("DEF")) {
             return new SimpleValuesField(this.locate(def.getKey()));
         } else {
@@ -138,7 +138,7 @@ public class FilteredCrossIndexField extends AbstractValuesField implements Filt
 
             key = new Key(keys);
         } else if (parameterNode == null) {
-            key = Dataset.STAR;
+            key = Dataset.ANY;
         }
 
         if (key != null) {

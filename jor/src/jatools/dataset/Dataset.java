@@ -40,7 +40,7 @@ import java.util.Map;
 public class Dataset implements DatasetBase, ProtectPublic {
     public static final int ASC = 0;
     public static final int DESC = 1;
-    public static final Key STAR = new Key(new Object[0]);
+    public static final Key ANY = new Key(new Object[0]);
     public static Dataset nulls;
     public final static int NO_MORE_ROWS = -1;
     public final static int ERROR = 0;
@@ -144,7 +144,7 @@ public class Dataset implements DatasetBase, ProtectPublic {
     @DebugOff
     public RowSet getRowSet() {
         if (this.rowset == null) {
-            this.rowset = new RangeRowSet(this, STAR, 0, this.getRowCount() - 1);
+            this.rowset = new RangeRowSet(this, ANY, 0, this.getRowCount() - 1);
         }
 
         return this.rowset;

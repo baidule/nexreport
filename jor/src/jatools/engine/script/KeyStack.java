@@ -30,7 +30,7 @@ public class KeyStack {
      * Creates a new KeyManager object.
      */
     public KeyStack() {
-        this.stack.push(Dataset.STAR);
+        this.stack.push(Dataset.ANY);
     }
 
     /**

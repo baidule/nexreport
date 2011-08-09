@@ -72,7 +72,7 @@ public class CrossRowSet extends RandomRowSet {
                 Map newmap = new IndexBuilder(this, newcols2).build();
 
                 for (Object k : newmap.keySet()) {
-                    if (k != Dataset.STAR) {
+                    if (k != Dataset.ANY) {
                         Key k2 = (Key) k;
                         Object[] tempkey = new Object[cols2.length];
                         Arrays.fill(tempkey, Key.ANY);

@@ -10,7 +10,7 @@ import org.apache.commons.lang.ArrayUtils;
  * @version $Revision: 1.4 $
   */
 public class Key {
-    public static final Object ANY = new Object();
+    public static final Object ANY = Dataset.ANY;
     public static final Object UNKNOWN = new Object();
     
     public Object[] elements;

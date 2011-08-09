@@ -150,7 +150,7 @@ public class GroupNode extends DatasetBasedNode {
     public Key getKey() {
         Key key = super.getKey();
 
-        if (key != Dataset.STAR) {
+        if (key != Dataset.ANY) {
             return key;
         } else {
             return this.rowset.key();

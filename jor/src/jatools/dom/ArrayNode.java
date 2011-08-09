@@ -65,7 +65,7 @@ public class ArrayNode extends ElementBase implements NodeList {
     public Key getKey() {
         Key key = super.getKey();
 
-        if (key != Dataset.STAR) {
+        if (key != Dataset.ANY) {
             return key;
         } else {
             return new Key(new Object[] { value() });

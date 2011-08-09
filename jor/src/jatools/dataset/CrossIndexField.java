@@ -73,7 +73,7 @@ public class CrossIndexField extends AbstractValuesField implements Filter, Prop
      */
     public Object[] values() {
         try {
-            RowSet rowset = this.indexView.locate(Dataset.STAR, Dataset.STAR);
+            RowSet rowset = this.indexView.locate(Dataset.ANY, Dataset.ANY);
 
             if (rowset != null) {
                 return rowset.valuesAt(col);
@@ -140,7 +140,7 @@ public class CrossIndexField extends AbstractValuesField implements Filter, Prop
                 key = new Key(keys);
             }
         } else if (parameterNode == null) {
-            key = Dataset.STAR;
+            key = Dataset.ANY;
         }
 
         if (key != null) {
@@ -172,13 +172,13 @@ public class CrossIndexField extends AbstractValuesField implements Filter, Prop
         } else {
             if (prop.equals("ALL")) {
                 if (all == null) {
-                    all = new FilteredCrossIndexField(this.indexView.locate(Dataset.STAR), col, key2);
+                    all = new FilteredCrossIndexField(this.indexView.locate(Dataset.ANY), col, key2);
                 }
 
                 return all;
             } else if (prop.equals("ALL2")) {
                 if (all2 == null) {
-                    all2 = new SimpleValuesField(this.locate(Dataset.STAR, Dataset.STAR));
+                    all2 = new SimpleValuesField(this.locate(Dataset.ANY, Dataset.ANY));
                 }
 
                 return all2;

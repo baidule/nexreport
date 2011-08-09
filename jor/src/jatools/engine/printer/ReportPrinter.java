@@ -94,7 +94,7 @@ public class ReportPrinter implements PrintConstants, ProtectPublic {
 
         context.getScript().set("$$nodestack", context.getScript().getNodeStack(0));
         // ALL 已经不需要了，已经很丰富了 用 all2,all3
-        //context.getScript().set("ALL", Dataset.STAR);
+        context.getScript().set("ALL", Key.ANY);
         context.getScript().set("ANY", Key.ANY);
         
         

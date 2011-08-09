@@ -16,7 +16,7 @@ public class CrossIndexBuilder extends IndexBuilder {
     }
 
     protected Object getTotalIndex() {
-        return new CrossRowSet(src.getDataset(), Dataset.STAR, ids, cols2);
+        return new CrossRowSet(src.getDataset(), Dataset.ANY, ids, cols2);
     }
 
     protected RowSet getIndex(Key key, int _from, int _to) {

@@ -294,7 +294,7 @@ public abstract class ElementBase extends NodeBase implements Element {
 
             return new Key(tmp);
         } else {
-            return Dataset.STAR;
+            return Dataset.ANY;
         }
     }
 
