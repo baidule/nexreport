@@ -101,4 +101,8 @@ public class ImagePainter extends SimplePainter {
 
         return image;
     }
+    
+    public static void main(String[] args) {
+		System.out.println("\u201d");
+	}
 }

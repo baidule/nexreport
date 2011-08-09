@@ -12,6 +12,7 @@ import jatools.data.Formula;
 import jatools.data.Parameter;
 import jatools.data.reader.sql.SqlReader;
 import jatools.dataset.Dataset;
+import jatools.dataset.Key;
 import jatools.designer.App;
 import jatools.dom.ReportDataModel;
 import jatools.engine.PrintConstants;
@@ -92,7 +93,11 @@ public class ReportPrinter implements PrintConstants, ProtectPublic {
         context.getScript().set(IMAGE_LOADER, new AwtImageLoader(context.getScript()));
 
         context.getScript().set("$$nodestack", context.getScript().getNodeStack(0));
-        context.getScript().set("ALL", Dataset.STAR);
+        // ALL 已经不需要了，已经很丰富了 用 all2,all3
+        //context.getScript().set("ALL", Dataset.STAR);
+        context.getScript().set("ANY", Key.ANY);
+        
+        
 
         declareDocumentVariables(context.getScript(), doc);
 

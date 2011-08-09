@@ -10,6 +10,9 @@ import org.apache.commons.lang.ArrayUtils;
  * @version $Revision: 1.4 $
   */
 public class Key {
+    public static final Object ANY = new Object();
+    public static final Object UNKNOWN = new Object();
+    
     public Object[] elements;
 
     /**
@@ -147,5 +150,22 @@ public class Key {
      */
     public String toString() {
         return ArrayUtils.toString(this.elements);
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public boolean hasAll() {
+        if (this.elements != null) {
+            for (Object obj : this.elements) {
+                if (obj == ANY) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
