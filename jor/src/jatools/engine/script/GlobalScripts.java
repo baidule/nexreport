@@ -14,6 +14,8 @@ import jatools.engine.script.debug.ScriptDebugger;
 
 import jatools.util.HZUtil;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.io.UnsupportedEncodingException;
 
 import java.net.URLEncoder;
@@ -29,6 +31,8 @@ import java.text.SimpleDateFormat;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -62,6 +66,44 @@ public class GlobalScripts implements ProtectPublic {
         cal.setTime(d);
 
         return cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param keys DOCUMENT ME!
+     * @param values DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public static Map toMap(String keys, String values) {
+        HashMap result = new HashMap();
+
+        String[] ks = keys.split(",");
+        String[] vs = values.split(",");
+
+        for (int i = 0; i < vs.length; i++) {
+            result.put(ks[i], new Integer(vs[i]));
+        }
+
+        return result;
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param src DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public static String quoted(String src) {
+        String[] a = src.split(",");
+
+        for (int i = 0; i < a.length; i++) {
+            a[i] = String.format("'%s'", a[i]);
+        }
+
+        return StringUtils.join(a, ',');
     }
 
     /**
@@ -251,6 +293,15 @@ public class GlobalScripts implements ProtectPublic {
      */
     public static double max(double a, double b) {
         return Math.max(a, b);
+    }
+
+    /**
+     * DOCUMENT ME!
+     *
+     * @param args DOCUMENT ME!
+     */
+    public static void main(String[] args) {
+        System.out.println(quoted("m0001,m0002,m0003"));
     }
 
     /**

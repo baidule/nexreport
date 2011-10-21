@@ -30,6 +30,9 @@ public interface ValuesField extends jatools.engine.ValueIfClosed,Index {
      * @return DOCUMENT ME!
      */
     public Object sum();
+    
+    
+    
 
     /**
      * DOCUMENT ME!

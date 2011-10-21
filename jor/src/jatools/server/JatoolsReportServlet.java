@@ -1,6 +1,7 @@
 package jatools.server;
 
 import jatools.accessor.ProtectPublic;
+import jatools.data.reader.sql.ModelsQuery;
 import jatools.designer.App;
 import jatools.engine.ReportJob;
 
@@ -55,6 +56,13 @@ public class JatoolsReportServlet extends HttpServlet implements ProtectPublic {
 
         if ("export".equals(action)) {
             ReportExporter.service(request, response);
+        }else if ("querymodel".equals(action)) {
+        	try {
+				ModelsQuery.service(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } else if (action == null) {
             ReportWriter.service(request, response);
         } else if ("tempfile".equals(action)) {

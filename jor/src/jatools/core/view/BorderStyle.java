@@ -1,9 +1,10 @@
 package jatools.core.view;
 
 import java.awt.Color;
-
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -165,4 +166,46 @@ public class BorderStyle implements BorderBase {
 
         return style;
     }
+    
+    public static void main(String[] args) {
+    	  String text = "border-top:10 solid #123;border-top:10 solid 123px";
+    	  
+    	  
+    	  
+          System.out.println("Old text : " + text);
+          System.out.println("New text : " + getEditedText(text));
+	}
+    
+  
+
+      /**
+      * Replace all words starting with the letter 'a' or 'A' with
+      * their uppercase forms.
+      */
+      private static String getEditedText(String aText){
+        StringBuffer result = new StringBuffer();
+        Matcher matcher = fINITIAL_A.matcher(aText);
+        while ( matcher.find() ) {
+        	
+        	for(int i = 0;i < matcher.groupCount();i++)
+        		System.out.println(i+">>"+matcher.group(i));
+        	
+        	
+          matcher.appendReplacement(result, getReplacement(matcher));
+        }
+        matcher.appendTail(result);
+        return result.toString();
+      }
+
+      private static final Pattern fINITIAL_A = Pattern.compile(
+        "([\\s|:]+\\d+[\\s|$])",
+        Pattern.CASE_INSENSITIVE
+      );
+
+      private static String getReplacement(Matcher aMatcher){
+        return aMatcher.group(0).replaceAll("\\s+$","")+"px ";
+      }
+
+  
+
 }

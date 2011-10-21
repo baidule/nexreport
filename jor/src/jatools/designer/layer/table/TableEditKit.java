@@ -148,7 +148,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
      *
      */
     public TableEditKit() {
-        KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
+        KeyboardFocusManager.getCurrentKeyboardFocusManager()
+                            .addKeyEventDispatcher(this);
     }
 
     void setMenuProvider(MenuProvider menuProvider) {
@@ -318,7 +319,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         if (hit == TablePeer._EAST) {
             int lastColumn = (sel.x + sel.width) - 1;
 
-            return this.colResizer.init(lastColumn, getColumnFrom(table, lastColumn));
+            return this.colResizer.init(lastColumn,
+                getColumnFrom(table, lastColumn));
         } else if (hit == TablePeer._SOUTH) {
             int lastRow = (sel.y + sel.height) - 1;
 
@@ -378,7 +380,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         try {
             Cell cid = hitCell(getTable(), x, y);
 
-            if ((info.lastSelCell.x == cid.column) && (info.lastSelCell.y == cid.row)) {
+            if ((info.lastSelCell.x == cid.column) &&
+                    (info.lastSelCell.y == cid.row)) {
                 return;
             }
 
@@ -403,8 +406,11 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
             if ((cell.row != info.lastRow) || (cell.column != info.lastColumn)) {
                 Rectangle sel = (Rectangle) tablePeer.getSelection().clone();
-                sel.translate(cell.column - info.startCol, cell.row - info.startRow);
-                cellsRubber.moveTo(getTable().getBounds(sel.y, sel.x, sel.width, sel.height));
+                sel.translate(cell.column - info.startCol,
+                    cell.row - info.startRow);
+                cellsRubber.moveTo(getTable()
+                                       .getBounds(sel.y, sel.x, sel.width,
+                        sel.height));
                 cellMover.x = sel.x;
                 cellMover.y = sel.y;
 
@@ -423,10 +429,12 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
             Cell cell = getTable().getGrowStandardCellAt(x, y);
 
             if ((cell.row != info.lastRow) || (cell.column != info.lastColumn)) {
-                if (((cell.row - info.startRow) >= 0) && ((cell.column - info.startCol) >= 0)) {
+                if (((cell.row - info.startRow) >= 0) &&
+                        ((cell.column - info.startCol) >= 0)) {
                     cellsRubber.moveTo(getTable()
-                                           .getBounds(info.startRow, info.startCol,
-                            cell.column - info.startCol + 1, cell.row - info.startRow + 1));
+                                           .getBounds(info.startRow,
+                            info.startCol, cell.column - info.startCol + 1,
+                            cell.row - info.startRow + 1));
                     cellMerger.x = cell.column;
                     cellMerger.y = cell.row;
                 }
@@ -466,7 +474,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
         if ((sel.row2() != cellMerger.y) || (sel.column2() != cellMerger.x)) {
             Rectangle target = new Rectangle(info.startCol, info.startRow,
-                    cellMerger.x - info.startCol + 1, cellMerger.y - info.startRow + 1);
+                    cellMerger.x - info.startCol + 1,
+                    cellMerger.y - info.startRow + 1);
 
             if (tablePeer.canGrow(sel, target.width, target.height)) {
                 GroupEdit edit = new GroupEdit();
@@ -498,7 +507,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         Cell srcCell = new Cell((Rectangle) tablePeer.getSelection());
 
         if (tablePeer.canMove(srcCell, cellMover.y, cellMover.x)) {
-            moveCells((Rectangle) tablePeer.getSelection().clone(), cellMover.y, cellMover.x, ctrl);
+            moveCells((Rectangle) tablePeer.getSelection().clone(),
+                cellMover.y, cellMover.x, ctrl);
 
             tablePeer.getSelection().setLocation(cellMover.x, cellMover.y);
         } else {
@@ -560,7 +570,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
                 int[] oldVal = getColumnWidths(table);
 
                 if (((selection.x + selection.width) - 1) == info.startCol) {
-                    for (int i = selection.x; i < (selection.x + selection.width); i++)
+                    for (int i = selection.x;
+                            i < (selection.x + selection.width); i++)
                         table.setColumnWidth(i, s);
                 } else {
                     table.setColumnWidth(info.startCol, s);
@@ -569,7 +580,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
                 int[] newVal = getColumnWidths(table);
 
                 PropertyEdit edit = new TablePropertyEdit(tablePeer,
-                        ComponentConstants.PROPERTY_COLUMN_WIDTHS, oldVal, newVal);
+                        ComponentConstants.PROPERTY_COLUMN_WIDTHS, oldVal,
+                        newVal);
                 vertResizeBar = null;
 
                 tablePeer.getOwner().addEdit(edit);
@@ -579,14 +591,16 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
                 int[] oldVal = table.getRowHeights();
 
                 if (((selection.y + selection.height) - 1) == info.startRow) {
-                    for (int i = selection.y; i < (selection.y + selection.height); i++) {
+                    for (int i = selection.y;
+                            i < (selection.y + selection.height); i++) {
                         table.setRowHeight(i, s);
                     }
                 } else {
                     int dy = s - table.getRowHeight(info.startRow);
                     table.setRowHeight(info.startRow, s);
 
-                    if (tablePeer.isFixedHeight() && (info.startRow < (table.getRowCount() - 1))) {
+                    if (tablePeer.isFixedHeight() &&
+                            (info.startRow < (table.getRowCount() - 1))) {
                         table.setRowHeight(info.startRow + 1,
                             table.getRowHeight(info.startRow + 1) - dy);
                     }
@@ -618,8 +632,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
     private void startResize(int x, int y) {
         info.mainState = STATE_RESIZING;
-        info.subState = (info.subState == SUBSTATE_ROW_RESIZE_READY) ? SUBSTATE_ROW_RESIZING
-                                                                     : SUBSTATE_COLUMN_RESIZING;
+        info.subState = (info.subState == SUBSTATE_ROW_RESIZE_READY)
+            ? SUBSTATE_ROW_RESIZING : SUBSTATE_COLUMN_RESIZING;
 
         if (info.subState == SUBSTATE_COLUMN_RESIZING) {
             x = Math.max(x, info.minPoint.x);
@@ -665,7 +679,9 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
     private Cell startCellMove(int x, int y) {
         try {
-            Cell cell = getTablePeer().getNearestCellInSelection(this.cellMover.x, this.cellMover.y);
+            Cell cell = getTablePeer()
+                            .getNearestCellInSelection(this.cellMover.x,
+                    this.cellMover.y);
 
             info.mainState = STATE_CELL_MOVING;
             info.startRow = cell.row;
@@ -686,7 +702,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         try {
             Cell br = new Cell(getTablePeer().getSelection());
 
-            Cell cell = getTable().getCellstore().getCell(br.row2(), br.column2());
+            Cell cell = getTable().getCellstore()
+                            .getCell(br.row2(), br.column2());
 
             if (cell == null) {
                 cell = new Cell(br.row, br.column);
@@ -814,11 +831,13 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
         pop.addSeparator();
 
-        _PopAction mergeAction = new _PopAction(App.messages.getString("res.409"));
+        _PopAction mergeAction = new _PopAction(App.messages.getString(
+                    "res.409"));
         mergeAction.putValue(Action.ACTION_COMMAND_KEY, UNITE_CELL);
         pop.add(mergeAction);
 
-        _PopAction unmergeAction = new _PopAction(App.messages.getString("res.410"));
+        _PopAction unmergeAction = new _PopAction(App.messages.getString(
+                    "res.410"));
         unmergeAction.putValue(Action.ACTION_COMMAND_KEY, UN_UNITE_CELL);
         pop.add(unmergeAction);
 
@@ -965,7 +984,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
         if ((MouseEvent.META_MASK & modifier) != 0) {
             JComponent panel = tablePeer.getOwner().getGroupPanel();
-            ppp.show(panel, (int) (tablePeer.getOwner().getScale() * (x + off.x)),
+            ppp.show(panel,
+                (int) (tablePeer.getOwner().getScale() * (x + off.x)),
                 (int) (tablePeer.getOwner().getScale() * (y + off.y)));
 
             return;
@@ -979,13 +999,16 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
             info.mainState = TABLE_DRAG;
             info.subState = SUBSTATE_IDLE;
 
-            SelectionFramePainter paintLayer = tablePeer.getOwner().getSelectedFrameLayer();
+            SelectionFramePainter paintLayer = tablePeer.getOwner()
+                                                        .getSelectedFrameLayer();
 
-            worker = new MoveWorker(tablePeer.getOwner(), true, ComponentPeer.CENTER, paintLayer,
+            worker = new MoveWorker(tablePeer.getOwner(), true,
+                    ComponentPeer.CENTER, paintLayer,
                     new ComponentPeer[] { tablePeer });
 
             paintLayer.setSelectedFrames(worker.getFrames());
-        } else if ((info.subState == SUBSTATE_IDLE) && ((MouseEvent.META_MASK & modifier) == 0)) {
+        } else if ((info.subState == SUBSTATE_IDLE) &&
+                ((MouseEvent.META_MASK & modifier) == 0)) {
             startSelect(x, y);
             endSelect();
         }
@@ -1062,7 +1085,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
      *
      * @return DOCUMENT ME!
      */
-    public boolean insertChildren(int r, int c, int w, int h, Class prepareClass, GroupEdit edit) {
+    public boolean insertChildren(int r, int c, int w, int h,
+        Class prepareClass, GroupEdit edit) {
         TablePropertyListener lst = new TablePropertyListener(tablePeer);
 
         TableBase table = (TableBase) tablePeer.getComponent();
@@ -1077,7 +1101,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
                 if (com == null) {
                     newCell = new Cell(i, j);
                 } else {
-                    if ((com.getCell().row == i) && (com.getCell().column == j)) {
+                    if ((com.getCell().row == i) &&
+                            (com.getCell().column == j)) {
                         newCell = (Cell) com.getCell().clone();
 
                         Component p = com.getParent();
@@ -1185,7 +1210,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
         Component first = store.getComponent(r.y, r.x);
 
-        if (!tableParentAlways && (first != null) && first.getCell().equals(new Cell(r))) {
+        if (!tableParentAlways && (first != null) &&
+                first.getCell().equals(new Cell(r))) {
             Cell save = first.getCell();
             first.setCell(null);
 
@@ -1377,8 +1403,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
                 Component p = panelstore.getComponentOver(cell.row, cell.column);
                 p.add(comp);
 
-                PropertyChangeEvent e = new PropertyChangeEvent(p, ComponentConstants.PROPERTY_ADD,
-                        comp, null);
+                PropertyChangeEvent e = new PropertyChangeEvent(p,
+                        ComponentConstants.PROPERTY_ADD, comp, null);
 
                 lst.propertyChange(e);
             }
@@ -1416,14 +1442,16 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
                     } else if (cell.contains(cell.row, com.getCell().column)) {
                         newCell = (Cell) oldCell.clone();
                         newCell.column = cell.column2() + 1;
-                        newCell.colSpan = -newCell.column + 1 + oldCell.column2();
+                        newCell.colSpan = -newCell.column + 1 +
+                            oldCell.column2();
                     }
 
                     if (newCell != null) {
                         com.setCell(newCell);
 
                         lst.propertyChange(new PropertyChangeEvent(com,
-                                ComponentConstants.PROPERTY_CELL, oldCell, newCell));
+                                ComponentConstants.PROPERTY_CELL, oldCell,
+                                newCell));
                     }
                 }
             }
@@ -1509,17 +1537,21 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
     private void createLabelAt(Cell cell, boolean ctrl) {
         cell = leadingCell(getTable(), cell);
 
-        Component hit = getTable().getCellstore().getComponent(cell.row, cell.column);
+        Component hit = getTable().getCellstore()
+                            .getComponent(cell.row, cell.column);
 
         if (hit == null) {
             hit = new Label();
 
-            Rectangle b = getTable().getBounds(cell.row, cell.column, cell.colSpan, cell.rowSpan);
+            Rectangle b = getTable()
+                              .getBounds(cell.row, cell.column, cell.colSpan,
+                    cell.rowSpan);
             hit.setBounds(b);
             hit.setCell(cell);
             getTable().add(hit);
 
-            ComponentPeer peer = ComponentPeerFactory.createPeer(tablePeer.getOwner(), hit);
+            ComponentPeer peer = ComponentPeerFactory.createPeer(tablePeer.getOwner(),
+                    hit);
             tablePeer.add(peer);
 
             tablePeer.getOwner().addEdit(new AddEdit(peer, true));
@@ -1593,7 +1625,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
      * @return DOCUMENT ME!
      */
     public boolean keyTyped(KeyEvent e) {
-        if ((e.getModifiers() & (KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK | KeyEvent.CTRL_MASK)) != 0) {
+        if ((e.getModifiers() &
+                (KeyEvent.ALT_MASK | KeyEvent.SHIFT_MASK | KeyEvent.CTRL_MASK)) != 0) {
             return false;
         }
 
@@ -1621,8 +1654,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         default:
             e.consume();
 
-            Cell cell = new Cell(tablePeer.getFocusedCell().row, tablePeer.getFocusedCell().column,
-                    1, 1);
+            Cell cell = new Cell(tablePeer.getFocusedCell().row,
+                    tablePeer.getFocusedCell().column, 1, 1);
 
             createLabelAt(cell, false);
             sendKey(editor, e.getKeyCode(), e.getKeyChar());
@@ -1669,9 +1702,10 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
      * @param keyChar
      *            DOCUMENT ME!
      */
-    public static void sendKey(java.awt.Component comp, int vk_code, char keyChar) {
-        KeyEvent k = new KeyEvent(comp, KeyEvent.KEY_TYPED, new Date().getTime(), 0,
-                KeyEvent.VK_UNDEFINED, keyChar);
+    public static void sendKey(java.awt.Component comp, int vk_code,
+        char keyChar) {
+        KeyEvent k = new KeyEvent(comp, KeyEvent.KEY_TYPED,
+                new Date().getTime(), 0, KeyEvent.VK_UNDEFINED, keyChar);
         comp.dispatchEvent(k);
     }
 
@@ -1709,7 +1743,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         lst.applyEdit(edit);
     }
 
-    private void insertColumn(int col, int w, CompoundEdit edit, boolean leftside) {
+    private void insertColumn(int col, int w, CompoundEdit edit,
+        boolean leftside) {
         TableBase t = (TableBase) tablePeer.getComponent();
 
         TablePropertyListener lst = new TablePropertyListener(tablePeer);
@@ -1763,7 +1798,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         TableBase t = (TableBase) tablePeer.getComponent();
 
         if ((row < 0) || (row >= t.getRowCount())) {
-            throw new java.lang.ArrayIndexOutOfBoundsException("No such row " + row);
+            throw new java.lang.ArrayIndexOutOfBoundsException("No such row " +
+                row);
         }
 
         if (t.getRowCount() == count) {
@@ -1798,14 +1834,17 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
         int width = table.getColumnWidth(selection.x);
 
-        SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner().getTopLevelAncestor(),
-                App.messages.getString("res.422"), App.messages.getString("res.426"), width);
+        SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner()
+                                                           .getTopLevelAncestor(),
+                App.messages.getString("res.422"),
+                App.messages.getString("res.426"), width);
         input.show();
 
         if (!input.xok) {
             return false;
         } else {
-            for (int i = selection.x; i < (selection.x + selection.width); i++)
+            for (int i = selection.x; i < (selection.x + selection.width);
+                    i++)
                 table.setColumnWidth(i, input.getValue());
 
             int[] newVal = getColumnWidths(table);
@@ -1826,21 +1865,24 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
 
         int height = table.getRowHeight(selection.y);
 
-        SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner().getTopLevelAncestor(),
-                App.messages.getString("res.421"), App.messages.getString("res.427"), height);
+        SizeDialog input = new SizeDialog((Frame) tablePeer.getOwner()
+                                                           .getTopLevelAncestor(),
+                App.messages.getString("res.421"),
+                App.messages.getString("res.427"), height);
 
         input.show();
 
         if (!input.xok) {
             return false;
         } else {
-            for (int i = selection.y; i < (selection.y + selection.height); i++)
+            for (int i = selection.y; i < (selection.y + selection.height);
+                    i++)
                 table.setRowHeight(i, input.getValue());
 
             int[] newVal = table.getRowHeights();
 
-            edit.addEdit(new TablePropertyEdit(tablePeer, ComponentConstants.PROPERTY_ROW_HEIGHTS,
-                    oldVal, newVal));
+            edit.addEdit(new TablePropertyEdit(tablePeer,
+                    ComponentConstants.PROPERTY_ROW_HEIGHTS, oldVal, newVal));
 
             return true;
         }
@@ -1898,7 +1940,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
      */
     public boolean dispatchKeyEvent(KeyEvent e) {
         if ((this.tablePeer != null) && this.tablePeer.isFocused() &&
-                tablePeer.getOwner().isActive() && e.getComponent() instanceof LayerContainer &&
+                tablePeer.getOwner().isActive() &&
+                e.getComponent() instanceof LayerContainer &&
                 isSystemCaptured(e.getKeyCode())) {
             if (e.getKeyCode() == KeyEvent.VK_TAB) {
                 if (e.getID() == KeyEvent.KEY_TYPED) {
@@ -1920,7 +1963,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
         Class prepareClass;
 
         public _InsertItem(ReportAction action) {
-            super((String) action.getValue(Action.NAME), (Icon) action.getValue(Action.SMALL_ICON));
+            super((String) action.getValue(Action.NAME),
+                (Icon) action.getValue(Action.SMALL_ICON));
             this.addActionListener(this);
             this.prepareClass = (Class) action.getValue(ReportAction.CLASS);
         }
@@ -2059,7 +2103,8 @@ public class TableEditKit implements ActionListener, KeyEventDispatcher {
             } else if (e.getActionCommand() == UNITE_CELL) {
                 done = unitCell(edit);
             } else if (e.getActionCommand() == UN_UNITE_CELL) {
-                done = ununitCell(edit, (Rectangle) tablePeer.getSelection().clone());
+                done = ununitCell(edit,
+                        (Rectangle) tablePeer.getSelection().clone());
                 BlankCellLoader.load(tablePeer, edit);
                 setSelection(selection);
             } else if (e.getActionCommand() == RESIZE_ROW_HEIGHTS) {
@@ -2153,7 +2198,8 @@ class SizeDialog extends JDialog {
         JPanel center = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         center.add(new JLabel(label), gbc);
-        editor = new SpinEditor(new Integer(value), new Integer(0), new Integer(500), new Integer(1));
+        editor = new SpinEditor(new Integer(value), new Integer(0),
+                new Integer(500), new Integer(1));
         editor.setPreferredSize(new Dimension(90, 20));
         center.add(editor, gbc);
 

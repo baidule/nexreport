@@ -2,6 +2,7 @@ package jatools.core.view;
 
 import jatools.accessor.PropertyAccessor;
 import jatools.accessor.PropertyDescriptor;
+
 import jatools.designer.App;
 
 import java.awt.BasicStroke;
@@ -11,8 +12,11 @@ import java.awt.Graphics2D;
 import java.awt.Insets;
 import java.awt.Rectangle;
 import java.awt.Stroke;
+
 import java.io.Serializable;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -22,6 +26,9 @@ import java.io.Serializable;
  * @version $Revision$
   */
 public class Border implements Serializable, PropertyAccessor, BorderBase {
+    private static final Pattern ASSURE_PX_PATTERN = Pattern.compile("([\\s|:]+\\d+[\\s|$])",
+            Pattern.CASE_INSENSITIVE);
+
     /**
      * DOCUMENT ME!
      */
@@ -79,13 +86,15 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
     *
     * @return DOCUMENT ME!
     */
-    public static Border create(BorderStyle top, BorderStyle left, BorderStyle bottom,
-        BorderStyle right) {
-        if ((top != null) && top.equals(left) && top.equals(bottom) && top.equals(right)) {
+    public static Border create(BorderStyle top, BorderStyle left,
+        BorderStyle bottom, BorderStyle right) {
+        if ((top != null) && top.equals(left) && top.equals(bottom) &&
+                top.equals(right)) {
             return new Border("border:" + top.toString());
         }
 
-        if ((top == null) && (left == null) && (bottom == null) && (right == null)) {
+        if ((top == null) && (left == null) && (bottom == null) &&
+                (right == null)) {
             return null;
         }
 
@@ -128,7 +137,8 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
     public static Border create(String text) {
         Border b = new Border(text);
 
-        return create(b.getTopStyle(), b.getLeftStyle(), b.getBottomStyle(), b.getRightStyle());
+        return create(b.getTopStyle(), b.getLeftStyle(), b.getBottomStyle(),
+            b.getRightStyle());
     }
 
     /**
@@ -203,8 +213,8 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
         }
     }
 
-    private void paint(final BorderStyle edge, final Graphics graphics, final int xStart,
-        final int yStart, final int xEnd, final int yEnd) {
+    private void paint(final BorderStyle edge, final Graphics graphics,
+        final int xStart, final int yStart, final int xEnd, final int yEnd) {
         final String style = edge.getStyle();
 
         if (graphics instanceof Graphics2D) {
@@ -218,7 +228,8 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
             } else if (BorderStyle.BORDER_STYLE_DOTTED.equals(style)) {
                 stroke = getDottedStroke(edge.getThickness());
             } else {
-                throw new IllegalStateException(App.messages.getString("res.630") + style);
+                throw new IllegalStateException(App.messages.getString(
+                        "res.630") + style);
             }
 
             g2d.setStroke(stroke);
@@ -247,10 +258,8 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
      * @return DOCUMENT ME!
      */
     public static Stroke getDashedStroke(final float width) {
-        return new BasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f,
-            new float[] {
-                5
-            }, 0);
+        return new BasicStroke(width, BasicStroke.CAP_BUTT,
+            BasicStroke.JOIN_MITER, 10.0f, new float[] { 5 }, 0);
     }
 
     /**
@@ -261,10 +270,8 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
      * @return DOCUMENT ME!
      */
     public static Stroke getDottedStroke(final float width) {
-        return new BasicStroke(width, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10.0f,
-            new float[] {
-                2
-            }, 0);
+        return new BasicStroke(width, BasicStroke.CAP_BUTT,
+            BasicStroke.JOIN_MITER, 10.0f, new float[] { 2 }, 0);
     }
 
     /**
@@ -416,6 +423,25 @@ public class Border implements Serializable, PropertyAccessor, BorderBase {
      */
     public void setStyleText(String styleText) {
         this.styleText = styleText;
+
+        if (this.styleText != null) {
+            this.styleText = normalStyle(this.styleText);
+        }
+
         this.valid = false;
+    }
+
+    private static String normalStyle(String aText) {
+        StringBuffer result = new StringBuffer();
+        Matcher matcher = ASSURE_PX_PATTERN.matcher(aText);
+
+        while (matcher.find()) {
+            String repl = matcher.group(0).replaceAll("\\s+$", "") + "px ";
+
+            matcher.appendReplacement(result, repl);
+        }
+
+        matcher.appendTail(result);
+        return result.toString();
     }
 }

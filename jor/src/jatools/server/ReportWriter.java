@@ -5,10 +5,12 @@ import jatools.engine.ReportJob;
 import jatools.io.DefaultResourceOutputFactory;
 import jatools.io.ResourceOutputFactory;
 
+import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -41,7 +43,28 @@ public class ReportWriter extends ReportActionBase {
             PrintWriter out = response.getWriter();
 
             job.printAsDHTML(ff, out);
-        } else {
+        }else if (as.equals("xls") || as.equals("xlsn")) {
+            // 打印excel报表到一个字节流
+            ByteArrayOutputStream ba = new ByteArrayOutputStream();
+
+            if (as.equals("xlsn")) {
+                job.printAsXLSn(ba);
+            } else {
+                job.printAsXLS(ba);
+            }
+
+            // 将字节流输出到 servlet 的response
+            response.setContentType("application/vnd.ms-excel");
+            //application/x-msexcel
+            response.setContentType("application/x-msexcel");
+            response.setHeader("Content-disposition", "attachment;filename=report.xls");
+
+            response.setContentLength(ba.size());
+
+            ServletOutputStream sos = response.getOutputStream();
+            ba.writeTo(sos);
+            sos.flush();
+        }  else {
             throw new Exception("\u4E0D\u652F\u6301\u8F93\u51FA\u683C\u5F0F " + as);
         }
     }

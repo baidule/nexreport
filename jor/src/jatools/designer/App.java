@@ -156,7 +156,7 @@ public class App implements ProtectPublic {
         System2.setUserPath(working_dir);
 
         if (!nolookandfeel) {
-            setLookAndFeel();
+           // setLookAndFeel();
         }
 
         loadMru();
