@@ -22,13 +22,24 @@ public class CodeConvert {
     * @param args DOCUMENT ME!
     */
     public static void main(String[] args) {
-         convert(new File("E:\\java\\JOR\\src.secret"), ".java","GB2312","UTF-8");
+    	
+    	//System.out.println("E:\\java\\JOR\\DPT_NAME.DPT_LEVEL, DPT_id secret".replaceAll("(?i)\\b(D)(ID|NAME|LEVEL)\\b","DPT_$2"));
+    	
+    	
+        convert(new File("D:\\eclipse36\\workspace\\iprint\\src"), ".java", "GB2312",
+            "UTF-8");
     }
 
-    static void convert(File f, String ext,String from,String to) {
+    static String replace(String str, String pattern, String rep) {
+    	
+    	//   (DPT_NAME), $1
+        return null;
+    }
+
+    static void convert(File f, String ext, String from, String to) {
         if (f.isDirectory()) {
             for (File fs : f.listFiles()) {
-                convert(fs, ext,from,to);
+                convert(fs, ext, from, to);
             }
         } else if (f.getName().endsWith(ext)) {
             try {
@@ -39,7 +50,8 @@ public class CodeConvert {
                 fis.read(buffers);
                 fis.close();
 
-                OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(f), to); //
+                OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(
+                            f), to); //
                 writer.write(new String(buffers, from));
 
                 writer.close();

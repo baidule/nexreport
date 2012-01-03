@@ -18,6 +18,11 @@ import org.apache.log4j.Logger;
 public class Messages implements ProtectClass {
     private static Logger logger = Logger.getLogger("ZMessages");
     public static ResourceBundle dictionary;
+    
+    private Messages()
+    {
+    	
+    }
 
     /**
      * DOCUMENT ME!

@@ -1,15 +1,19 @@
 
-import java.io.*;
-import java.util.List;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.util.Vector;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-public class ListFiles {
+public class I18NUtils {
 
 	static Vector resources = new Vector();
 
-	static String findDir = "D:\\workspace\\jor\\src\\";
+	//static String findDir = "E:\\java\\XForm2\\src.jatools\\";
 
 	static int num = 0;
 
@@ -26,8 +30,8 @@ public class ListFiles {
 			PrintWriter fout = new PrintWriter(new OutputStreamWriter(
 					new FileOutputStream(saveFile), "GBK"));
 
-			ListFiles lf = new ListFiles();
-			lf.listFile("D:\\workspace\\jor\\src\\");
+			I18NUtils lf = new I18NUtils();
+			lf.listFile("D:\\src.jatools\\");
 			for (int i = 0; i < resources.size(); i++) {
 				fout.println("res." + i + "=" + resources.get(i));
 			}
@@ -148,30 +152,31 @@ public class ListFiles {
 		for (int i = 0; i < list.length; i++) {
 			try {
 				if (list[i].isDirectory()) {
-					new ListFiles().listFile(list[i].toString());
+					new I18NUtils().listFile(list[i].toString());
 				} else {
 
 					String filter = substring(list[i].getAbsolutePath().toString(), ".");
-					String hzutil = findDir + "jatools\\util\\HZUtil.java";
+				//	String hzutil = findDir + "jatools\\util\\HZUtil.java";
 
-					if (filter.equals("java")
-							&& (!hzutil.equals(list[i].getAbsolutePath().toString()))) {
+					if (filter.equals("java")) {
 
 						System.out.println(list[i].getAbsolutePath());
 
 						File srcfile = new File(list[i].getAbsolutePath());
 
 						BufferedReader fin = new BufferedReader(new InputStreamReader(
-								new FileInputStream(srcfile), "GBK"));
+								new FileInputStream(srcfile), "UTF-8"));
 						int line_no = 1;
 
 						String line = null;
 
 						//					fout.println(list[i].getAbsolutePath());
 						String newfile = "E" + list[i].getAbsolutePath().substring(1);
+						new File(newfile).getParentFile().mkdirs();
+						
 
 						PrintWriter out = new PrintWriter(new OutputStreamWriter(
-								new FileOutputStream(newfile), "GBK"));
+								new FileOutputStream(newfile), "UTF-8"));
 
 						while ((line = fin.readLine()) != null) {
 							
