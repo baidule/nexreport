@@ -1,0 +1,4 @@
+void debug() 
+{
+	jatools.engine.script.GlobalScripts.debug(this.interpreter);
+}

@@ -1,0 +1,4 @@
+void importFunctions( arg ) 
+{
+	jatools.engine.script.GlobalScripts.importFunctions(this.interpreter,arg);
+}
