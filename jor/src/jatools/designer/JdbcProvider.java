@@ -39,8 +39,7 @@ public class JdbcProvider extends Connection {
             
 
             //
-            new PropertyDescriptor(ComponentConstants.PROPERTY_PASSWORD, String.class),
-            
+            new PropertyDescriptor(ComponentConstants.PROPERTY_PASSWORD, String.class),          
 
             //
             new PropertyDescriptor(ComponentConstants.PROPERTY_URL, String.class)

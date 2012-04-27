@@ -40,8 +40,9 @@ import java.util.Map;
   */
 public class ReportPrinter implements PrintConstants, ProtectPublic {
     private static boolean NO_CACHE_MODEL = Util.getProperty("no.cache.model") != null;
+    
 
-  //  private final static ThreadLocal localScript2 = new ThreadLocal();
+    private final static ThreadLocal localScript2 = new ThreadLocal();
     private final static ThreadLocal localReaders = new ThreadLocal();
     private ReportDocument doc;
     private Context context;
@@ -79,11 +80,14 @@ public class ReportPrinter implements PrintConstants, ProtectPublic {
         
         this.context = new Context();
         
+       
+        
         if (this.doc.isDebugOff()) {
             this.context.getScript().hideErrors(null);
         }
 
         context.getScript().set(SCRIPT, context.getScript());
+        localScript2.set(context.getScript());
 
         if (styleManager == null) {
             styleManager = new DisplayStyleManager(null);
@@ -129,14 +133,14 @@ public class ReportPrinter implements PrintConstants, ProtectPublic {
         context.u((String) context.getScript().get("copyrights"));
     }
 
-//    /**
-//     * DOCUMENT ME!
-//     *
-//     * @return DOCUMENT ME!
-//     */
-//    public static Script getLocalScript() {
-//        return (Script) localScript2.get();
-//    }
+    /**
+     * DOCUMENT ME!
+     *
+     * @return DOCUMENT ME!
+     */
+    public static Script getLocalScript() {
+        return (Script) localScript2.get();
+    }
 
     /**
      * DOCUMENT ME!

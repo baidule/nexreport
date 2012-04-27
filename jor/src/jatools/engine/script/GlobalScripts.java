@@ -5,17 +5,28 @@ import bsh.Primitive;
 
 import jatools.accessor.ProtectPublic;
 
+import jatools.dataset.Dataset;
+
 import jatools.designer.App;
+
+import jatools.dom.DatasetBasedNode;
+
+import jatools.dom.field.RowField;
 
 import jatools.engine.ImportFunctions;
 import jatools.engine.System2;
+
+import jatools.engine.printer.ReportPrinter;
 
 import jatools.engine.script.debug.ScriptDebugger;
 
 import jatools.util.HZUtil;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 import java.net.URLEncoder;
@@ -825,6 +836,38 @@ public class GlobalScripts implements ProtectPublic {
      * @return DOCUMENT ME!
      */
     public static String clobString(String s) {
+        Script script = ReportPrinter.getLocalScript();
+
+        if (script != null) {
+            script.clearValue2();
+            script.eval(s);
+
+            Object o = script.getValue2();
+
+            if (o instanceof RowField) {
+                RowField field = (RowField) o;
+
+                if (field.getNode() instanceof DatasetBasedNode) {
+                    DatasetBasedNode node = (DatasetBasedNode) field.getNode();
+                    Dataset rows = node.getDataset();
+                    int col = field.getColumn();
+
+                    if (col == -1) {
+                        return null;
+                    }
+
+                    try {
+                        return IOUtils.toString(rows.getReader(
+                                rows.getRow(node.getRowSet().rowAt(0)).index,
+                                col));
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
         return null;
     }
 
@@ -849,7 +892,8 @@ public class GlobalScripts implements ProtectPublic {
 
         try {
             Class.forName("org.hsqldb.jdbcDriver");
-            con = DriverManager.getConnection("jdbc:hsqldb:./demosdb/mydb", "sa", null);
+            con = DriverManager.getConnection("jdbc:hsqldb:./demosdb/mydb",
+                    "sa", null);
             p = con.prepareStatement("SELECT * FROM 订单查询");
             rs = p.executeQuery();
         } catch (ClassNotFoundException e) {
@@ -869,16 +913,16 @@ public class GlobalScripts implements ProtectPublic {
     public static TableModel getTableModel() {
         DefaultTableModel result = new DefaultTableModel(0, 4);
         result.addRow(new Object[] {
-                App.messages.getString("res.51"), new Integer(16), App.messages.getString("res.52"),
-                new Integer(90)
+                App.messages.getString("res.51"), new Integer(16),
+                App.messages.getString("res.52"), new Integer(90)
             });
         result.addRow(new Object[] {
-                App.messages.getString("res.53"), new Integer(17), App.messages.getString("res.54"),
-                new Integer(99)
+                App.messages.getString("res.53"), new Integer(17),
+                App.messages.getString("res.54"), new Integer(99)
             });
         result.addRow(new Object[] {
-                App.messages.getString("res.55"), new Integer(18), App.messages.getString("res.54"),
-                new Integer(85)
+                App.messages.getString("res.55"), new Integer(18),
+                App.messages.getString("res.54"), new Integer(85)
             });
 
         return result;

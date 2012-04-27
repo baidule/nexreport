@@ -90,7 +90,7 @@ public class I18NUtils {
 		index = resources.indexOf(s);
 
 		if(isGBK(s)){
-			result += str.substring(0,start) + "App.messages.getString(\"res."+index+"\")";
+			result += str.substring(0,start) + "App.messages.getString(\""+s+"\")";
 			}
 			else{
 				result +=str.substring(0,start) + "\"" +s + "\"";
