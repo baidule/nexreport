@@ -292,7 +292,7 @@ public class SqlReader extends AbstractDatasetReader {
 
     private boolean isQuery(String sql) {
         if (sql != null) {
-            return sql.toLowerCase().indexOf("select ") > -1;
+            return sql.toLowerCase().indexOf("select ") > -1 || sql.toLowerCase().indexOf("with ") > -1;
         } else {
             return false;
         }
